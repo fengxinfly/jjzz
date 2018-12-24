@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>设计师详情页</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  
+  <link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+  <link rel="stylesheet" href="css/amazeui.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/amazeui.min.js"></script>
+	
+</head>
+<body>
+	<div class="fixedSlide">
+  	<ul>
+  		<li class="fixedSlide_1">
+  			<i></i><p>联系客服</p>
+  		</li>
+  		<li class="fixedSlide_2">
+  			<i></i><p>下载APP</p>
+  			<div class="fixedSlide_2_down">
+  				<img src="img/appDownQR.png"/>
+  			</div>
+  		</li>
+  		<li class="fixedSlide_3">
+  			<i></i><p>立即预约</p>
+  		</li>
+  		<li class="fixedSlide_4 toTop" style="display: none;">
+  			<i></i><p>返回顶部</p>
+  		</li>
+  	</ul>
+  </div>
+	<div class="am-topbar header">
+		<div class="am-g tr-login-topbar">
+	    <div class="am-container">
+	      <div class="am-fr am-text-xs am-margin-right-sm" id="loginPanel">
+	        	<a class="login" href="sign.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="register" href="javascript:;">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  target="_blank" href="shopping_cart.html" class="shoppingCart"><span class="am-icon-shopping-cart"><i></i></span>购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	        	<div class="am-hoverDown">
+              <a class="am-hoverDown-title" href="javascript:;">个人中心 <span class="am-icon-angle-down"></span></a>
+              <ul class="am-hoverDown-caption">
+                <li><a target="_blank" href="personal_center.html?type=sideBar1">个人信息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar2">我的预约</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar3">我的订单</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar4">我的方案</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar9">地址管理</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar5">我的收藏</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar6">我的红包</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar7">我的消息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar8">我的社区</a></li>
+              </ul>
+            </div>
+	        	<div id="appDown">
+	        		<p>APP下载</p>
+	        		<div class="appDownQRcode">
+	        			<img src="img/erweima.png"/>
+	        			<h4>扫一扫下载APP</h4>
+	        		</div>
+	        	</div>
+	      </div>
+	    </div>
+	 </div>
+	 	<div class="am-g">
+		<div class="am-container">
+			<div class="left jj-logo">
+			  <img class="logo" src="img/logo.png"></img>
+	   </div>
+	  <div class="right margin-t12">
+      <ul class="jj-menu clearfix">
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="javascript:;">产品</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="product.html">
+                        <i class="icon_server_1"></i>
+                        <p>整装甄品</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="full_house.html">
+                        <i class="icon_server_3"></i>
+                        <p>全屋定制</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sigle_product.html">
+                        <i class="icon_server_2"></i>
+                        <p>精选单品</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+	      </li>
+		  <li class="jj-dropdown jj-menu-li">
+			  <a class="jj-menu-name" href="javascript:;">体验城</a>
+			  <div class="nav-child">
+				  <ul class="clearfix">
+					  <li>
+						  <a href="experience_city.html">
+							  <i class="icon_server_12"></i>
+							  <p>了解体验城</p>
+						  </a>
+					  </li>
+					  <li>
+						  <a href="enter_business.html">
+							  <i class="icon_server_13"></i>
+							  <p>入驻商家</p>
+						  </a>
+					  </li>
+				  </ul>
+			  </div>
+		  </li>
+		  <li class="jj-dropdown jj-menu-li">
+			  <a class="jj-menu-name jj-menu-active" href="case.html">案例</a>
+			  <div class="nav-child">
+				  <ul class="clearfix">
+					  <li>
+						  <a href="case.html?type=caseTab1">
+							  <i class="icon_server_9"></i>
+							  <p>经典案例</p>
+						  </a>
+					  </li>
+					  <li>
+						  <a href="case.html?type=caseTab2">
+							  <i class="icon_server_10"></i>
+							  <p>施工直播</p>
+						  </a>
+					  </li>
+					  <li class="active">
+						  <a href="designer.html">
+							  <i class="icon_server_11"></i>
+							  <p>设计师</p>
+						  </a>
+					  </li>
+				  </ul>
+			  </div>
+		  </li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="service.html">服务</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="quality_assurance.html">
+                        <i class="icon_server_6"></i>
+                        <p>品质保障</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="see_get.html">
+                        <i class="icon_server_7"></i>
+                        <p>所见即所得</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="financial_service.html">
+                        <i class="icon_server_8"></i>
+                        <p>金融服务</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="community.html">社区</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="javascript:;">关于我们</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="jinji_plus.html">
+                        <i class="icon_server_1"></i>
+                        <p>晋级+</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="business.html">
+                        <i class="icon_server_4"></i>
+                        <p>商务合作</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="join_us.html">
+                        <i class="icon_server_5"></i>
+                        <p>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+    	</ul>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+	<!--头部结束-->
+	<div class="rollpic">
+		<div class="rollpic_img">
+			<img src="img/designerBanner.jpg" width="100%" alt=""/>
+			<div class="designer_box">
+				<div class="designer_box_left left">
+					<img src="img/designer12.png"/>
+				</div>
+				<div class="designer_box_right right">
+					<p class="designer_box_right_name">
+						<b>苏本印</b>
+						<span class="star">
+      				<i class="active"></i>
+      				<i class="active"></i>
+      				<i></i>
+      				<i></i>
+      				<i></i>
+      			</span>
+					</p>
+					<h3>首席设计师</h3>
+					<h3>一切设计尊崇舒适的生活</h3>
+					<hr />
+					<h3>案例作品：<b>13</b>套</h3>
+					<h3>从业经验：<b>15</b>年</h3>
+					<h3>擅长风格：<i>现代 简约 美式</i></h3>
+					<button class="am-btn am-round">立即预约</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="am-container margin-t30">	
+		<div class="live_left left">
+			<ol class="am-breadcrumb">
+			  <li><a href="#">首页</a></li>
+			  <li><a href="#">设计师</a></li>
+			  <li class="am-active">苏本印</li>
+			</ol>
+			<div class="designerPage_top">
+				<ol class="clearfix">
+					<li class="designerPage_top_li1 active"><i></i>代表作品</li>
+					<li class="designerPage_top_li2"><i></i>业主评价</li>
+				</ol>
+			</div>
+			<div class="designerPage_main">
+				<ul>
+					<li style="display: block;">
+						<div class="am-g margin-t30">
+						 <div class="am-u-sm-12">
+					    <div class="case_content_list3">
+					      <img src="img/u645.jpg" alt=""/>
+					      <div class="case_content_list_designer">
+					      	<img src="img/designer2.jpg"/>
+					      </div>
+					      <div class="pic_describe">
+					      		<h3>绿城全运村</h3>
+					        	<p class="pic_describe_p1">
+					        		<span>北欧/现代</span>
+					        		<b>两室一厅</b>
+					        		<i>80m²</i>
+					        	</p>
+					        	<div class="pic_describe_num clearfix">
+					        		<b class="left am-weight">6万</b>
+					        		<p class="right"><span><i></i>7710</span><strong><i></i>1</strong></p>
+					        	</div>
+					      </div>
+					    </div>
+					 </div>
+						 <div class="am-u-sm-4">
+						    <div class="case_content_list3">
+						      <img src="img/u645.jpg" alt=""/>
+						      <div class="case_content_list_designer">
+						      	<img src="img/designer2.jpg"/>
+						      </div>
+						      <div class="pic_describe">
+						      		<h3>绿城全运村</h3>
+						        	<p class="pic_describe_p1">
+						        		<span>北欧/现代</span>
+						        		<b>两室一厅</b>
+						        		<i>80m²</i>
+						        	</p>
+						        	<div class="pic_describe_num clearfix">
+						        		<b class="left am-weight">6万</b>
+						        		<p class="right"><span><i></i>7710</span><strong><i></i>1</strong></p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+						 <div class="am-u-sm-4">
+						    <div class="case_content_list3">
+						      <img src="img/u645.jpg" alt=""/>
+						      <div class="case_content_list_designer">
+						      	<img src="img/designer2.jpg"/>
+						      </div>
+						      <div class="pic_describe">
+						      		<h3>绿城全运村</h3>
+						        	<p class="pic_describe_p1">
+						        		<span>北欧/现代</span>
+						        		<b>两室一厅</b>
+						        		<i>80m²</i>
+						        	</p>
+						        	<div class="pic_describe_num clearfix">
+						        		<b class="left am-weight">6万</b>
+						        		<p class="right"><span><i></i>7710</span><strong><i></i>1</strong></p>
+						        	</div>
+						      </div>
+						    </div>
+						 </div>
+						 <div class="am-u-sm-4">
+					    <div class="case_content_list3">
+					      <img src="img/u645.jpg" alt=""/>
+					      <div class="case_content_list_designer">
+					      	<img src="img/designer2.jpg"/>
+					      </div>
+					      <div class="pic_describe">
+					      		<h3>绿城全运村</h3>
+					        	<p class="pic_describe_p1">
+					        		<span>北欧/现代</span>
+					        		<b>两室一厅</b>
+					        		<i>80m²</i>
+					        	</p>
+					        	<div class="pic_describe_num clearfix">
+					        		<b class="left am-weight">6万</b>
+					        		<p class="right"><span><i></i>7710</span><strong><i></i>1</strong></p>
+					        	</div>
+					      </div>
+					    </div>
+					 </div>
+					</div>
+					<!--关于ta-->
+					<div class="am-g margin-t30 aboutTA">
+						<h2>关于TA</h2>
+						<div class="clearfix margin-t20">
+							<div class="am-u-md-4 aboutTA_left">
+								<div class="aboutTA_left_img">
+									<img src="img/designer12.png"/>
+								</div>
+								<div class="clearfix aboutTA_left_number1 aboutTA_left_number">
+									<div class="am-u-md-6 am-border-right">
+										<b>61</b>作品
+									</div>
+									<div class="am-u-md-6">
+										<b>5</b>星级
+									</div>
+								</div>
+								<div class="aboutTA_left_number2 clearfix aboutTA_left_number">
+									<div class="am-u-md-12">
+										<b>15448723</b>人气
+									</div>
+								</div>
+							</div>
+							<div class="am-u-md-8 aboutTA_right">
+								<h3>您好，我是王凤波</h3>
+								<p>设计经验：10年以上</p>
+								<p>擅长空间：餐厅，样板间，家具住宅，别墅豪宅，酒吧KTV，酒店，办公室，医院，会所，商业展示，售楼处，文化空间，咖啡厅</p>
+								<p>所在地：北京</p>
+								<h4>个人简介</h4>
+								<h5>中国著名室内设计大师，中国著名室内设计大师中国著名室内设计大师中国著名室内设计大师中国著名室内设计大师，中国著名室内设计大师中国著名室内设计大师中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，中国著名室内设计大师，</h5>
+								<h4>证书与奖励</h4>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，即‘中华设计委’称号；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，即‘中华设计委’称号；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，即‘中华设计委’称号；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，即‘中华设计委’称号；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，即‘中华设计委’称号；</h5>
+								<h5>2015年荣获全国工商联合会家居装饰业商会设计师委员会，；</h5>
+							</div>
+						</div>
+					</div>
+					</li>
+					<li>
+						<div class="margin-t20">
+							<article class="am-comment">
+								<a href="#link-to-user-home">
+									<img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/96/h/96" alt="" class="am-comment-avatar" width="48" height="48">
+								</a>
+								<div class="am-comment-main">
+									<header class="am-comment-hd">
+										<div class="am-comment-meta">
+											<a href="#link-to-user" class="am-comment-author">某人</a> 评论于 <time>2018-1-12 15:30</time>
+										</div>
+									</header>
+									<div class="am-comment-bd">
+										<p>那，那是一封写给南部母亲的信。我茫然站在骑楼下，我又看到永远的樱子走到街心。其实雨下得并不大，却是一生一世中最大的一场雨。而那封信是这样写的，年轻的樱子知不知道呢？</p>
+									</div>
+								</div>
+							</article>
+						</div>	
+					</li>
+				</ul>
+			</div>
+			<!--代表作品-->
+			
+		</div>
+		<div class="live_right right">
+				<div style="border: 1px solid #e0e0e0;">
+					<h3>免费申请户型规划？</h3>
+					<div class="live_right_count">
+						<ul>
+							<li class="live_right_count_li1">
+								<span class="active">新房</span><span>二手房</span>
+							</li>
+							<li class="live_right_count_li2">
+								<input type="text" placeholder="输入房屋面积" />
+							</li>
+							<li class="live_right_count_li3">
+								<select name="">
+									<option value="">1室</option>
+									<option value="">2室</option>
+									<option value="">3室</option>
+									<option value="">4室</option>
+								</select>
+								<select name="">
+									<option value="">1厅</option>
+									<option value="">2厅</option>
+								</select>
+								<select name="">
+									<option value="">1厨</option>
+									<option value="">2厨</option>
+								</select>
+							</li>
+							<li class="live_right_count_li4">
+								<select name="">
+									<option value="">1卫</option>
+									<option value="">2卫</option>
+								</select>
+								<select name="">
+									<option value="">1阳台</option>
+									<option value="">2阳台</option>
+								</select>
+							</li>
+							<li class="live_right_count_li5">
+								<input type="text" placeholder="输入您的姓名" />
+							</li>
+							<li class="live_right_count_li5">
+								<input type="text" placeholder="输入您的手机号" />
+							</li>
+							<li class="live_right_count_li6">
+								<button class="am-btn am-btn-warning">立即计算</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div style="margin-top: 20px;">
+					<a href="#"><img src="img/live2.jpg"/></a>
+				</div>
+			</div>
+	</div>
+<!--尾部开始-->
+	<footer class="footer">
+		<ul class="am-container">
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="jinji_plus.html">晋级+</a></li>
+						<li class="am-u-md-12"><a href="business.html">商务合作</a></li>
+						<li class="am-u-md-12"><a href="join_us.html">工作机会</a></li>
+						<li class="am-u-md-12"><a href="experience_city.html">体验城</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我服务</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="quality_assurance.html">品质保障</a></li>
+						<li class="am-u-md-12"><a href="financial_service.html">金融服务</a></li>
+						<li class="am-u-md-12"><a href="javascript:;">售后承诺</a></li>
+						<li class="am-u-md-12"><a href="see_get.html">所见即所得</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 line">
+				<div class="part-5-title">联系我们</div>
+				<div class="part-5-words2">
+					<span>联系地址：沈阳市铁西区云峰北街十三号（铁西百合家乐福三楼--晋级8000平体验馆）</span>
+					<span><i class="am-icon-phone contactPhone"></i><em>131-0988-6859</em></span>
+					<span>商务邮箱：jinjizhengzhuang@163.com</span>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 part-5-li2">
+				<div class="part-5-title" style="margin-bottom: 10px;">关注我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul clearfix">
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/appEWM.png"/>
+							<p>app下载</p>
+						</li>
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/weixin.png"/>
+							<p>官方微信</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<div class="clear"></div>
+		</ul>
+		<div class="copyright">
+			<p><i></i><span>辽公网安备 32015586630077号</span></p>
+			<p>辽ICP备14021018号&nbsp;&nbsp;|&nbsp;&nbsp;增值电信商务经营许可证：辽B2-20060312 </p>
+			<p>北京晋级华夏科技有限公司 &nbsp;&nbsp;版权所有</p>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript">
+	$(function(){
+		$('.designerPage_top ol li').click(function(){
+			var _index = $(this).index();
+			$(this).addClass('active').siblings().removeClass('active');
+			$('.designerPage_main ul li').eq(_index).show().siblings().hide();
+		});
+	});
+</script>
+</html>

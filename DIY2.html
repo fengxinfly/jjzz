@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+  <meta charset="UTF-8">
+  <title>晋级整装--生成方案</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+		<link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+		<link rel="stylesheet" href="/front/css/amazeui.css"/>
+		<link rel="stylesheet" href="/front/css/swiper.min.css"/>
+		<link rel="stylesheet" href="/front/css/style.css"/>
+		<script src="/front/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/front/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/front/js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/front/js/amazeui.min.js"></script>
+
+		<script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+        <style>
+            #styleDiv{
+                position: fixed;
+                width: 800px;
+                height: 500px;
+                background: #fff;
+                border-radius: 4px;
+                border: 1px solid #ddd;
+                top: 50%;
+                left:50%;
+                margin-top: -250px;
+                margin-left:-400px;
+                z-index:9999;
+                display: none;
+                overflow-y: auto;
+                padding: 20px;
+            }
+            .styleUl_li{
+                position: relative;
+                float: left;
+                margin-right:20px;
+                margin-bottom: 20px;
+            }
+            .styleUl_li.active i{position: absolute;width: 40px;height:40px;display: inline-block;
+                background: url("/front/img/selectedIcon.png") no-repeat;top: 20px;right: 20px;z-index: 999;}
+            .styleUl_li.active b{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,.6);display: inline-block;
+                top: 0;left:0;z-index: 998;}
+			#choiceDesignerBox{position: fixed;top: 50%;left: 50%;margin-left: -600px;
+				margin-top:-300px;background:#fff;z-index: 9999;height:600px;overflow-y: auto;display: none;}
+			#choiceDesigner{margin:0 auto;}
+			#choiceDesigner a button{background:#ccc;}
+			#choiceDesigner a button.active{background:#f05815;}
+			.choiceDesigner_btn{position: absolute;top:20px;right:60px;}
+        </style>
+</head>
+	<body onload="loadData()">
+		<div class="am-topbar header">
+			<div class="am-g">
+				<div class="am-container">
+					<div class="left jj-logo">
+						<img class="logo" src="img/logo.png"/>
+					</div>
+					<div class="right margin-t12">
+						<ul class="jj-menu">
+							<li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+							<li class="jj-menu-li"><a class="jj-menu-name" href="sigle_product.html">家装产品</a></li>
+							<li class="jj-menu-li"><a class="jj-menu-name" href="personal_center.html?type=sideBar1">个人中心</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="am-container">
+			<!--生成方案-->
+			<div class="programme">
+				<div class="programme_top">
+					<span>1.选择图片</span><b>>>>></b><span class="active">2.生成方案</span><b>>>>></b><span>3.预约设计</span>
+				</div>
+				<div class="am-divider-dotted"></div>
+				<div class="programme_summary margin-t20">
+					<ul class="clearfix">
+						<li>
+							<h4>户型</h4>
+							<p id="house_type_p"></p>
+						</li>
+						<li>
+							<h4>类型</h4>
+							<p id="house_status_p"></p>
+						</li>
+						<li>
+							<h4>性质</h4>
+							<p id="house_state_p"></p>
+						</li>
+						<li>
+							<h4>建筑面积</h4>
+							<p id="acreage_p"></p>
+						</li>
+						<li>
+							<h4>方案总价</h4>
+							<p><b id="price_all_p"></b>元</p>
+						</li>
+					</ul>
+				</div>
+				<div class="programme_main margin-t20">
+					<p>每个房间都可以选择不同的主方案，点击更换图片替换主方案，可生成新的报价单。</p>
+					<div class="am-g margin-t20" id="styleCaseDiv"></div>
+                    <div id="styleDiv">
+                        <ul class="styleDivUl clearfix"></ul>
+                        <div class="am-text-center">
+                            <button class="am-btn am-btn-warning am-radius" onclick="updateStyle()">保存</button>
+                            <button class="am-btn am-radius" id="styleDivDelete">取消</button>
+                        </div>
+                    </div>
+
+					<div class="programmeList_box">
+						<button class="am-btn am-radius btn1" onclick="loadFixtureDefault()">主材套餐</button>
+						<div class="programme_list">
+							<ol>
+								<li class="programme_list_ol_li">
+									<div class="programme_list_ol_li_div clearfix">
+										<p class="left programme_list_ol_li_div_p1"><i></i><span>软装清单</span></p>
+										<b class="right">展开</b>
+									</div>
+									<div class="programme_list_down">
+								  		<dl class="clearfix">
+								        	<dd class="dd1" style="width: 20%">名称</dd>
+								        	<dd class="dd2" style="width: 20%">房间</dd>
+								        	<dd class="dd4" style="width: 20%">单价</dd>
+								        	<dd class="dd5" style="width: 20%">来源</dd>
+								        	<dd class="dd6" style="width: 20%">状态</dd>
+								        </dl>
+								        <div class="programme_list_down_list">
+								            <ul id = "rzMaterialUl"></ul>
+								        </div>
+								        <div class="programme_list_down_img margin-t12">
+								        	<div class="am-g" id="replaceDiv"></div>
+								        </div>
+								    </div>
+								</li>
+
+								<li class="programme_list_ol_li">
+									<div class="programme_list_ol_li_div clearfix">
+										<p class="left programme_list_ol_li_div_p2"><i></i><span>硬装建材</span></p>
+										<b class="right">展开</b>
+									</div>
+									<div class="programme_list_down">
+								  		<dl class="clearfix">
+								        	<dd class="dd1" style="width: 33%">硬装材料名称</dd>
+								        	<dd class="dd2" style="width: 33%">价格</dd>
+								        	<dd class="dd5" style="width: 33%">来源</dd>
+
+								        </dl>
+								        <div class="programme_list_down_list">
+								            <ul id="fixtureBaseUl"></ul>
+								        </div>
+								    </div>
+								</li>
+								<li class="programme_list_ol_li">
+									<div class="programme_list_ol_li_div clearfix">
+										<p class="left programme_list_ol_li_div_p3"><i></i><span>硬装工艺</span></p>
+										<b class="right">展开</b>
+									</div>
+									<div class="programme_list_down">
+								  		<dl class="clearfix">
+								        	<dd class="dd1" style="width: 33%">工艺名称</dd>
+											<dd class="dd2" style="width: 33%">费用金额</dd>
+								        	<dd class="dd3" style="width: 33%">来源</dd>
+								        </dl>
+								        <div class="programme_list_down_list">
+								            <ul id="productArgsUl"></ul>
+								        </div>
+								    </div>
+								</li>
+							</ol>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="btnFixed">
+			<div class="am-container clearfix btnFixed_div">
+				<div class="left">
+					<button class="am-btn am-radius btn2">预约设计师</button>
+				</div>
+				<div class="right">
+					<button class="am-btn am-radius btn3" onclick="saveCase()">保存方案</button>
+				</div>
+			</div>
+		</div>
+		<!--遮罩层-->
+		<div id="mask"></div>
+		<!--主材套餐-->
+		<div id="mainPackages">
+			<div class="mainPackages_top clearfix">
+				<i class="am-icon-close right"></i>
+			</div>
+			<div class="mainPackages_main">
+				<ol class="clearfix">
+					<li class="active" onclick="loadFixtureTree(1)"><p><b>A5</b>基准包</p><i></i></li>
+					<li onclick="loadFixtureTree(2)"><p><b>A7</b>舒适包</p><i></i></li>
+					<li onclick="loadFixtureTree(3)"><p><b>A9</b>轻奢包</p><i></i></li>
+				</ol>
+				<ul class="margin-t12" id="fixtureTreeUl"></ul>
+			</div>
+			<div class="mainPackages_btn margin-t12">
+				<button class="am-btn am-radius" onclick="updateCsFixtureTreeId()">确定</button>
+			</div>
+		</div>
+
+		<div class="am-container" id="choiceDesignerBox">
+			<div id="choiceDesigner">
+				<p>系统会自动只能推荐给您所选风格匹配的设计师为您服务</p>
+				<div class="choiceDesigner_btn">
+					<button class="am-btn am-radius am-btn-warning">确定</button>
+				</div>
+				<div class="choiceDesigner_img">
+					<div class="am-g clearfix" id="designerDiv"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		var img_ids = 0;
+		var house_user_ids = 0;
+		var fixture_tree_id = 0;
+		var fixture_tree_id_ = 0;
+		var case_id = 0;
+		var designer_id = 0;
+		var order_id = 0;
+
+		var price_rz = 0;
+		var price_jz = 0;
+		var price_gy = 0;
+        /**初始化加载数据*/
+		function loadData() {
+			var postData = {};
+			postData["case_id"]= getRequestParam("case_id");
+			requestPostFront("/flowController/queryHouseAndMaterialCase",postData,
+					function (resultData){
+						var base = resultData.base;
+						var cs = resultData.data.case;
+						fixture_tree_id = cs.fixture_tree_id;
+						case_id = cs.id;
+						order_id = cs.order_id;
+						designer_id = cs.designer_id;
+					    $("#house_type_p").html(cs.house_type);
+						if(cs.house_status==1){$("#house_status_p").html("新房")}
+						if(cs.house_status==2){$("#house_status_p").html("旧房")}
+
+						if(cs.house_state==1){$("#house_state_p").html("普通住宅")}
+						if(cs.house_state==2){$("#house_state_p").html("别墅")}
+						if(cs.house_state==3){$("#house_state_p").html("公寓")}
+						if(cs.house_state==4){$("#house_state_p").html("loft")}
+						$("#acreage_p").html(cs.acreage+"㎡");
+
+						price_rz = cs.price_rz;
+						price_jz = cs.price_jz;
+						price_gy = cs.price_gy;
+						$("#price_all_p").html(price_rz+price_jz+price_gy);
+
+						var styleCases = resultData.data.styleCases;
+						if (styleCases.length>0){
+							for (var i=0;i<styleCases.length;i++){
+								var styleCase = styleCases[i];
+								var str = '<div class="am-u-sm-4">';
+								str +='<div class="am-thumbnail">';
+								str +='<div class="am-thumbnail-caption clearfix">';
+								str +='<h3 class="left">'+styleCase.name+'</h3>';
+								str +='<p class="right"><b></b><span>('+styleCase.acreage+'㎡)</span></p>';
+								str +='</div>';
+								str +='<img src="'+base+''+styleCase.url+'" alt="" style="height: 200px;"/>';
+								str +='<h4 onclick="getStyle('+styleCase.house_user_id+')" class="am-text-center" style="background: #eaeaea;padding: 4px 0;">更换图片</h4>';
+								str +='</div>';
+								str +='</div>';
+                            $("#styleCaseDiv").append(str);
+							}
+						}
+
+                        var materialUserList = resultData.data.materialUserList;
+                        showRzMaterial(materialUserList);
+
+
+
+						var fixtureBaseList = resultData.data.fixtureBaseList;
+						getFixtureBase(fixtureBaseList);
+
+
+						var productArtses = resultData.data.productArtses;
+						if (productArtses.length>0){
+							for(var i=0;i<productArtses.length;i++){
+								var productArtse = productArtses[i];
+								var str = '<li class="clearfix">';
+								str +='<div class="div1" style="width: 33%">'+productArtse.item+'</div>';
+
+								str +='<div class="div2" style="width: 33%">￥'+productArtse.price+'元</div>';
+
+								str +='<div class="div3" style="width: 33%">晋级整装</div>';
+								str +='</li>';
+								$("#productArgsUl").append(str);
+							}
+						}
+
+						var designers = resultData.data.designers;
+						if (designers.length>0){
+							$("#designerDiv").empty();
+							for(var i=0;i<designers.length;i++){
+								var designer = designers[i];
+								var str = '<div class="am-u-sm-2">';
+								str +='<div class="am-thumbnail">';
+								str +='<img src="'+base+''+designer.url+'" alt="" style="height: 120px;"/>';
+								str +='<div class="clearfix">';
+								str +='<div class="left">';
+								str +='<h3>'+designer.name+'</h3>';
+								str +='<span>首席设计师</span>';
+								str +='</div>';
+								if(designer.id==designer_id){
+									str +='<a class="right"><button class="am-btn am-round active" onclick="chooseDesigner('+designer.id+',this)">选择设计师</button></a>';
+								}else {
+								    str +='<a class="right"><button class="am-btn am-round" onclick="chooseDesigner('+designer.id+',this)">选择设计师</button></a>';
+								}
+								str +='</div>';
+								str +='</div>';
+								str +='</div>';
+								$("#designerDiv").append(str);
+							}
+						}
+
+					})
+		}
+
+		/**更换图片*/
+        function getStyle(house_user_id) {
+            var postData = {};
+            postData["house_user_id"]=  house_user_id;
+            postData["dict_id"]= 0;
+            requestPostFront("/flowController/queryStyleData",postData,
+                    function (resultData){
+                        var styles = resultData.data;
+                        var base = resultData.base;
+                        if (styles.length>1){
+                            $(".styleDivUl").empty();
+                            $("#styleDiv").show();
+                            $("#mask").show();
+                            var str = '';
+                            for (var i=0;i<styles.length;i++){
+                                var style = styles[i];
+                                if (style.img_id==style.id) {
+                                    str += '<li class="styleUl_li active">';
+                                }else {
+                                    str += '<li class="styleUl_li">';
+                                }
+                                str +='<img width="350" height="250" src="'+base+''+style.url+'" onclick="getValues('+style.id+','+style.house_user_id+')">';
+                                str +='<i></i>';
+                               /* str +='<b></b>';*/
+                                str +='</li>';
+                            }
+                            $(".styleDivUl").append(str);
+                        }else {
+                            alert("仅一种风格不允许替换~");
+                        }
+                    })
+        }
+
+
+        function getValues(img_id,house_user_id) {
+            img_ids = img_id;
+            house_user_ids = house_user_id;
+        }
+
+        function updateStyle() {
+            var postData = {};
+            postData["house_user_id"]=  house_user_ids;
+            postData["img_id"]= img_ids;
+            requestPostFront("/flowController/updateStyleDefault",postData,
+                    function (resultData){
+                        var result = resultData.data;
+                        if(result>0){
+                            alert("保存成功");
+                            window.history.go(0);
+                        }else {
+                            alert("系统异常~");
+                        }
+                    })
+        }
+
+
+        function loadFixtureBase() {
+			var postData = {};
+			postData["fixture_tree_id"]=  fixture_tree_id;
+			requestPostFront("/flowController/queryFixtureBase",postData,
+					function (resultData){
+						var fixtureBaseList = resultData.fixtureBaseList;
+						getFixtureBase(fixtureBaseList);
+					})
+		}
+
+		function getFixtureBase(fixtureBaseList){
+			$("#fixtureBaseUl").empty();
+			if (fixtureBaseList.length>0){
+				for (var  i=0;i<fixtureBaseList.length;i++){
+					var fixtureBase = fixtureBaseList[i];
+					var str = '';
+					str +='<li class="clearfix">';
+					str +=' <div class="div1" style="width: 33%">'+fixtureBase.name+'</div>';
+					str +=' <div class="div1" style="width: 33%">'+fixtureBase.price+'</div>';
+					str +=' <div class="div1" style="width: 33%">晋级装饰</div>';
+					str +='</li>';
+					$("#fixtureBaseUl").append(str);
+				}
+			}
+		}
+
+		function loadFixtureTree(id) {
+			fixture_tree_id_ = id;
+			var postData = {};
+			postData["fixture_tree_id"]=  id;
+			requestPostFront("/flowController/queryFixtureTree",postData,
+					function (resultData){
+						var fixtureTree = resultData.data;
+						price_jz = resultData.data.price;
+						$("#price_all_p").html(price_rz+price_jz+price_gy);
+						var list1 = fixtureTree.houseUserChooseList;
+						$("#fixtureTreeUl").empty();
+						if (list1!=null && list1.length>0){
+							var str = '<li class="clearfix" style="display: block;">';
+							for (var i=0;i<list1.length;i++){
+								var sub = list1[i];
+								str +='<dl>';
+								str +='<dt>'+sub.name+'</dt>';
+								var list2 = sub.houseUserChooseList;
+								if (list2!=null && list2.length>0){
+									for (var j=0;j<list2.length;j++){
+										var item = list2[j];
+										str +='<dd>'+item.name+'</dd>';
+									}
+								}
+								str +='</dl>';
+							}
+							str +='</li>';
+							$("#fixtureTreeUl").append(str);
+						}
+					})
+		}
+
+		function loadFixtureDefault() {
+			var obj = $('.mainPackages_main ol li');
+			if (fixture_tree_id==1){
+				obj.removeClass('active');
+				$(obj[0]).addClass('active');
+			}
+			if (fixture_tree_id==2){
+				obj.removeClass('active');
+				$(obj[1]).addClass('active');
+			}
+			if (fixture_tree_id==3){
+				obj.removeClass('active');
+				$(obj[2]).addClass('active');
+			}
+
+			loadFixtureTree(fixture_tree_id);
+
+
+		}
+
+		function updateCsFixtureTreeId() {
+			var postData = {};
+			postData["case_id"]=  case_id;
+			postData["fixture_tree_id"]= fixture_tree_id_;
+			requestPostFront("/flowController/updateCaseFixtureTreeId",postData,
+					function (resultData){
+						var result = resultData.data;
+						if(result>0){
+							alert("保存成功");
+							fixture_tree_id = fixture_tree_id_;
+							loadFixtureBase();
+						}else {
+							alert("保存失败");
+						}
+					})
+		}
+
+		function chooseDesigner(id,obj) {
+			$('#designerDiv .am-u-sm-2 a button').removeClass('active');
+			$(obj).addClass('active');
+			designer_id = id;
+		}
+
+		function saveCase() {
+			if(designer_id==0){
+				alert("请选择设计师！");
+				return false;
+			}else {
+				var postData = {};
+				postData["designer_id"]=designer_id;
+				postData["case_id"]= case_id;
+				postData["order_id"]= order_id;
+
+				requestPostFront("/flowController/submitOrder",postData,
+						function (resultData){
+							var result = resultData.data;
+							if(result>0){
+								alert("生成案例成功！");
+								window.location.href='success.html';
+							}else{
+								alert("生成案例失败！");
+							}
+						}
+				)
+			}
+		}
+
+        function substitutionData(house_user_id,material_tree_id) {
+            var postData = {};
+            postData["house_user_id"]= house_user_id;
+            postData["material_tree_id"]= material_tree_id;
+            requestPostFront("/flowController/querySubstitutionData",postData,
+                    function (resultData){
+                        var replaceMaterials = resultData.data;
+                        $("#replaceDiv").empty();
+                        if(replaceMaterials.length > 0){
+                            for(var i=0;i<replaceMaterials.length;i++){
+                                var replaceMaterial = replaceMaterials[i];
+                                var trStr ='<div class="am-u-sm-2">';
+                                trStr +='<div class="am-thumbnail">';
+                                trStr +='<img src="img/shafa.jpg" alt="" onclick="updateSubstitution('+replaceMaterial.id+','+replaceMaterial.house_user_id+','+replaceMaterial.material_tree_id+')"/>';
+                                trStr +='<h3 class="am-thumbnail-caption">'+replaceMaterial.material_name+'</h3>';
+                                trStr +='</div>'; trStr +=' </div>';
+                                $("#replaceDiv").append(trStr);
+                            }
+                        }
+                    }
+            )
+        }
+
+        <!--更新替换替换材料-->
+        function updateSubstitution(id,house_user_id,material_tree_id) {
+            var postData = {};
+            postData["id"]= id;
+            postData["house_user_id"]= house_user_id;
+            postData["material_tree_id"]= material_tree_id;
+            requestPostFront("/flowController/updateSubstitutionData",postData,
+                    function (resultData){
+                        var result = resultData.data;
+                        if(result>0){
+                            loadRzMaterial();
+                        }
+                    }
+            )
+        }
+
+        function loadRzMaterial() {
+            var postData = {};
+            postData["case_id"]=case_id;
+            requestPostFront("/flowController/queryRzMaterial",postData,
+                    function (resultData){
+                        var materialUserList = resultData.data;
+                        showRzMaterial(materialUserList);
+                    }
+            )
+        }
+
+        function showRzMaterial(materialUserList) {
+            if (materialUserList!=null && materialUserList.length>0){
+                $("#rzMaterialUl").empty();
+                for (var i=0;i<materialUserList.length;i++){
+                    var materialUser = materialUserList[i];
+                    var str = '<li class="clearfix">';
+                    str +='<div class="div1" style="width: 20%">'+materialUser.material_name+'</div>';
+                    str +='<div class="div2" style="width: 20%">'+materialUser.name+'</div>';
+                    str +='<div class="div4" style="width: 20%">￥'+materialUser.old_price+'/套</div>';
+                    str +='<div class="div5" style="width: 20%">晋级整装</div>';
+                    str +='<div class="div6" style="width: 20%"><button class="am-btn am-radius" onclick="substitutionData('+materialUser.house_user_id+','+materialUser.material_tree_id+')">备选产品</button></div>';
+                    str +='</li>';
+                    $("#rzMaterialUl").append(str);
+                }
+            }
+        }
+
+    </script>
+
+	<script type="text/javascript">
+		$(function(){
+			$('.programme_list_ol_li_div b').click(function(){
+				if($(this).parent().next().css('display') == 'block'){
+					$(this).parent().next().slideUp();
+					$(this).html('展开').css('color','#000');
+				}else{
+					$(this).parent().next().slideDown();
+					$(this).html('收起').css('color','#F05815');
+				}
+			});
+			
+			$('.mainPackages_main ol li').click(function(){
+				var _index = $(this).index();
+				$(this).addClass('active').siblings().removeClass('active');
+				$('.mainPackages_main ul li').eq(_index).show().siblings().hide();
+			});
+			
+			$('.programmeList_box .btn1').click(function(){
+				$('#mainPackages').slideDown();
+				$('#mask').show();
+			});
+			
+			$('.mainPackages_top i').click(function(){
+				$('#mainPackages').slideUp();
+				$('#mask').hide();
+			});
+			$('.mainPackages_btn button').click(function(){
+				$('#mainPackages').slideUp();
+				$('#mask').hide();
+			});
+
+            $('#styleDivDelete').click(function(){
+                $('#styleDiv').hide();
+                $('#mask').hide();
+            });
+
+            $('#styleDiv').delegate('.styleUl_li','click',function(){
+                $(this).addClass('active').siblings().removeClass('active');
+            });
+			$('.btnFixed .btn2').click(function(){
+				$('#mask').show();
+				$('#choiceDesignerBox').show();
+			});
+			$('.choiceDesigner_btn button').click(function(){
+				$('#mask').hide();
+				$('#choiceDesignerBox').hide();
+			});
+		});
+	</script>
+</html>

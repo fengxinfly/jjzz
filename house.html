@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择户型</title>
+    <script src="/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body onload="loadData()">
+<form id="createCaseForm" method="post">
+    <input type="text" id="product_id" name="product_id" value=""/>
+    <span>小区或楼盘<input type="text" id="case_name" name="case_name" value=""/></span><br>
+    <span>选择户型<span><table id="houseDictionaryTable"></table></span></span><br>
+    <span>房屋面积<input type="text" id="acreage" name="acreage" value=""/>平方米</span><br>
+    <span>房屋类型<input type="radio"  name="house_status" value="1" checked="checked"/>新房
+                   <input type="radio"  name="house_status" value="2"/>旧房
+    </span><br>
+    <input type="button" value="下一步" onclick="createCase()"/>
+</form>
+</body>
+<script type="text/javascript">
+    function  loadData() {
+        $("#product_id").val(getRequestParam("product_id"))
+        var postData = {};
+        postData["product_id"]= $("#product_id").val();
+        requestPostFront("/flowController/queryHouseDictionaryByProductId",postData,
+                function (resultData){
+                    var houseDictionaryList = resultData.data;
+                    if(houseDictionaryList.length > 0){
+                       $("#houseDictionaryTable").empty();
+                        for(var i=0;i<houseDictionaryList.length;i++){
+                            var houseDictionary = houseDictionaryList[i];
+                            var trStr = '<tr>';
+                            trStr += '<td>'+houseDictionary.name+'</td>';
+                            trStr += '<td>' +
+                                        '<input type="button" value="-" onclick="down('+houseDictionary.id+')">' +
+                                        '<input type="text" id="number'+houseDictionary.id+'" name="number" value="1" readonly="readonly">' +
+                                        '<input type="button" value="+" onclick="up('+houseDictionary.id+')">' +
+
+                                                '<input type="text" id="id" name="house_dictionary_id" value="'+houseDictionary.id+'">' +
+                                                '<input type="text" id="name" name="house_dictionary_name" value="'+houseDictionary.name+'">' +
+                                    '</td>';
+                            trStr += '</tr>'
+                            $("#houseDictionaryTable").append(trStr);
+                        }
+                    }
+                }
+        )
+    }
+
+    function down(id) {
+      var num = $('#number'+id).val();
+        if(num>0){
+            $('#number'+id).val(num-1);
+        }
+    }
+    function up(id) {
+        var num = $('#number'+id).val();
+        if(num<=4){
+            $('#number'+id).val(num*1+1);
+        }
+    }
+
+    var fixture_tree_id = 0;
+    function createCase() {
+        var postData = $("#createCaseForm").serialize();
+        requestPostFront("/flowController/createCaseAllMaterial",postData,function (resultData){
+                   alert(resultData.msg);
+                }
+        )
+
+    }
+</script>
+
+
+
+
+
+
+
+</html>

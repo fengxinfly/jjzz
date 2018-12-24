@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>个人中心</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+	<link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+	<link rel="stylesheet" href="css/amazeui.css"/>
+	<link rel="stylesheet" href="css/swiper.min.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/areaData.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/amazeui.min.js"></script>
+	<script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body style="background: #f3f3f3;">
+<div class="fixedSlide">
+	<ul>
+		<li class="fixedSlide_1">
+			<i></i><p>联系客服</p>
+		</li>
+		<li class="fixedSlide_2">
+			<i></i><p>下载APP</p>
+			<div class="fixedSlide_2_down">
+				<img src="img/appDownQR.png"/>
+			</div>
+		</li>
+		<li class="fixedSlide_3">
+			<i></i><p>立即预约</p>
+		</li>
+		<li class="fixedSlide_4 toTop" style="display: none;">
+			<i></i><p>返回顶部</p>
+		</li>
+	</ul>
+</div>
+<div class="am-topbar header">
+	<div class="am-g tr-login-topbar">
+		<div class="am-container">
+			<div class="am-fr am-text-xs am-margin-right-sm" id="loginPanel">
+				<a class="login" href="sign.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="register" href="javascript:;">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  target="_blank" href="shopping_cart.html" class="shoppingCart"><span class="am-icon-shopping-cart"><i></i></span>购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+				<div class="am-hoverDown">
+					<a class="am-hoverDown-title" href="javascript:;">个人中心 <span class="am-icon-angle-down"></span></a>
+					<ul class="am-hoverDown-caption">
+						<li><a target="_blank" href="personal_center.html?type=sideBar1">个人信息</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar2">我的预约</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar3">我的订单</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar4">我的方案</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar9">地址管理</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar5">我的收藏</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar6">我的红包</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar7">我的消息</a></li>
+						<li><a target="_blank" href="personal_center.html?type=sideBar8">我的社区</a></li>
+					</ul>
+				</div>
+				<div id="appDown">
+					<p>APP下载</p>
+					<div class="appDownQRcode">
+						<img src="img/erweima.png"/>
+						<h4>扫一扫下载APP</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="am-g">
+		<div class="am-container">
+			<div class="left jj-logo">
+				<img class="logo" src="img/logo.png"></img>
+			</div>
+			<div class="right margin-t12">
+				<ul class="jj-menu clearfix">
+					<li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+					<li class="jj-dropdown jj-menu-li">
+						<a class="jj-menu-name" href="javascript:;">产品</a>
+						<div class="nav-child">
+							<ul class="clearfix">
+								<li>
+									<a href="product.html">
+										<i class="icon_server_1"></i>
+										<p>整装甄品</p>
+									</a>
+								</li>
+								<li>
+									<a href="full_house.html">
+										<i class="icon_server_3"></i>
+										<p>全屋定制</p>
+									</a>
+								</li>
+								<li>
+									<a href="sigle_product.html">
+										<i class="icon_server_2"></i>
+										<p>精选单品</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="jj-dropdown jj-menu-li">
+						<a class="jj-menu-name" href="javascript:;">体验城</a>
+						<div class="nav-child">
+							<ul class="clearfix">
+								<li>
+									<a href="experience_city.html">
+										<i class="icon_server_12"></i>
+										<p>了解体验城</p>
+									</a>
+								</li>
+								<li>
+									<a href="enter_business.html">
+										<i class="icon_server_13"></i>
+										<p>入驻商家</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="jj-dropdown jj-menu-li">
+						<a class="jj-menu-name" href="case.html">案例</a>
+						<div class="nav-child">
+							<ul class="clearfix">
+								<li>
+									<a href="case.html?type=caseTab1">
+										<i class="icon_server_9"></i>
+										<p>经典案例</p>
+									</a>
+								</li>
+								<li>
+									<a href="case.html?type=caseTab2">
+										<i class="icon_server_10"></i>
+										<p>施工直播</p>
+									</a>
+								</li>
+								<li>
+									<a href="designer.html">
+										<i class="icon_server_11"></i>
+										<p>设计师</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="jj-dropdown jj-menu-li">
+						<a class="jj-menu-name" href="service.html">服务</a>
+						<div class="nav-child">
+							<ul class="clearfix">
+								<li>
+									<a href="quality_assurance.html">
+										<i class="icon_server_6"></i>
+										<p>品质保障</p>
+									</a>
+								</li>
+								<li>
+									<a href="see_get.html">
+										<i class="icon_server_7"></i>
+										<p>所见即所得</p>
+									</a>
+								</li>
+								<li>
+									<a href="financial_service.html">
+										<i class="icon_server_8"></i>
+										<p>金融服务</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="jj-menu-li"><a class="jj-menu-name" href="community.html">社区</a></li>
+					<li class="jj-dropdown jj-menu-li">
+						<a class="jj-menu-name" href="javascript:;">关于我们</a>
+						<div class="nav-child">
+							<ul class="clearfix">
+								<li>
+									<a href="jinji_plus.html">
+										<i class="icon_server_1"></i>
+										<p>晋级+</p>
+									</a>
+								</li>
+								<li>
+									<a href="business.html">
+										<i class="icon_server_4"></i>
+										<p>商务合作</p>
+									</a>
+								</li>
+								<li>
+									<a href="join_us.html">
+										<i class="icon_server_5"></i>
+										<p>加入我们</p>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<!--个人信息-->
+<div class="am-container" id="personal_inf">
+	<div class="personal_inf_top">
+		<div class="head_portrait">
+			<img src="img/designer2.jpg"/>
+		</div>
+		<div class="personal_inf_top_name">
+			<h2>华夏</h2>
+			<h4>积分：1234<h4>
+			<div class="personal_inf_top_name_select">
+				<div class="c-dropdown js-dropdown">
+					<input type="hidden" name="Framework" id="Framework" class="js-dropdown__input">
+					<span class="c-button c-button--dropdown js-dropdown__current">设定家的状态</span>
+					<ul class="c-dropdown__list">
+						<li class="c-dropdown__item" data-dropdown-value="angular">暂无装修计划</li>
+						<li class="c-dropdown__item" data-dropdown-value="backbone">半年-3年内会装修</li>
+						<li class="c-dropdown__item" data-dropdown-value="ember">准备装修</li>
+						<li class="c-dropdown__item" data-dropdown-value="knockout">装修进行中</li>
+						<li class="c-dropdown__item" data-dropdown-value="react">采购软装中</li>
+						<li class="c-dropdown__item" data-dropdown-value="html">装修完成已入住</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="personal_inf_main margin-t20 clearfix">
+		<div class="left" id="sideBar">
+			<ul>
+				<li type="sideBar1" class="sideBar_li9 active" id="personal_info"><i></i><span>个人信息</span><b></b></li>
+				<li type="sideBar2" class="sideBar_li1" id="my_reservation"><i></i><span>我的预约</span><b></b></li>
+				<li type="sideBar3" class="sideBar_li2" id="my_order"><i></i><span>我的订单</span><b></b></li>
+				<li type="sideBar4" class="sideBar_li3" id="my_plan"><i></i><span>我的方案</span><b></b></li>
+				<li type="sideBar9" class="sideBar_li4" id="my_address"><i></i><span>地址管理</span><b></b></li>
+				<li type="sideBar5" class="sideBar_li5" id="my_collection"><i></i><span>我的收藏</span><b></b></li>
+				<li type="sideBar6" class="sideBar_li8" id="my_red_bag"><i></i><span>我的红包</span><b></b></li>
+				<li type="sideBar7" class="sideBar_li6" id="my_news"><i></i><span>我的消息</span><b></b></li>
+				<li type="sideBar8" class="sideBar_li7" id="my_community"><i></i><span>我的社区</span><b></b></li>
+			</ul>
+		</div>
+		<div class="right" id="mainContent">
+			<ol>
+				<li class="mainContent_ol_li" style="display: block;">
+					<div class="mainContent_top">
+						<span>个人信息</span>
+					</div>
+					<ul class="mainContent_main">
+						<li>
+							<label>昵称:</label>
+							<input type="text" id="name"/>
+						</li>
+						<li>
+							<label>账户:</label>
+							<input type="text" id="userName" readonly="readonly"/>
+						</li>
+						<li>
+							<label>性别:</label>
+							<span>男</span><input type="radio" name="sex" value="1"/>
+							<span>女</span><input type="radio" name="sex" value="0"/>
+						</li>
+						<li>
+							<label>出生日期:</label>
+							<form name="reg_testdate" style="display: inline-block;">
+								<select name="YYYY" onChange="YYYYDD(this.value)">
+									<option value="">请选择 年</option>
+								</select>
+								<select name="MM" onChange="MMDD(this.value)">
+									<option value="">选择 月</option>
+								</select>
+								<select name="DD">
+									<option value="">选择 日</option>
+								</select>
+							</form>
+						</li>
+						<li>
+							<label>手机号码:</label>
+							<input type="text" id="phone"/>
+						</li>
+						<!--<li>
+							<label>所在地:</label>
+							<select name="" class="sheng">
+								<option value="0">--省--</option>
+							</select>
+							<select name="" class="shi" disabled="true">
+								<option value="0">--市区--</option>
+							</select>
+							<select name="" class="xian" disabled="true">
+								<option value="0">--县镇--</option>
+							</select>
+						</li>
+						<li>
+							<label>您的住址:</label>
+							<input type="text" name="" id="" value="" />
+						</li>-->
+						<li>
+							<label>邮箱:</label>
+							<input type="text" id="email" />
+						</li>
+						<li style="text-align: center;">
+							<button class="am-btn am-radius" onclick="updateUserInfo();">保存编辑</button>
+						</li>
+					</ul>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>我的预约</span>
+					</div>
+					<ul id="reservation_ul">
+					</ul>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top" id="orderStatus">
+						<strong class="active" data="all">全部订单</strong>
+						<strong data="0">待付款</strong>
+						<strong data="1">待收货</strong>
+						<strong data="3">待评价</strong>
+					</div>
+					<div class="mainContent_ol_li_main">
+						<!--全部订单-->
+						<div class="mainContent_ol_li_main_div" style="display: block;">
+							<ul>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#">申请售后</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p>交易成功</p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t30">
+											<button class="am-btn am-radius">评价</button>
+										</div>
+									</div>
+								</li>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="mainContent_ol_ul_li_content_left order">
+											<div class="clearfix mainContent_ol_ul_li_content_left_div">
+												<div class="order_img order">
+													<img class="am-g" src="img/danpin1.png"/>
+												</div>
+												<div class="order_caption order margin-t12 am-text-left">
+													<p>索菲亚经典百叶衣柜定制</p>
+													<p>尺寸：1500mm*2000mm</p>
+													<p>颜色：湖蓝色</p>
+												</div>
+												<div class="order_num order margin-t30">×2</div>
+												<div class="order_sh order">
+													<p><a href="#">申请售后</a></p>
+												</div>
+											</div>
+											<div class="clearfix mainContent_ol_ul_li_content_left_div">
+												<div class="order_img order">
+													<img class="am-g" src="img/danpin1.png"/>
+												</div>
+												<div class="order_caption order margin-t12 am-text-left">
+													<p>索菲亚经典百叶衣柜定制</p>
+													<p>尺寸：1500mm*2000mm</p>
+													<p>颜色：湖蓝色</p>
+												</div>
+												<div class="order_num order margin-t30">×2</div>
+												<div class="order_sh order">
+													<p><a href="#">申请售后</a></p>
+												</div>
+											</div>
+
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p>交易成功</p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+											<p><a href="#">查看评价</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t30">
+											<button class="am-btn am-radius">再次购买</button>
+										</div>
+									</div>
+								</li>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#"></a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p><a href="#">等待付款</a></p>
+											<p><a href="#">订单详情</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t12">
+											<p>还剩23小时28分</p>
+											<button class="am-btn am-radius am-btn-warning">立即付款</button>
+											<p class="cancelOrder am-cursor">取消订单</p>
+										</div>
+									</div>
+								</li>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#">申请售后</a></p>
+											<p><a href="#">延迟收货</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p><a href="#">等待收货</a></p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t12">
+											<p>还剩4天23小时</p>
+											<button class="am-btn am-radius am-btn-primary confirmGoods">确认收货</button>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--待付款-->
+						<div class="mainContent_ol_li_main_div am-text-center margin-t60">
+							<img src="img/no_orderIcon.png" />
+							<p class="am-text-lg margin-t12">--没有任何订单呢--</p>
+						</div>
+						<!--待收货-->
+						<div class="mainContent_ol_li_main_div">
+							<ul>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#">申请售后</a></p>
+											<p><a href="#">延迟收货</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p><a href="#">等待收货</a></p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t12">
+											<p>还剩4天23小时</p>
+											<button class="am-btn am-radius am-btn-primary">确认收货</button>
+										</div>
+									</div>
+								</li>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#">申请售后</a></p>
+											<p><a href="#">延迟收货</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p><a href="#">等待收货</a></p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t12">
+											<p>还剩4天23小时</p>
+											<button class="am-btn am-radius am-btn-primary">确认收货</button>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<!--待评价-->
+						<div class="mainContent_ol_li_main_div">
+							<ul>
+								<li class="mainContent_ol_ul_li">
+									<div class="clearfix mainContent_ol_ul_li_header">
+										<p class="left">预约编号：DD20180228001078</p>
+										<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+										<i class="right"></i>
+										<b class="right">2018-02-09</b>
+									</div>
+									<div class="mainContent_ol_ul_li_content clearfix">
+										<div class="order_img order">
+											<img class="am-g" src="img/danpin1.png"/>
+										</div>
+										<div class="order_caption order margin-t12 am-text-left">
+											<p>索菲亚经典百叶衣柜定制1500mm</p>
+											<p>尺寸：1500mm*2000mm</p>
+											<p>颜色：湖蓝色</p>
+										</div>
+										<div class="order_num order margin-t30">×2</div>
+										<div class="order_sh order">
+											<p><a href="#">申请售后</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_price order am-text-danger">￥799.00</div>
+										<div class="orderLine"></div>
+										<div class="order_inf order">
+											<p>交易成功</p>
+											<p><a href="#">订单详情</a></p>
+											<p><a href="#">查看物流</a></p>
+										</div>
+										<div class="orderLine"></div>
+										<div class="order_operation order margin-t30">
+											<button class="am-btn am-radius">评价</button>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>我的方案</span>
+						<a href="#"><button class="am-btn am-btn-warning am-radius">新建方案</button></a>
+					</div>
+					<div class="am-g margin-t20" id="my_plan_div">
+					</div>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>地址管理</span>
+					</div>
+					<div class="address_Ad">
+						<div class="address_Ad_hd">
+							<button class="am-btn am-round"><i class="am-icon-plus"></i>新建地址</button>
+							<span>您已创建<b>2</b>个收货地址，最多可创建20个</span>
+						</div>
+						<div class="address_Ad_table">
+							<table border="0">
+								<thead>
+								<tr>
+									<th width="15%">收货人</th>
+									<th width="20%">联系方式</th>
+									<th width="30%">地址</th>
+									<th width="20%">操作</th>
+									<th width="15%"></th>
+								</tr>
+								</thead>
+								<tbody>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<b class="active">甄品收藏</b>
+						<b>定制收藏</b>
+						<b>单品收藏</b>
+						<b>案例收藏</b>
+						<b>设计师收藏</b>
+					</div>
+					<div class="mainContent_collection">
+						<div class="mainContent_collection_list" style="display: block;">
+							<div class="am-g margin-t20">
+								<div class="am-u-sm-3">
+									<div class="am-thumbnail">
+										<img class="am-full" src="img/case_page1.jpg" alt=""/>
+										<h3 class="am-thumbnail-caption">索菲亚我是衣帽间定制</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mainContent_collection_list">
+							<div class="am-g margin-t20">
+								<div class="am-u-sm-3">
+									<div class="am-thumbnail">
+										<img class="am-full" src="img/case_page1.jpg" alt=""/>
+										<h3 class="am-thumbnail-caption">索菲亚我是衣帽间定制</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mainContent_collection_list">
+							<div class="am-g margin-t20">
+							</div>
+						</div>
+						<div class="mainContent_collection_list">
+							<div class="am-g margin-t20">
+							</div>
+						</div>
+						<div class="mainContent_collection_list">
+							<div class="am-g margin-t20">
+							</div>
+						</div>
+					</div>
+
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>我的红包</span>
+					</div>
+					<div class="am-g margin-t20 am-text-center">
+						<img src="img/no-hongbao.png"/>
+					</div>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>我的消息</span>
+					</div>
+					<ul id="my_news_ul">
+					</ul>
+				</li>
+				<li class="mainContent_ol_li">
+					<div class="mainContent_top">
+						<span>我的社区</span>
+					</div>
+					<div class="am-g margin-t20 am-text-center">
+						<img src="img/no-hongbao.png"/>
+					</div>
+				</li>
+			</ol>
+
+		</div>
+	</div>
+</div>
+<div id="mask"></div>
+<!--新建地址-->
+<div class="newAddress">
+	<div class="newAddress_hd clearfix">
+		<h2 class="left">收货信息</h2>
+		<i class="am-icon-remove right"></i>
+	</div>
+	<div class="am-divider-dotted"></div>
+	<div class="newAddress_bd">
+		<ul>
+			<li class="clearfix">
+						<span class="left">
+							<label>收货人：</label>
+							<input type="text"  id="realName"/>
+						</span>
+				<span class="right">
+							<label>联系方式：</label>
+							<input type="text"  id="telphone"/>
+						</span>
+			</li>
+			<li>
+				<label>所在区域：</label>
+				<select name="" class="sheng" id="province">
+					<option value="0">--省--</option>
+				</select>
+				<select name="" class="shi" id="city" disabled="true">
+					<option value="0">--市区--</option>
+				</select>
+				<select name="" class="xian" id="district" disabled="true">
+					<option value="0">--县镇--</option>
+				</select>
+			</li>
+			<li>
+				<label>详细地址：</label>
+				<input type="text" id="addr" />
+			</li>
+			<li>
+				<label class="ui-checkbox" style="margin-left: 80px;">
+					<input type="checkbox" id="isDefault">
+					<span></span>
+					<input type="hidden" id="userAddrId">
+				</label>
+				<span>设为默认值</span>
+			</li>
+			<li class="am-text-center">
+				<button class="am-btn am-btn-warning am-radius" onclick="saveOrUpdateAddr();">确定</button>
+				<button class="am-btn am-radius" id="userAddrCancel">取消</button>
+			</li>
+		</ul>
+	</div>
+</div>
+<footer class="footer">
+	<ul class="am-container">
+		<li class="am-u-lg-2 am-u-md-2 line">
+			<div class="part-5-title">关于我们</div>
+			<div class="part-5-words2">
+				<ul class="part-5-words2-ul">
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">晋级+</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">商务合作</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">工作机会</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">线下体验中心</a></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</li>
+		<li class="am-u-lg-2 am-u-md-2 line">
+			<div class="part-5-title">关于我服务</div>
+			<div class="part-5-words2">
+				<ul class="part-5-words2-ul">
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">品质保障</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">金融服务</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">售后承诺</a></li>
+					<li class="am-u-lg-12 am-u-md-12"><a href="javascript:;">所见即所得</a></li>
+					<div class="clear"></div>
+				</ul>
+			</div>
+		</li>
+		<li class="am-u-lg-4 am-u-md-4 line">
+			<div class="part-5-title">联系我们</div>
+			<div class="part-5-words2">
+				<span>联系地址：沈阳市铁西区云峰北街十三号（铁西百合家乐福三楼--晋级8000平体验馆）</span>
+				<span><i class="am-icon-phone contactPhone"></i><em>131-0988-6859</em></span>
+				<span>商务邮箱：jinjizhengzhuang@163.com</span>
+			</div>
+		</li>
+		<li class="am-u-lg-4 am-u-md-4 part-5-li2">
+			<div class="part-5-title" style="margin-bottom: 10px;">关注我们</div>
+			<div class="part-5-words2">
+				<ul class="part-5-words2-ul clearfix">
+					<li class="am-u-lg-6 am-u-md-6">
+						<img src="img/appEWM.png"/>
+						<p>app下载</p>
+					</li>
+					<li class="am-u-lg-6 am-u-md-6">
+						<img src="img/weixin.png"/>
+						<p>官方微信</p>
+					</li>
+				</ul>
+			</div>
+		</li>
+		<div class="clear"></div>
+	</ul>
+	<div class="copyright">
+		<p><i></i><span>辽公网安备 32015586630077号</span></p>
+		<p>辽ICP备14021018号&nbsp;&nbsp;|&nbsp;&nbsp;增值电信商务经营许可证：辽B2-20060312 </p>
+		<p>北京晋级华夏科技有限公司 &nbsp;&nbsp;版权所有</p>
+	</div>
+</footer>
+
+</body>
+<script language="JavaScript">
+    function YYYYMMDDstart(){
+        MonHead = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        //先给年下拉框赋内容
+        var y  = new Date().getFullYear();
+        for (var i = (y-30); i < (y+30); i++) //以今年为准，前30年，后30年
+            document.reg_testdate.YYYY.options.add(new Option(" "+ i +" 年", i));
+
+        //赋月份的下拉框
+        for (var i = 1; i < 13; i++)
+            document.reg_testdate.MM.options.add(new Option(" " + i + " 月", i));
+
+        //document.reg_testdate.YYYY.value = y;
+        //document.reg_testdate.MM.value = new Date().getMonth() + 1;
+        var n = MonHead[new Date().getMonth()];
+        if (new Date().getMonth() ==1 && IsPinYear(YYYYvalue)) n++;
+        writeDay(n); //赋日期下拉框Author:meizz
+        //document.reg_testdate.DD.value = new Date().getDate();
+    }
+//    if(document.attachEvent){
+//        window.attachEvent("onload", YYYYMMDDstart);
+//        sleep(2000);
+//        queryUserInfo();
+//	}else{
+//        window.addEventListener('load', YYYYMMDDstart, false);
+//        sleep(2000);
+//        queryUserInfo();
+//    }
+
+    function YYYYDD(str) //年发生变化时日期发生变化(主要是判断闰平年)
+    {
+        var MMvalue = document.reg_testdate.MM.options[document.reg_testdate.MM.selectedIndex].value;
+        if (MMvalue == ""){ var e = document.reg_testdate.DD; optionsClear(e); return;}
+        var n = MonHead[MMvalue - 1];
+        if (MMvalue ==2 && IsPinYear(str)) n++;
+        writeDay(n)
+    }
+    function MMDD(str)   //月发生变化时日期联动
+    {
+        var YYYYvalue = document.reg_testdate.YYYY.options[document.reg_testdate.YYYY.selectedIndex].value;
+        if (YYYYvalue == ""){ var e = document.reg_testdate.DD; optionsClear(e); return;}
+        var n = MonHead[str - 1];
+        if (str ==2 && IsPinYear(YYYYvalue)) n++;
+        writeDay(n)
+    }
+    function writeDay(n)   //据条件写日期的下拉框
+    {
+        var e = document.reg_testdate.DD; optionsClear(e);
+        for (var i=1; i<(n+1); i++)
+            e.options.add(new Option(" "+ i + " 日", i));
+    }
+    function IsPinYear(year)//判断是否闰平年
+    {
+        return(0 == year%4 && (year%100 !=0 || year%400 == 0));
+    }
+    function optionsClear(e)
+    {
+        e.options.length = 1;
+    }
+
+
+    $(function(){
+
+        var sheng = areaData.sheng;
+        var shiIndex = 0;
+
+        for (var i=0;i<sheng.length;i++) {
+            var $option = $('<option value='+(i+1)+'>'+sheng[i]+'</option>');
+            $('.sheng').append($option);
+        }
+
+        $('.sheng').change(function(){
+            shiIndex = this.selectedIndex-1;
+            if (shiIndex<0) {
+
+            } else{
+                var shi = areaData.shi['a_'+shiIndex];
+                $('.shi').html('<option value="0">--市区--</option>');
+                $('.xian').html('<option value="0">--县镇--</option>');
+                for (var i=0;i<shi.length;i++) {
+                    var $option = $('<option value='+(i+1)+'>'+shi[i]+'</option>');
+                    $('.shi').append($option);
+                }
+            }
+            $('.shi').attr("disabled",false);
+        });
+        $('.shi').change(function(){
+            index = this.selectedIndex-1;
+            if (index<0) {
+
+            } else{
+                var xian = areaData.xian['a_'+shiIndex+'_'+index];
+                $('.xian').html('<option value="0">--县镇--</option>');
+                for (var i=0;i<xian.length;i++) {
+                    var $option = $('<option value='+(i+1)+'>'+xian[i]+'</option>');
+                    $('.xian').append($option);
+                }
+            }
+            $('.xian').attr("disabled",false);
+        });
+
+
+        $('.personal_inf_main').delegate('#sideBar ul li','click',function(e){
+            var _index = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.mainContent_ol_li').eq(_index).show().siblings().hide();
+            personalQuery(e);
+        });
+        $('.personal_inf_main').delegate('.mainContent_top strong','click',function(){
+            var _index = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.mainContent_ol_li_main_div').eq(_index).show().siblings().hide();
+        });
+        $('.personal_inf_main').delegate('.mainContent_top b','click',function(){
+            var _index = $(this).index();
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.mainContent_collection_list').eq(_index).show().siblings().hide();
+        });
+
+        $('.address_Ad_hd button').click(function(){
+            $("#realName").val("");
+            $("#telphone").val("");
+            $("#addr").val("");
+            $("#province").val("0");
+            $("#city").val("0");
+            $("#district").val("0");
+            $("#userAddrId").val("");
+            $("#isDefault").prop('checked',false);
+            $('#mask').show();
+            $('.newAddress').show();
+        });
+        $('.newAddress_hd i').click(function(){
+            $('#mask').hide();
+            $('.newAddress').hide();
+        });
+        $('#userAddrCancel').click(function(){
+            $('#mask').hide();
+            $('.newAddress').hide();
+        });
+        $("#orderStatus strong").click(function(e){
+				changeOrderStatus(e);
+        });
+        YYYYMMDDstart()
+        initProvince();
+        queryUserInfo();
+    });
+
+    /*
+	 * 更新用户信息
+	 */
+	function updateUserInfo() {
+		var name = $("#name").val();
+		var sex = $("input[name='sex']:checked").val();
+		var phone = $("#phone").val();
+		var email = $("#email").val();
+		var year = $("select[name='YYYY']").val();
+        var month = $("select[name='MM']").val();
+        var day = $("select[name='DD']").val();
+        var birthday = year + "-" + month + "-" + day;
+        var param = {};
+        param["name"] = name;
+        param["sex"] = sex;
+        param["phone"] = phone;
+        param["email"] = email;
+        param["birthday"] = birthday;
+        requestPostFront("/personalCenter/updateUserInfo",param,function (resultData){
+                if(resultData){
+                    var code = resultData.code;
+                    if(code == "200"){
+						alert("更新用户信息成功");
+					}
+                }
+            }
+        )
+    }    
+    /*
+	 * 初始化省直辖市
+	 */
+    function  initProvince() {
+        $.ajax({
+            url : "/personalCenter/queryProvince",
+            type : "post",
+            dataType : "json",
+            cache : false,
+            data : {},
+            success : function (data) {
+                var province = [];
+                province.push('<option value="0">--省--</option>');
+                for(var i=0;i<data.length;i++){
+                    var id  = data[i].id;
+                    var name  = data[i].name;
+                    province.push('<option value="'+id+'">'+name+'</option>');
+				}
+				$("#province").html(province.join(''));
+                $("#province").change(function(){
+                    queryCity(this);
+                });
+            },
+            error : function() {
+                alert("http post request fail!");
+            }
+        });
+    }
+
+    /*
+     * 地市查询
+     */
+    function queryCity(obj) {
+		var pid = $(obj).val();
+		if(pid == ""){
+		    return;
+		}
+        requestPostFront("/personalCenter/queryCity",{"pid":pid},function (resultData){
+                if(resultData){
+                    var city = [];
+                    city.push('<option value="0">--市区--</option>');
+                    for(var i in resultData){
+                        var id  = resultData[i].id;
+                        var name  = resultData[i].name;
+                        city.push('<option value="'+id+'">'+name+'</option>');
+                    }
+                    $("#city").html(city.join(''));
+                    $('#city').attr("disabled",false);
+                    $("#city").change(function(){
+                        queryDistrict(this);
+                    });
+                }
+            }
+        )
+    }
+
+    /*
+	 * 区县查询
+	 */
+    function queryDistrict(obj) {
+        var pid = $(obj).val();
+        if(pid == ""){
+            return;
+        }
+        requestPostFront("/personalCenter/queryDistrict",{"pid":pid},function (resultData){
+                if(resultData){
+                    var district = [];
+                    district.push('<option value="0">--县镇--</option>');
+                    for(var i in resultData){
+                        var id  = resultData[i].id;
+                        var name  = resultData[i].name;
+                        district.push('<option value="'+id+'">'+name+'</option>');
+                    }
+                    $('#district').attr("disabled",false);
+                    $("#district").html(district.join(''));
+                }
+            }
+        )
+    }
+
+    /*
+	 *获取登入用户信息
+	 */
+    function queryUserInfo(){
+
+        requestPostFront("/personalCenter/queryUserInfo",{},function (resultData){
+                if(resultData){
+                    var name = resultData.name;
+                    if(name){
+                        $("#name").val(name);
+                    }
+                    $("#userName").val(resultData.username);
+                    var sex = resultData.sex;
+                    $(":radio[name='sex'][value='" + sex + "']").prop("checked", "checked");
+                    var phone = resultData.phone;
+                    if(phone){
+                        $("#phone").val(phone);
+                    }
+                    var email = resultData.email;
+                    if(email){
+                        $("#email").val(email);
+                    }
+                    var birthday = resultData.birthday;
+                    var dateArr = birthday.split("-");
+                    $("select[name='YYYY']").val(dateArr[0]);
+                    if(dateArr[1].indexOf('0') > -1){
+                        $("select[name='MM']").val(dateArr[1].charAt(1));
+                    }else{
+                        $("select[name='MM']").val(dateArr[1]);
+                    }
+                    if(dateArr[2].indexOf('0') > -1){
+                        $("select[name='DD']").val(dateArr[2].charAt(1));
+                    }else{
+                        $("select[name='DD']").val(dateArr[2]);
+                    }
+                }
+            }
+        )
+	}
+    function personalQuery(e){
+        var postData = {};
+        var id = $(e.target).parent().attr("id");
+        if(id == "personal_info"){
+            queryUserInfo();
+        }else if(id == "my_reservation"){
+            $.ajax({
+                url : "/userAppointment/queryUserAppointment",
+                type : "post",
+                dataType : "json",
+                async : false,
+                cache : false,
+                data : postData,
+                success : function (data) {
+                    console.log(data);
+                    var designer = [];
+                    var store = [];
+                    for(var i in data){
+						var type = data[i].type;
+						var appointmentCode = data[i].appointmentCode;
+						var name = data[i].name;
+                        var tel = data[i].tel;
+                        var remark = data[i].remark;
+                        var createTime = data[i].createTime;
+                        if(type == "1"){
+                            designer.push('<li class="mainContent_ol_ul_li">');
+                            designer.push('<div class="clearfix mainContent_ol_ul_li_header"><p class="left">预约编号：'+appointmentCode+'</p><b class="right">'+new Date(createTime).Format("yyyy-MM-dd")+'</b></div>');
+                            designer.push('<div class="mainContent_ol_ul_li_content"><p><label>姓名：</label><span>'+name+'</span></p><p><label>设计师电话：</label><span>'+tel+'</span></p><p><label>备注：</label><span>'+remark+'</span></p></div>');
+                            designer.push('</li>');
+						}else if(type == "2"){
+                            store.push('<li class="mainContent_ol_ul_li">');
+                            store.push('<div class="clearfix mainContent_ol_ul_li_header"><p class="left">预约编号：'+appointmentCode+'</p><b class="right">'+new Date(createTime).Format("yyyy-MM-dd")+'</b></div>');
+                            store.push('<div class="mainContent_ol_ul_li_content"><p><label>姓名：</label><span>'+name+'</span></p><p><label>商铺电话：</label><span>'+tel+'</span></p><p><label>备注：</label><span>'+remark+'</span></p></div>');
+                            store.push('</li>');
+						}
+					}
+					$("#reservation_ul").html(designer.join(''));
+                    $("#reservation_ul").append(store.join(''));
+                },
+                error : function() {
+                    alert("http post request fail!");
+                }
+            });
+        }else if(id == "my_order"){
+            queryUserOrder({});
+        }else if(id == "my_plan"){
+            $.ajax({
+                url : "/personalCenter/queryUserCase",
+                type : "post",
+                dataType : "json",
+                async : false,
+                cache : false,
+                data : {},
+                success : function (data) {
+                    var planList = [];
+                    for(var i in data){
+                        var id = data[i].id;
+                        var name = data[i].name;
+                        var create_time = data[i].create_time;
+                        planList.push('<div class="am-u-sm-4">');
+                        planList.push('<div class="am-thumbnail">');
+                        planList.push('<div class="am-relative"><img class="am-full" src="img/case_page1.jpg" alt="">');
+                        planList.push('<div class="am-mask"><a href="#"><button class="am-btn am-radius" id="'+id+'">修改方案</button></a></div></div>');
+                        planList.push('<div class="am-thumbnail-caption clearfix"><p class="left">'+name+'</p><b class="right am-text-danger">￥6，9830.00</b></div>');
+                        planList.push('<p class="am-text-sm am-times">'+new Date(create_time).Format("yyyy-MM-dd")+'</p>');
+                        planList.push('</div></div>');
+					}
+					$("#my_plan_div").html(planList.join(''));
+                },
+                error : function() {
+                    alert("http post request fail!");
+                }
+            });
+        }else if(id == "my_address"){
+            queryUserAddr();
+		}else if(id == "my_collection"){
+            $.ajax({
+                url : "/collection/queryUserCollection",
+                type : "post",
+                dataType : "json",
+                async : false,
+                cache : false,
+                data : postData,
+                success : function (data) {
+                    var zp = [];
+                    var dz = [];
+                    var sigle = [];
+                    var user_case = [];
+                    var designer = [];
+                    for(var i in data){
+                        var type = data[i].type;
+                        var desc = data[i].desc;
+                        if(type == "1"){
+                            zp.push('<div class="am-u-sm-3"><div class="am-thumbnail">');
+                            zp.push('<img class="am-full" src="img/case_page1.jpg" alt="">');
+                            zp.push('<h3 class="am-thumbnail-caption">'+desc+'</h3>');
+                            zp.push('</div></div>');
+						}else if(type == "2"){
+                            dz.push('<div class="am-u-sm-3"><div class="am-thumbnail">');
+                            dz.push('<img class="am-full" src="img/case_page1.jpg" alt="">');
+                            dz.push('<h3 class="am-thumbnail-caption">'+desc+'</h3>');
+                            dz.push('</div></div>');
+						}else if(type == "3"){
+                            sigle.push('<div class="am-u-sm-3"><div class="am-thumbnail">');
+                            sigle.push('<img class="am-full" src="img/case_page1.jpg" alt="">');
+                            sigle.push('<h3 class="am-thumbnail-caption">'+desc+'</h3>');
+                            sigle.push('</div></div>');
+                        }else if(type == "4"){
+                            user_case.push('<div class="am-u-sm-3"><div class="am-thumbnail">');
+                            user_case.push('<img class="am-full" src="img/case_page1.jpg" alt="">');
+                            user_case.push('<h3 class="am-thumbnail-caption">'+desc+'</h3>');
+                            user_case.push('</div></div>');
+                        }else if(type == "5"){
+                            designer.push('<div class="am-u-sm-3"><div class="am-thumbnail">');
+                            designer.push('<img class="am-full" src="img/case_page1.jpg" alt="">');
+                            designer.push('<h3 class="am-thumbnail-caption">'+desc+'</h3>');
+                            designer.push('</div></div>');
+                        }
+					}
+                    $(".mainContent_collection").children().eq(0).children().html(zp.join(''));
+                    $(".mainContent_collection").children().eq(1).children().html(dz.join(''));
+                    $(".mainContent_collection").children().eq(2).children().html(sigle.join(''));
+                    $(".mainContent_collection").children().eq(3).children().html(user_case.join(''));
+                    $(".mainContent_collection").children().eq(4).children().html(designer.join(''));
+                    $(".mainContent_collection").prev().children().eq(0).click();//点击我的收藏后,初始化显示第一个tab
+                    $(".mainContent_collection").prev().children().each(function (index) {
+						if(index == 0){
+							$(this).text('甄品收藏('+$(".mainContent_collection").children().eq(0).children().eq(0).children().size()+')');
+                        }else if(index == 1){
+                            $(this).text('定制收藏('+$(".mainContent_collection").children().eq(1).children().eq(0).children().size()+')');
+						}else if(index == 2){
+                            $(this).text('单品收藏('+$(".mainContent_collection").children().eq(2).children().eq(0).children().size()+')');
+                        }else if(index == 3){
+                            $(this).text('案例收藏('+$(".mainContent_collection").children().eq(3).children().eq(0).children().size()+')');
+                        }else if(index == 4){
+                            $(this).text('设计师收藏('+$(".mainContent_collection").children().eq(4).children().eq(0).children().size()+')');
+                        }
+                    })
+                },
+                error : function() {
+                    alert("http post request fail!");
+                }
+            });
+        }else if(id == "my_red_bag"){
+
+        }else if(id == "my_news"){
+            $.ajax({
+                url : "/notify/queryUserNotifyByParam",
+                type : "post",
+                dataType : "json",
+                async : false,
+                cache : false,
+                data : postData,
+                success : function (data) {
+                    var news  = [];
+                    for(var i in data){
+						var title = data[i].title;
+                        var content = data[i].content;
+                        var createTime = data[i].createTime;
+                        news.push('<li class="mainContent_ol_ul_li">');
+                        news.push('<div class="mainContent_ol_ul_li_content clearfix">');
+                        news.push('<div class="am-u-md-2"><img class="am-g am-circle" src="img/danpin1.png"></div>');
+                        news.push('<div class="am-u-md-6 margin-t12"><h3>'+title+'</h3><p>'+content+'</p></div>');
+                        news.push('<div class="am-u-md-4 am-text-right margin-t20">'+new Date(createTime).Format('yyyy-MM-dd')+'</div>');
+                        news.push('</div></li>');
+					}
+					$("#my_news_ul").html(news.join(''));
+                },
+                error : function() {
+                    alert("http post request fail!");
+                }
+            });
+
+        }else if(id == "my_community"){
+
+        }
+        postData = {};
+    }
+    function queryUserOrder(param) {
+        requestPostFront("/personalCenter/queryUserOrder",param,function (resultData){
+                if(resultData){
+                    setOrderStatusNum(resultData.statusMap);
+                    console.log(resultData);
+                    var data = resultData.list;
+                    var orderList = [];
+                    orderList.push('<ul>')
+                    for(var i in data){
+                        var orderCode = data[i].orderCode;
+                        var realTransPrice = data[i].realTransPrice;
+                        var orderStatus = data[i].orderStatus;
+                        var orderTime = data[i].orderTime;
+                        var id = data[i].id;
+                        orderList.push('<li class="mainContent_ol_ul_li">');
+                        orderList.push('<div class="clearfix mainContent_ol_ul_li_header">');
+                        orderList.push('<p class="left">订单编号：'+orderCode+'</p>');
+                        orderList.push('<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>');
+                        orderList.push('<i class="right" id="'+id+'" onclick="deleteConfirm(this);"></i>');
+                        orderList.push('<b class="right">'+new Date(orderTime).Format("yyyy-MM-dd hh:mm:ss")+'</b></div>');
+                        orderList.push('<div class="mainContent_ol_ul_li_content clearfix">');
+                        var skuList = data[i].skuList;
+                        if(skuList.length == 1){
+                            var url = skuList[0].url;
+                            var materialName = skuList[0].materialName;
+                            var num = skuList[0].num;
+                            if(url){
+                                //orderList.push('<div class="order_img order"><img class="am-g" src="'+url+'"></div>');
+                                orderList.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                            }else{
+                                orderList.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                            }
+                            orderList.push('<div class="order_caption order margin-t12 am-text-left">');
+                            orderList.push('<p>'+materialName+'</p>');
+                            var skuValueList = skuList[0].skuValueList;
+                            for(var j in skuValueList){
+                                var key = skuValueList[j].key;
+                                var value = skuValueList[j].value;
+                                orderList.push('<p title="'+value+'">'+key+"："+value+'</p>');
+                            }
+                            orderList.push('</div>');
+                            orderList.push('<div class="order_num order margin-t30">×'+num+'</div>');
+                            orderList.push('<div class="order_sh order"><p><a href="#">申请售后</a></p></div>');
+                        }else{
+                            orderList.push('<div class="mainContent_ol_ul_li_content_left order">');
+                            for(j in skuList){
+                                var url = skuList[j].url;
+                                var materialName = skuList[j].materialName;
+                                var num = skuList[j].num;
+                                orderList.push('<div class="clearfix mainContent_ol_ul_li_content_left_div">');
+                                if(url){
+                                    //orderList.push('<div class="order_img order"><img class="am-g" src="'+url+'"></div>');
+                                    orderList.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                                }else{
+                                    orderList.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                                }
+                                orderList.push('<div class="order_caption order margin-t12 am-text-left">');
+                                orderList.push('<p>'+materialName+'</p>');
+                                var skuValueList = skuList[j].skuValueList;
+                                for(var k in skuValueList){
+                                    var key = skuValueList[k].key;
+                                    var value = skuValueList[k].value;
+                                    orderList.push('<p title="'+value+'">'+key+"："+value+'</p>');
+                                }
+                                orderList.push('</div>');
+                                orderList.push('<div class="order_num order margin-t30">×'+num+'</div>');
+                                orderList.push('<div class="order_sh order"><p><a href="#">申请售后</a></p></div>');
+                                orderList.push('</div>');
+                            }
+                            orderList.push('</div>');
+                        }
+                        orderList.push('<div class="orderLine"></div>');
+                        orderList.push('<div class="order_price order am-text-danger">'+realTransPrice+'</div>');
+                        orderList.push('<div class="orderLine"></div>');
+
+                        if(orderStatus == -1){
+                            orderList.push('<div class="order_inf order"><p><a href="#">交易取消</a></p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p></div>');
+                            orderList.push('<div class="orderLine"></div>');
+						}else if(orderStatus == 0){
+                            orderList.push('<div class="order_inf order"><p><a href="#">等待付款</a></p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p></div>');
+                            orderList.push('<div class="orderLine"></div>');
+                            orderList.push('<div class="order_operation order margin-t12 __web-inspector-hide-shortcut__"><p>还剩23小时28分</p><button class="am-btn am-radius am-btn-warning">立即付款</button><p class="cancelOrder am-cursor" id="'+id+'" onclick="cancelOrder(this);">取消订单</p></div>');
+                        }else if(orderStatus == 1){
+                            orderList.push('<div class="order_inf order"><p><a href="#">等待收货</a></p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p><p><a href="#">查看物流</a></p></div>');
+                            orderList.push('<div class="orderLine"></div>');
+                            orderList.push('<div class="order_operation order margin-t12"><p>还剩4天23小时</p><button class="am-btn am-radius am-btn-primary confirmGoods" >确认收货</button></div>');
+                        }else if(orderStatus == 2){
+                            orderList.push('<div class="order_inf order"><p>卖家已发货</p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p><p><a href="#">查看物流</a></p></div>');
+                            orderList.push('<div class="orderLine"></div>');
+                            orderList.push('<div class="order_operation order margin-t30"><button class="am-btn am-radius">评价</button></div>');
+                        }else if(orderStatus == 3){
+                            orderList.push('<div class="order_inf order"><p>交易成功</p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p><p><a href="#">查看物流</a></p></div>');
+                            orderList.push('<div class="orderLine"></div>');
+                            orderList.push('<div class="order_operation order margin-t30"><button class="am-btn am-radius" onclick="orderEvaluate(this);">评价</button></div>');
+						}
+                        orderList.push('</li>');
+                    }
+                    orderList.push('</ul>')
+                    var orderStatus = param["orderStatus"];
+                    $(".mainContent_ol_li_main").children().html('');
+                    if(!orderStatus){
+                        if(data.length > 0){
+                            $(".mainContent_ol_li_main").children().eq(0).show();
+                            $(".mainContent_ol_li_main").children().eq(0).html(orderList.join(''));
+                            $(".mainContent_ol_li_main").children().eq(0).removeClass("am-text-center margin-t60");
+                        }else{
+                            $(".mainContent_ol_li_main").children().eq(0).addClass("am-text-center margin-t60");
+                            $(".mainContent_ol_li_main").children().eq(0).html('<img src="img/no_orderIcon.png"><p class="am-text-lg margin-t12">--没有任何订单呢--</p>');
+                        }
+                    }else{
+                        if(data.length > 0){
+                            if(orderStatus == 0){
+                                $(".mainContent_ol_li_main").children().eq(1).show();
+                                $(".mainContent_ol_li_main").children().eq(1).html(orderList.join(''));
+                                $(".mainContent_ol_li_main").children().eq(1).removeClass("am-text-center margin-t60");
+							}else if(orderStatus == 1){
+                                $(".mainContent_ol_li_main").children().eq(2).show();
+                                $(".mainContent_ol_li_main").children().eq(2).html(orderList.join(''));
+                                $(".mainContent_ol_li_main").children().eq(2).removeClass("am-text-center margin-t60");
+							}else if(orderStatus == 3){
+                                $(".mainContent_ol_li_main").children().eq(3).show();
+                                $(".mainContent_ol_li_main").children().eq(3).html(orderList.join(''));
+                                $(".mainContent_ol_li_main").children().eq(3).removeClass("am-text-center margin-t60");
+							}
+                        }else{
+                            if(orderStatus == 0){
+                                $(".mainContent_ol_li_main").children().eq(1).addClass("am-text-center margin-t60");
+                                $(".mainContent_ol_li_main").children().eq(1).html('<img src="img/no_orderIcon.png"><p class="am-text-lg margin-t12">--没有任何订单呢--</p>');
+                            }else if(orderStatus == 1){
+                                $(".mainContent_ol_li_main").children().eq(2).addClass("am-text-center margin-t60");
+                                $(".mainContent_ol_li_main").children().eq(2).html('<img src="img/no_orderIcon.png"><p class="am-text-lg margin-t12">--没有任何订单呢--</p>');
+                            }else if(orderStatus == 3){
+                                $(".mainContent_ol_li_main").children().eq(3).addClass("am-text-center margin-t60");
+                                $(".mainContent_ol_li_main").children().eq(3).html('<img src="img/no_orderIcon.png"><p class="am-text-lg margin-t12">--没有任何订单呢--</p>');
+                            }
+
+                        }
+                    }
+                    $('.orderLine').each(function(){
+                        //debugger;
+                        var oHeight = $(this).parent().height();
+                        $(this).height(oHeight);
+                    });
+                }
+            }
+        )
+    }
+
+    /**
+	 * 订单评价
+	 */
+    function orderEvaluate(obj) {
+		var id = $(obj).parent().parent().prev().children("i").attr("id");
+		console.log(id);
+		window.open("logistics_evaluate.html?orderId="+id);
+    }
+	/**
+	 * 删除提示
+	 */
+    var delOrderObj;
+    function deleteConfirm(obj) {
+        var id = $(obj).attr("id");
+        if(id == ""){
+            alert("请选择要删除的订单");
+            return null;
+		}
+        delOrderObj = obj;
+    }
+    /**
+	 * 显示不同订单状态的数量
+	 */
+    function setOrderStatusNum(statusMap){
+        for(var key in statusMap){
+            if(key == "0"){
+                $("#orderStatus").children().eq(1).text("待付款" + statusMap[key]);
+			}else if(key == "1"){
+                $("#orderStatus").children().eq(2).text("待收货" + statusMap[key]);
+			}else if(key == "3"){
+                $("#orderStatus").children().eq(3).text("待评价" + statusMap[key]);
+            }
+        }
+	}
+    /**
+	 * 订单tab切换查询
+	 */
+    function  changeOrderStatus(e) {
+		var data = $(e.currentTarget).attr("data");
+		if("all" != data){
+            var param = {};
+            param["orderStatus"] = data;
+			queryUserOrder(param);
+		}else{
+            queryUserOrder({});
+		}
+
+    }
+    /**
+	 * 查询用户地址
+	 */
+    function queryUserAddr() {
+        requestPostFront("/personalCenter/queryUserAddr",{},function (resultData){
+                if(resultData){
+                    var addrList = [];
+                    for(var i in resultData){
+                        var id  = resultData[i].id;
+                        var realName = resultData[i].realName;
+                        var phone = resultData[i].phone;
+                        var isDefault = resultData[i].isDefault;
+                        var addrAll = resultData[i].addrAll;
+                        addrList.push('<tr>');
+                        addrList.push('<td>'+realName+'</td>');
+                        addrList.push('<td>'+phone+'</td>');
+                        addrList.push('<td>'+addrAll+'</td>');
+                        addrList.push('<td><span class="edit" onclick="selectAddrById(this);">编辑</span>&nbsp;&nbsp;|&nbsp;&nbsp;<span class="delete" onclick="deleteUserAddr(this);">删除</span></td>');
+                        if(isDefault == 1){
+                            addrList.push('<td><label class="ui-checkbox"><input type="checkbox" checked="checked" id="'+id+'"><span></span></label>默认地址</td>');
+                        }else{
+                            addrList.push('<td><label class="ui-checkbox"><input type="checkbox" id="'+id+'"><span></span></label>默认地址</td>');
+                        }
+                        addrList.push('</tr>');
+                    }
+
+                    $(".address_Ad_table").children().children("tbody").html(addrList.join(''));
+
+                    var postData = {};
+                    $(".address_Ad_table").find("input").bind("click",function () {
+                        var isChecked = $(this).is(":checked");
+                        if(isChecked){
+                            $(this).parent().parent().parent().siblings().find("input").prop('checked',false);//checkbox选中互斥
+                            postData["url"] = "/personalCenter/updateAddrDefaultSelected";
+                        }else{
+                            postData["url"] = "/personalCenter/updateAddrDefaultCancel";
+                        }
+                        postData["id"] = $(this).attr("id");
+                        updateUserAddrDefault(postData);
+                    })
+                }
+            }
+        )
+    }
+
+    /**
+	 * 更新用户默认地址
+     * @param param
+     */
+    function updateUserAddrDefault(param){
+        requestPostFront(param["url"],param,function (resultData){
+                if(resultData){
+                    console.log(resultData);
+                }
+            }
+        )
+	}
+
+    /**
+	 * 删除用户收货地址
+     * @param obj
+     */
+	function deleteUserAddr(obj) {
+        var id = $(obj).parent().next().find("input").eq(0).attr("id");
+        if(id == ""){
+            return;
+        }
+        popup('确定要删除吗？',true,function(){
+            requestPostFront("/personalCenter/deleteUserAddr",{"id":id},function (resultData){
+                    if(resultData){
+                        var code = resultData.code;
+                        if(code == "200"){
+                            $(obj).parent().parent().remove();
+                        }
+                    }
+                }
+            )
+        });
+    }
+
+
+    /**
+	 * 编辑用户收货地址
+     * @param obj
+     */
+    function selectAddrById(obj) {
+        var id = $(obj).parent().next().find("input").eq(0).attr("id");
+        if(id == ""){
+            return;
+        }
+        $("#userAddrId").val(id);
+        requestPostFront("/personalCenter/selectAddrById",{"id":id},function (resultData){
+				$('#mask').show();
+				$('.newAddress').show();
+                if(resultData){
+                    console.log(resultData);
+                    var realName = resultData.addr.realName;
+                    var phone = resultData.addr.phone;
+                    var addr = resultData.addr.addr;
+                    var isDefault = resultData.addr.isDefault;
+                    if(isDefault == 1){
+                        $("#isDefault").prop('checked',true);
+                        $("#isDefault").attr('value',1);
+                    }else{
+                        $("#isDefault").prop('checked',false);
+                        $("#isDefault").attr('value',0);
+                    }
+                    var cityId = resultData.addr.cityId;
+                    $("#realName").val(realName);
+                    $("#telphone").val(phone);
+                    $("#addr").val(addr);
+                    var resultMap = resultData.resultMap;
+                    for(var key in resultMap){
+                        if(key.length >2){
+                            $("#city").val(key);
+                            var district = [];
+                            district.push('<option value="0">--县镇--</option>');
+                            for(var i in resultMap[key]){
+                                var id  = resultMap[key][i].id;
+                                var name  = resultMap[key][i].name;
+                                if(id == cityId){
+                                    district.push('<option value="'+id+'">'+name+'</option>');
+                                }else{
+                                    district.push('<option value="'+id+'">'+name+'</option>');
+                                }
+                            }
+                            $('#district').attr("disabled",false);
+                            $("#district").html(district.join(''));
+                            $("#district").val(cityId);
+                        }else{
+                            $("#province").val(key);
+                            var city = [];
+                            city.push('<option value="0">--市区--</option>');
+                            for(var i in resultMap[key]){
+                                var id  = resultMap[key][i].id;
+                                var name  = resultMap[key][i].name;
+                                city.push('<option value="'+id+'">'+name+'</option>');
+                            }
+                            $("#city").html(city.join(''));
+                            $('#city').attr("disabled",false);
+                            $("#city").change(function(){
+                                queryDistrict(this);
+                            });
+                        }
+
+                    }
+                }
+            }
+        )
+    }
+
+	/**
+	 * 保存或更新用户收货地址
+	 */
+    function saveOrUpdateAddr(){
+        var realName = $("#realName").val();
+        var phone = $("#telphone").val();
+        var addr = $("#addr").val();
+        var cityId = $("#district").val();
+        var isDefault ;
+        if($("#isDefault").is(":checked")){
+            isDefault = 1;
+		}else{
+            isDefault = 0;
+		}
+        var id  = $("#userAddrId").val();
+        var param = {};
+        param["realName"] = realName;
+        param["phone"] = phone;
+        param["addr"] = addr;
+        param["cityId"] = cityId;
+        param["isDefault"] = isDefault;
+        if(id){
+            param["id"] = id;
+            updateUserAddr(param);
+		}else{
+            saveUserAddr(param);
+		}
+	}
+
+	function saveUserAddr(param) {
+        $.ajax({
+            url : "/personalCenter/saveUserAddr",
+            type : "post",
+            dataType : "json",
+            cache : false,
+            data : param,
+            success : function (data) {
+                $('#mask').hide();
+                $('.newAddress').hide();
+                queryUserAddr();
+            },
+            error : function() {
+                alert("http post request fail!");
+            }
+        });
+    }
+
+    /**
+	 * 更新用户地址
+	 */
+    function updateUserAddr(param) {
+        $.ajax({
+            url : "/personalCenter/updateUserAddr",
+            type : "post",
+            dataType : "json",
+            cache : false,
+            data : param,
+            success : function (data) {
+                queryUserAddr();
+                $('#mask').hide();
+                $('.newAddress').hide();
+            },
+            error : function() {
+                alert("http post request fail!");
+            }
+        });
+    }
+    $(function(){
+        var url=window.location.search;
+        //转换成字符串
+        url=url.toString();
+        var array=new Array();//用来存放分分割后的字符串
+        array=url.split("=");
+        //这里的titles数组是tab选项卡的的标签数组，遍历数组
+        //这里的divs数组是tab选项卡相对应的数组
+        var titles = $('#sideBar ul li');
+        var divs = $('#mainContent ol li.mainContent_ol_li');
+
+        titles.each(function(){
+            var t = $(this).attr('type');
+            if(array[1] == t){
+                var _index = $(this).index();
+                $(this).addClass('active').siblings().removeClass('active');
+                divs.eq(_index).show().siblings().hide();
+                $(this).children("span").click();
+            }
+        });
+
+    });
+
+    Date.prototype.Format = function(fmt)
+    {
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt))
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        for(var k in o)
+            if(new RegExp("("+ k +")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        return fmt;
+    };
+
+	/*设定家的状态*/
+	;(function($, window, document, undefined) {
+		var $html = $('html');
+		$html.on('click', '.js-dropdown', function(e) {
+			e.preventDefault();
+			$(this).toggleClass('is-open');
+		});
+
+		$html.on('click', '.js-dropdown [data-dropdown-value]', function(e) {
+			e.preventDefault();
+			var $item = $(this);
+			var $dropdown = $item.parents('.js-dropdown');
+			$dropdown.find('.js-dropdown__input').val($item.data('dropdown-value'));
+			$dropdown.find('.js-dropdown__current').text($item.text());
+		});
+
+		$html.on('click', function(e) {
+			var $target = $(e.target);
+			if (!$target.parents().hasClass('js-dropdown')) {
+				$('.js-dropdown').removeClass('is-open');
+			}
+		});
+
+	})(jQuery, window, document);
+
+	$(function(){
+		$('.orderLine').each(function(){
+			var oHeight = $(this).parent().height();
+			$(this).height(oHeight);
+		});
+		/*取消订单*/
+		$('.mainContent_ol_li_main').delegate('.cancelOrder','click',function(){
+		    var id = $(this).attr("id");
+		    var cancelObj = $(this);
+			popup('确定取消此订单吗？',true,function(){
+                requestPostFront("/personalCenter/cancelOrder",{"id":id},function (resultData){
+                        if(resultData){
+                            var code = resultData.code;
+                            if(code == "200"){
+                                $(cancelObj).parent().prev().prev().children().eq(0).children().text("交易取消");
+                                $(cancelObj).parent().remove();
+                            }
+                        }
+                    }
+                )
+			});
+		});
+		/*确认收货*/
+		$('.mainContent_ol_li_main').delegate('.confirmGoods','click',function(){
+            var cancelObj = $(this);
+            var id = $(this).parent().parent().prev().children("i").attr("id");
+			popup('请确认是否已收到货？',true,function(){
+                requestPostFront("/personalCenter/confirmOrder",{"id":id},function (resultData){
+                        if(resultData){
+                            var code = resultData.code;
+                            if(code == "200"){
+								var html = [];
+                                html.push('<p>交易成功</p><p><a href="logistics_information.html?orderId='+id+'" target="_blank">订单详情</a></p><p><a href="#">查看物流</a></p>')
+                                $(cancelObj).parent().prev().prev().html(html.join(''));
+                                $(cancelObj).parent().html('<button class="am-btn am-radius">评价</button>');
+                            }
+                        }
+                    }
+                )
+			});
+		});
+		/*是否删除*/
+		$('.mainContent_ol_li_main').delegate('.mainContent_ol_ul_li_header i','click',function(){
+			popup('确定要删除吗？',true,function(){
+                $.ajax({
+                    url : "/personalCenter/deleteOrder",
+                    type : "post",
+                    dataType : "json",
+                    cache : false,
+                    data : {"id":$(delOrderObj).attr("id")},
+                    success : function (data) {
+                        if(data.code == "200"){
+                            //alert("删除成功");
+                            $(delOrderObj).parent().parent().remove();
+						}
+                    },
+                    error : function() {
+                        alert("http post request fail!");
+                    }
+                });
+			});
+		});
+	});
+
+</script>
+</html>

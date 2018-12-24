@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>产品详情页</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  
+  <link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+  <link rel="stylesheet" href="css/amazeui.css"/>
+  <link rel="stylesheet" href="css/swiper.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+	<div class="fixedSlide">
+  	<ul>
+  		<li class="fixedSlide_1">
+  			<i></i><p>联系客服</p>
+  		</li>
+  		<li class="fixedSlide_2">
+  			<i></i><p>下载APP</p>
+  			<div class="fixedSlide_2_down">
+  				<img src="img/appDownQR.png"/>
+  			</div>
+  		</li>
+  		<li class="fixedSlide_3">
+  			<i></i><p>立即预约</p>
+  		</li>
+  		<li class="fixedSlide_4 toTop" style="display: none;">
+  			<i></i><p>返回顶部</p>
+  		</li>
+  	</ul>
+  </div>
+	<div class="am-topbar header">
+		<div class="am-g tr-login-topbar">
+	    <div class="am-container">
+	      <div class="am-fr am-text-xs am-margin-right-sm" id="loginPanel">
+	        	<a class="login" href="sign.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="register" href="javascript:;">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  target="_blank" href="shopping_cart.html" class="shoppingCart"><span class="am-icon-shopping-cart"><i></i></span>购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	        	<div class="am-hoverDown">
+              <a class="am-hoverDown-title" href="javascript:;">个人中心 <span class="am-icon-angle-down"></span></a>
+              <ul class="am-hoverDown-caption">
+                <li><a target="_blank" href="personal_center.html?type=sideBar1">个人信息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar2">我的预约</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar3">我的订单</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar4">我的方案</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar9">地址管理</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar5">我的收藏</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar6">我的红包</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar7">我的消息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar8">我的社区</a></li>
+              </ul>
+            </div>
+	        	<div id="appDown">
+	        		<p>APP下载</p>
+	        		<div class="appDownQRcode">
+	        			<img src="img/erweima.png"/>
+	        			<h4>扫一扫下载APP</h4>
+	        		</div>
+	        	</div>
+	      </div>
+	    </div>
+	 </div>
+	 	<div class="am-g">
+		<div class="am-container">
+			<div class="left jj-logo">
+			  <img class="logo" src="img/logo.png"></img>
+	   </div>
+	  <div class="right margin-t12">
+      <ul class="jj-menu clearfix">
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name jj-menu-active" href="javascript:;">产品</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li class="active">
+                    <a href="product.html">
+                        <i class="icon_server_1"></i>
+                        <p>整装甄品</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="full_house.html">
+                        <i class="icon_server_3"></i>
+                        <p>全屋定制</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sigle_product.html">
+                        <i class="icon_server_2"></i>
+                        <p>精选单品</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+	      </li>
+		  <li class="jj-dropdown jj-menu-li">
+			  <a class="jj-menu-name" href="javascript:;">体验城</a>
+			  <div class="nav-child">
+				  <ul class="clearfix">
+					  <li>
+						  <a href="experience_city.html">
+							  <i class="icon_server_12"></i>
+							  <p>了解体验城</p>
+						  </a>
+					  </li>
+					  <li>
+						  <a href="enter_business.html">
+							  <i class="icon_server_13"></i>
+							  <p>入驻商家</p>
+						  </a>
+					  </li>
+				  </ul>
+			  </div>
+		  </li>
+		  <li class="jj-dropdown jj-menu-li">
+			  <a class="jj-menu-name" href="case.html">案例</a>
+			  <div class="nav-child">
+				  <ul class="clearfix">
+					  <li>
+						  <a href="case.html?type=caseTab1">
+							  <i class="icon_server_9"></i>
+							  <p>经典案例</p>
+						  </a>
+					  </li>
+					  <li>
+						  <a href="case.html?type=caseTab2">
+							  <i class="icon_server_10"></i>
+							  <p>施工直播</p>
+						  </a>
+					  </li>
+					  <li>
+						  <a href="designer.html">
+							  <i class="icon_server_11"></i>
+							  <p>设计师</p>
+						  </a>
+					  </li>
+				  </ul>
+			  </div>
+		  </li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="service.html">服务</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="quality_assurance.html">
+                        <i class="icon_server_6"></i>
+                        <p>品质保障</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="see_get.html">
+                        <i class="icon_server_7"></i>
+                        <p>所见即所得</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="financial_service.html">
+                        <i class="icon_server_8"></i>
+                        <p>金融服务</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="community.html">社区</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="javascript:;">关于我们</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="jinji_plus.html">
+                        <i class="icon_server_1"></i>
+                        <p>晋级+</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="business.html">
+                        <i class="icon_server_4"></i>
+                        <p>商务合作</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="join_us.html">
+                        <i class="icon_server_5"></i>
+                        <p>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+    	</ul>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+	<!--头部结束-->
+	<div class="rollpic">
+		<div class="rollpic_iframe">
+			<iframe class="vrIframe" scrolling="no" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="http://test.xytxw.com.cn/output/4.html"></iframe>
+		</div>
+	</div>
+
+	<!--套餐名-->
+	<div class="am-container margin-t20 clearfix">
+		<div class="freeName left">
+			<div class="freeName_title"><h4>倾心</h4></div>
+			<p class="freeName_text">北欧/现代 | 153.0㎡ | 三室两厅一厨两卫 | ￥88,281<span>577元/㎡</span></p>
+		</div>
+		<div class="right DIY_btn">
+			<button class="am-btn am-radius">马上DIY设计</button>
+		</div>
+		<div class="freeName_btn right">
+			<div class="pic_describe_num">
+    		<p style="text-align: right;"><span><i></i>7710</span><strong><i></i>1</strong></p>
+    		<div class="share" style="background: #fff;margin-bottom: 0px;">
+					<a href="#"><img src="img/weiboIcon.png"/></a>
+					<a href="#"><img src="img/QQIcon.png"/></a>
+					<a href="#"><img src="img/weixinIcon.png"/></a>
+				</div>
+    	</div>
+		</div>
+	</div>
+	<!--分割线-->
+	<div class="styleLine margin-t20"></div>
+	<!--全部物料-->
+	<div class="am-container margin-t20">
+		<div class="freeGoods">
+			<div class="clearfix">
+				<div class="freeName_title left"><strong>全部物料</strong></div>
+				<a class="right" target="_blank" href="materiel_page.html">查看更多>></a>
+			</div>
+			<div class="materielBox">
+				<a class="arrow-left" href="javascript:;"></a>
+				<a class="arrow-right" href="javascript:;"></a>
+				<div class="swiper-container margin-t12 materielBox_main">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods11.jpg"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods12.jpg"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods13.png"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods4.png"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods5.png"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods6.png"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods7.png"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+						<div class="swiper-slide freeGoods_img">
+							<img src="img/goods8.jpg"/><h3>水槽洗碗机</h3>
+							<div class="freeGoods_img_mask">
+								<p>水槽洗碗机</p>
+								<p>售价：￥2405.48</p>
+								<p>品牌：方太</p>
+								<p>品类：厨房-洗碗机</p>
+								<p>编码：WKW11-008-0115</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--详情-->
+	<div class="am-container clearfix margin-t12">
+		<div class="details">
+			<div class="freeName_title"><strong>详情</strong></div>
+			<div class="am-divider-dotted"></div>
+			<div class="details_1">
+				<h2>倾心</h2>
+				<p class="details_1_p1">简单洒脱，回归自然</p>
+				<p class="details_1_p2">北欧推崇人与自然、社会、环境的有机融合，在设计上注重功能、追求理性，将就简洁明朗的颜色，淡雅清爽的自然材质，线条流畅，不事雕琢。这一理念和我们追求的家
+的本源”居住“是相契合的。以低保和色彩为主辅以简明的白色进行点缀，避免浓艳色彩带来的视觉冲击，让你回家后放松紧绷一天的神经，融入到愉快的家居生活中。</p>
+				<img src="img/details1.jpg"/>
+			</div>
+		</div>
+	</div>
+	<div class="details_2">
+		<div class="am-full details_full margin-t20">
+			<div class="am-container">
+				<h3>客厅</h3>
+				<p>整体色调上保持北欧的淡雅清爽，灰白色地砖与蓝灰色墙面相呼应，带来质感上的提升，高质量、持久耐用，易维护。根据空气流动方向合理布置的空调，带来舒适温度的
+	同时保证最低的耗能，节能环保。</p>
+				<img src="img/details3.png"/>
+			</div>
+		</div>
+		<div class="am-container">
+			<h3>餐厅</h3>
+			<p>整体搭配浅色棉麻窗帘，温馨舒适，北欧风尽显。开放式的餐厅拥有更灵活的布局，最大化的提高空间使用率，原木吊灯散发出的暖光，可以让整个餐厅变得柔和有温度。</p>
+			<img src="img/details4.png"/>
+		</div>
+		<div class="am-full details_full margin-t20">
+			<div class="am-container">
+				<h3>主卧</h3>
+				<p>整体以蓝灰色和咖色为主体，搭配原木色地板，看上去干净，舒适，床造型简约干净，没有复杂的装饰。白色电视柜和深棕色的床与整个卧室的色调融合，双层遮光窗帘给
+	你一个更舒适，私密的休憩空间。</p>
+				<img src="img/details5.png"/>
+			</div>
+		</div>
+		<div class="am-container">
+			<h3>儿童房</h3>
+			<p>整体房间明亮，温馨，营造出一股淡淡的、粉粉的公主气质，壁纸采用植物胶，安全环保，吸顶灯的使用让空间看上去更大，灯光亮度保持在 3000-4000K (人眼最适色温)，
+	给孩子提供一个舒适的生活学习环境。</p>
+			<img src="img/details6.png"/>
+		</div>
+		<div class="am-container">
+			<h3>厨房</h3>
+			<p>我们收集国人身材数据、烹饪习惯，制定适合国人使用的厨房。清洗台顶部的射灯，提供明亮的光源便于仔细清洗食品。将清洗台安放在窗户前面，也让你在烹饪时欣赏窗
+	外的风景，感受室外清新的空气。</p>
+			<img src="img/details7.png"/>
+		</div>
+		<div class="am-container">
+			<h3>卫生间</h3>
+			<p>我们针对卫生间的使用场景对传统的卫生间空间进行重新优化，淋浴、马桶、洗漱台设置都是最符合用户使用习惯的。三者之间互不干扰，保证卫生间在多人使用过程中不
+	会互相干扰，最大化卫生间的使用率，告别早晨的慌乱。</p>
+			<img src="img/details8.png"/>
+		</div>
+		<div class="am-container" style="margin-bottom: 40px">
+			<h3>智能配置细节</h3>
+			<img src="img/details9.jpg"/>
+		</div>
+	</div>
+	
+	<!--<div class="am-container">
+		<div class="details_3">
+			<h2>即刻预约享钜惠</h2>
+			<b></b>
+			<div class="details_yuyue">
+				<input type="text" name="" id="" value="" placeholder="您的姓名" />
+				<input type="text" name="" id="" value="" placeholder="您的手机号" />
+				<button class="am-btn am-btn-warning am-radius">获取此套方案报价</button>
+			</div>
+		</div>
+	</div>-->
+<!--尾部开始-->
+	<footer class="footer">
+		<ul class="am-container">
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="jinji_plus.html">晋级+</a></li>
+						<li class="am-u-md-12"><a href="business.html">商务合作</a></li>
+						<li class="am-u-md-12"><a href="join_us.html">工作机会</a></li>
+						<li class="am-u-md-12"><a href="experience_city.html">体验城</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我服务</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="quality_assurance.html">品质保障</a></li>
+						<li class="am-u-md-12"><a href="financial_service.html">金融服务</a></li>
+						<li class="am-u-md-12"><a href="javascript:;">售后承诺</a></li>
+						<li class="am-u-md-12"><a href="see_get.html">所见即所得</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 line">
+				<div class="part-5-title">联系我们</div>
+				<div class="part-5-words2">
+					<span>联系地址：沈阳市铁西区云峰北街十三号（铁西百合家乐福三楼--晋级8000平体验馆）</span>
+					<span><i class="am-icon-phone contactPhone"></i><em>131-0988-6859</em></span>
+					<span>商务邮箱：jinjizhengzhuang@163.com</span>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 part-5-li2">
+				<div class="part-5-title" style="margin-bottom: 10px;">关注我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul clearfix">
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/appEWM.png"/>
+							<p>app下载</p>
+						</li>
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/weixin.png"/>
+							<p>官方微信</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<div class="clear"></div>
+		</ul>
+		<div class="copyright">
+			<p><i></i><span>辽公网安备 32015586630077号</span></p>
+			<p>辽ICP备14021018号&nbsp;&nbsp;|&nbsp;&nbsp;增值电信商务经营许可证：辽B2-20060312 </p>
+			<p>北京晋级华夏科技有限公司 &nbsp;&nbsp;版权所有</p>
+		</div>
+	</footer>
+<!--遮罩层-->
+		<div id="mask"></div>
+		<!--房屋定义-->
+		<div id="roomDefinition" style="display: none;">
+			<div class="roomDefinition_main">
+				<h2>房间定义</h2>
+				<ul>
+					<li>
+						<input class="int1" type="text" name="" id="" value="" placeholder="建筑面积" />
+					</li>
+					<li>
+						<select name="" class="sel1">
+							<option value="">新房</option>
+							<option value="">二手房</option>
+						</select>
+						<select name="" class="sel1">
+							<option value="">普通住宅</option>
+							<option value="">别墅</option>
+							<option value="">公寓</option>
+							<option value="">loft</option>
+						</select>
+					</li>
+					<li>
+						<select name="" class="sel2">
+							<option value="">套餐A</option>
+							<option value="">套餐B</option>
+							<option value="">套餐C</option>
+							<option value="">套餐D</option>
+						</select>
+					</li>
+					<li>
+						<div class="roomDefinition_main_div">
+							<input type="text" value="1" /><span>室</span>
+							<input type="text" value="1"/><span>厅</span>
+							<input type="text" value="1" /><span>厨</span>
+							<input type="text" value="1" /><span>卫</span>
+						</div>
+					</li>
+					<li class="am-divider-dotted"></li>
+					<li style="color: #999;">除了主卧 ，  另外的房间如何安排</li>
+					<li class="otherRoom">
+						<span class="active">次卧</span><span>子女房</span><span>老人房</span><span>书房</span>
+					</li>
+					<li style="color: #999;">选择硬装建材的不同配置</li>
+					<li class="A_package">
+						<span class="active">A5基准包</span><span>A7舒适包</span><span>A9轻奢包</span>
+					</li>
+					<li class="roomDefinition_main_btn">
+						<a href="DIY1.html" target="_blank">
+							<button class="am-btn am-radius">确定</button>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--<p class="decorate1"></p>
+			<p class="decorate2"></p>-->
+			<p class="decorate3"></p>
+		</div>
+</body>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/amazeui.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var swiper = new Swiper('.materielBox .swiper-container', {
+			  slidesPerView: 5,
+			  spaceBetween: 10,
+			  navigation: {
+				  nextEl: '.materielBox .arrow-right',
+				  prevEl: '.materielBox .arrow-left',
+			  },
+    	});
+    
+    $('.tab_ul1 li').click(function(){
+    	var _index = $(this).index();
+    	$(this).addClass('active').siblings().removeClass('active');
+    	$('.tab_ul2 li').eq(_index).show().siblings().hide();
+    });
+    
+    $('.DIY_btn').click(function(){
+    	$('#mask').show();
+    	$('#roomDefinition').slideDown();
+    });
+    
+	});
+</script>
+
+</html>

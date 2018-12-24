@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+  <meta charset="UTF-8">
+  <title>晋级整装--DIY</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  
+		<link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+		<link rel="stylesheet" href="/front/css/amazeui.css"/>
+		<link rel="stylesheet" href="/front/css/swiper.min.css"/>
+		<link rel="stylesheet" href="/front/css/style.css"/>
+	    <script src="/front/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="/front/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/front/js/public.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="/front/js/amazeui.min.js"></script>
+
+		<script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+			.back ul li{
+				display: block;
+			}
+			.styleUl_li{
+				position: relative;
+			}
+			.styleUl_li.active i{position: absolute;width: 40px;height:40px;display: inline-block;
+				background: url("/front/img/selectedIcon.png") no-repeat;top: 20px;right: 20px;z-index: 999;}
+			.styleUl_li.active b{position: absolute;width: 100%;height: 100%;background: rgba(0,0,0,.6);display: inline-block;
+			top: 0;left:0;z-index: 998;}
+		</style>
+</head>
+	<body onload="loadData()">
+	<div class="am-topbar header">
+		<div class="am-g">
+			<div class="am-container">
+				<div class="left jj-logo">
+					<img class="logo" src="img/logo.png"/>
+				</div>
+				<div class="right margin-t12">
+					<ul class="jj-menu">
+						<li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+						<li class="jj-menu-li"><a class="jj-menu-name" href="sigle_product.html">家装产品</a></li>
+						<li class="jj-menu-li"><a class="jj-menu-name" href="personal_center.html?type=sideBar1">个人中心</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+		<div class="am-g" style="min-height: 100%;">
+			<!--左边栏-->
+			<div class="leftSideBar">
+				<div class="flip">
+			      <div class="front">
+			      	<div class="front_top clearfix">
+			      		<h3 class="left" id="house_type"></h3>
+			      		<p class="right" id="case_acreage"></p>
+			      	</div>
+			      	<div class="am-divider-dotted"></div>
+			      	<div class="front_main">
+			      		<div class="front_main_top clearfix">
+			      			<span class="left">房间列表</span>
+								<!--<a class="right" href="#">修改</a>-->
+			      		</div>
+			      		<div class="front_main_content">
+			      			<ul id="front_main_contentUiId"></ul>
+			      		</div>
+			      	</div>
+					  <input type="hidden" id="product_id" name="product_id" value=""/>
+					  <input type="hidden" id="case_id" name="case_id" value=""/>
+					  <input type="hidden" id="house_user_id" name="house_user_id" value=""/>
+					  <input type="hidden" id="dict_id" name="dict_id" value="0"/>
+			      	<div class="front_btn">
+			      		<a onclick="createCase()" target="_blank"><button class="am-btn am-btn-warning">生成方案</button></a>
+			      	</div>
+			      </div>
+			      <div class="back">
+					  <form id="userChooseForm" method="post">
+						<ul id="chooseUL"></ul>
+					  </form>
+						<div class="back_btn">
+							<button class="am-btn am-btn1" onclick="canSet()">取消设置</button>
+							<button class="am-btn am-btn-warning am-btn2" onclick="saveSet()">保存设置</button>
+						</div>
+			      </div>
+			    </div>
+			</div>
+			<!--右边内容-->
+			<div class="rightContent">
+				<div class="rightContent_top">
+					<span class="active">1.选择图片</span><b>>>>></b><span>2.生成方案</span><b>>>>></b><span>3.预约设计</span>
+				</div>
+				<div class="rightContent_list">
+					<div class="rightContent_main" style="display: block;">
+						<div class="rightContent_center">
+							<div class="fenlei1 clearfix">
+								<label>装修风格：</label>
+								<ul class="clearfix" id="dictionaryUl"></ul>
+							</div>
+						</div>
+						<div class="rightContent_img">
+							<ul class="clearfix" id="styleUl"></ul>
+						</div>
+					</div>
+					</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		function updateStyle(img_id,house_user_id) {
+			var postData = {};
+			postData["house_user_id"]=  house_user_id;
+			postData["img_id"]= img_id;
+			requestPostFront("/flowController/updateStyleDefault",postData,
+					function (resultData){
+						var result = resultData.data;
+                        if(result<=0){
+							alert("系统异常~");
+						}
+					})
+		}
+
+
+		function getStyle(house_user_id,dict_id) {
+			var postData = {};
+			postData["house_user_id"]=  house_user_id;
+			postData["dict_id"]= dict_id;
+			requestPostFront("/flowController/queryStyleData",postData,
+					function (resultData){
+						var styles = resultData.data;
+						var base = resultData.base;
+						showData(styles,base);
+					})
+		}
+
+		function showData(styles,base) {
+			$("#styleUl").empty();
+			var str = '';
+			for(var i=0;i<styles.length;i++){
+				var style = styles[i];
+				if (style.img_id==style.id){
+					str  +='<li class="styleUl_li active">';
+				}else{
+					str  +='<li class="styleUl_li">';
+				}
+				str  += '<i></i>';
+				/*str  += '<b></b>';*/
+
+				str  +='<img onclick="updateStyle('+style.id+','+style.house_user_id+')" src="'+base+''+style.url+'" style="width: 220px;height: 200px;">';
+				str  +='</li>';
+			}
+
+			$("#styleUl").append(str);
+		}
+
+		function loadStyleData(dict_id,obj) {
+			$("#dict_id").val(dict_id);
+			var house_user_id = $("#house_user_id").val();
+			$(obj).addClass('active').siblings().removeClass('active');
+			getStyle(house_user_id,dict_id);
+		}
+		function loadStyle(house_user_id) {
+			$("#house_user_id").val(house_user_id);
+			$("#dict_id").val(0);
+			$('.front_main').delegate('.front_main_content li','click',function(){
+				var _index = $(this).index();
+				$('.rightContent_list .rightContent_main').eq(_index).show().siblings().hide();
+				$(this).addClass('active').siblings().removeClass('active');
+			});
+			$('.rightContent_center ul li').removeClass('active');
+			$('.rightContent_center ul li:first-child').addClass('active');
+			getStyle(house_user_id,0);
+
+		}
+		/**加载自定义户型菜单*/
+		function  loadData() {
+			$("#case_id").val(getRequestParam("case_id"));
+			var postData = {};
+			postData["case_id"]= $("#case_id").val();
+			requestPostFront("/flowController/queryHouseAndMaterialTreeAttr",postData,
+					function (resultData){
+						var cs = resultData.data.case;
+						$("#house_type").html(cs.house_type);
+					    $("#case_acreage").html("面积："+cs.acreage+"㎡");
+						var houseUsers = resultData.data.houseUsers;
+						if(houseUsers.length > 0){//用户自定义户型数据
+							$("#product_id").val(houseUsers[0].product_id);
+							$("#house_user_id").val(houseUsers[0].id);
+							$("#house_dictionary_id").val(houseUsers[0].house_dictionary_id);
+							$("#front_main_contentUiId").empty();
+							for(var i=0;i<houseUsers.length;i++){
+								var houseUser = houseUsers[i];
+								var trStr ='';
+								if(i==0){
+									trStr +='<li class="active">';
+								}else{
+									trStr +='<li>';
+								}
+								trStr +='<div onclick="loadStyle('+houseUser.id+')"><b>'+houseUser.name+'</b><span>'+houseUser.acreage+'㎡</span></div>';
+								trStr +='<i onclick="getData('+houseUser.id+')"></i>';
+								trStr +='</li>';
+								$("#front_main_contentUiId").append(trStr);
+							}
+						}
+
+						var dictionaries = resultData.data.dictionaries;
+						if (dictionaries.length>0){
+							var str = '<li class="active" onclick="loadStyleData(0,this)">不限</li>';
+							for (var i=0;i<dictionaries.length;i++){
+								var dictionary = dictionaries[i];
+								str +='<li onclick="loadStyleData('+dictionary.id+',this)">'+dictionary.name+'</li>';
+							}
+							$("#dictionaryUl").append(str);
+						}
+
+						var styles = resultData.data.styles;
+						if(styles.length>0){
+							var base = resultData.base;
+							showData(styles,base);
+						}
+					}
+			)
+		}
+
+		/**加载功能区*/
+		function getData(house_user_id) {
+			var postData = {};
+			postData["house_user_id"]= house_user_id;
+			requestPostFront("/flowController/queryHouseUserChoose",postData,
+					function (resultData){
+						var houseUserChoose = resultData.data;
+						$("#chooseUL").empty();
+						var str = '<li>';
+						str +='<div class="back_top clearfix">';
+						str +='<h3 class="left">'+houseUserChoose.name+'</h3>';
+						str +='<p class="right">' +
+								'<input type="hidden" name="house_user_id" id="house_user_id" value="'+house_user_id+'">' +
+								'<input style="width: 50px; color: #333" type="text" name="acreage" id="acreage" value="'+houseUserChoose.acreage+'">㎡</p>';
+						str +='</div>';
+						str +='<div class="am-divider-dotted"></div>';
+						str +='<div class="back_main">';
+						var list1 = houseUserChoose.houseUserChooseList;
+							for (var i=0;i<list1.length;i++){
+								var sub = list1[i];
+								str +='<dl class="dl'+i+' clearfix">';
+								str +='<dt>'+sub.name+'</dt>';
+								var list2 = sub.houseUserChooseList;
+								for (var j=0;j<list2.length;j++){
+									var item = list2[j];
+									if(item.default_v==1){
+										str +='<dd class="active"><i class="i'+j+' active"></i>'+item.name+'<input type="hidden" name="choose_id" value="'+item.id+'"/><input class="int2" type="hidden" name="default_v" value="1"/></dd>';
+									}else {
+										str +='<dd><i class="i'+j+'"></i>'+item.name+'<input type="hidden" name="choose_id" value="'+item.id+'"/><input class="int2" type="hidden" name="default_v" value="0" /></dd>';
+									}
+								}
+								str +='</dl>';
+							}
+						str +='</div>';
+						str +='</li>';
+						$("#chooseUL").append(str);
+					}
+			)
+
+			$('.leftSideBar .front').css('transform','rotateY(180deg)');
+			$('.leftSideBar .back').css('transform','rotateY(0deg)');
+			$('.leftSideBar .back ul li').show();
+		}
+
+		/**保存设置*/
+		function saveSet() {
+			var postData = $("#userChooseForm").serialize();
+			requestPostFront("/flowController/updateHouseUserChooseBatch",postData,
+					function (resultData){
+						var result = resultData.data;
+						if(result>0){
+							$('.leftSideBar .front').css('transform','rotateY(0deg)');
+							$('.leftSideBar .back').css('transform','rotateY(180deg)');
+							loadData();
+						}else {
+							alert("设置失败~");
+						}
+
+					}
+			)
+		}
+
+		/**取消设置*/
+		function canSet() {
+			$('.leftSideBar .front').css('transform','rotateY(0deg)');
+			$('.leftSideBar .back').css('transform','rotateY(180deg)');
+		}
+
+        function createCase() {
+            //
+            window.location.href="DIY2.html?case_id="+$("#case_id").val();
+        }
+
+	</script>
+	<script type="text/javascript">
+		$(function(){
+			$('.back').delegate('.back_main dl dd','click',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+				$(this).find('input.int2').val('1').parent().siblings().find('input.int2').val('0');
+			})
+
+			$('.rightContent').delegate('.styleUl_li','click',function(){
+				$(this).addClass('active').siblings().removeClass('active');
+			})
+		});
+	</script>
+
+</html>

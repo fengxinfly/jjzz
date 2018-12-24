@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+  <meta charset="UTF-8">
+  <title>晋级整装--物流信息</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  
+  <link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+  <link rel="stylesheet" href="css/amazeui.css"/>
+  <link rel="stylesheet" href="css/swiper.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/amazeui.min.js"></script>
+  <script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #f3f3f3;">
+	<div class="fixedSlide">
+  	<ul>
+  		<li class="fixedSlide_1">
+  			<i></i><p>联系客服</p>
+  		</li>
+  		<li class="fixedSlide_2">
+  			<i></i><p>下载APP</p>
+  			<div class="fixedSlide_2_down">
+  				<img src="img/appDownQR.png"/>
+  			</div>
+  		</li>
+  		<li class="fixedSlide_3">
+  			<i></i><p>立即预约</p>
+  		</li>
+  		<li class="fixedSlide_4 toTop" style="display: none;">
+  			<i></i><p>返回顶部</p>
+  		</li>
+  	</ul>
+  </div>
+	<div class="am-topbar header">
+		<div class="am-g tr-login-topbar">
+	    <div class="am-container">
+	      <div class="am-fr am-text-xs am-margin-right-sm" id="loginPanel">
+	        	<a class="login" href="sign.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="register" href="javascript:;">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  target="_blank" href="shopping_cart.html" class="shoppingCart"><span class="am-icon-shopping-cart"><i></i></span>购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+	        	<div class="am-hoverDown">
+              <a class="am-hoverDown-title" href="javascript:;">个人中心 <span class="am-icon-angle-down"></span></a>
+              <ul class="am-hoverDown-caption">
+                <li><a target="_blank" href="personal_center.html?type=sideBar1">个人信息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar2">我的预约</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar3">我的订单</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar4">我的方案</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar9">地址管理</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar5">我的收藏</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar6">我的红包</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar7">我的消息</a></li>
+                <li><a target="_blank" href="personal_center.html?type=sideBar8">我的社区</a></li>
+              </ul>
+            </div>
+	        	<div id="appDown">
+	        		<p>APP下载</p>
+	        		<div class="appDownQRcode">
+	        			<img src="img/erweima.png"/>
+	        			<h4>扫一扫下载APP</h4>
+	        		</div>
+	        	</div>
+	      </div>
+	    </div>
+	 </div>
+	 	<div class="am-g">
+		<div class="am-container">
+			<div class="left jj-logo">
+			  <img class="logo" src="img/logo.png"></img>
+	   </div>
+	  <div class="right margin-t12">
+      <ul class="jj-menu clearfix">
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="javascript:;">产品</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="product.html">
+                        <i class="icon_server_1"></i>
+                        <p>整装甄品</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="full_house.html">
+                        <i class="icon_server_3"></i>
+                        <p>全屋定制</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="sigle_product.html">
+                        <i class="icon_server_2"></i>
+                        <p>精选单品</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+	      </li>
+          <li class="jj-dropdown jj-menu-li">
+              <a class="jj-menu-name" href="javascript:;">体验城</a>
+              <div class="nav-child">
+                  <ul class="clearfix">
+                      <li>
+                          <a href="experience_city.html">
+                              <i class="icon_server_12"></i>
+                              <p>了解体验城</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="enter_business.html">
+                              <i class="icon_server_13"></i>
+                              <p>入驻商家</p>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
+          <li class="jj-dropdown jj-menu-li">
+              <a class="jj-menu-name" href="case.html">案例</a>
+              <div class="nav-child">
+                  <ul class="clearfix">
+                      <li>
+                          <a href="case.html?type=caseTab1">
+                              <i class="icon_server_9"></i>
+                              <p>经典案例</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="case.html?type=caseTab2">
+                              <i class="icon_server_10"></i>
+                              <p>施工直播</p>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="designer.html">
+                              <i class="icon_server_11"></i>
+                              <p>设计师</p>
+                          </a>
+                      </li>
+                  </ul>
+              </div>
+          </li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="service.html">服务</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="quality_assurance.html">
+                        <i class="icon_server_6"></i>
+                        <p>品质保障</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="see_get.html">
+                        <i class="icon_server_7"></i>
+                        <p>所见即所得</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="financial_service.html">
+                        <i class="icon_server_8"></i>
+                        <p>金融服务</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+	      <li class="jj-menu-li"><a class="jj-menu-name" href="community.html">社区</a></li>
+	      <li class="jj-dropdown jj-menu-li">
+	      	<a class="jj-menu-name" href="javascript:;">关于我们</a>
+	      	<div class="nav-child">
+            <ul class="clearfix">
+                <li>
+                    <a href="jinji_plus.html">
+                        <i class="icon_server_1"></i>
+                        <p>晋级+</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="business.html">
+                        <i class="icon_server_4"></i>
+                        <p>商务合作</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="join_us.html">
+                        <i class="icon_server_5"></i>
+                        <p>加入我们</p>
+                    </a>
+                </li>
+            </ul>
+        	</div>
+	      </li>
+    	</ul>
+	  </div>
+	  </div>
+	  </div>
+	</div>
+	<!--购物车-->
+	<div class="am-container margin-t120">
+		<!--面包屑-->
+		<ol class="am-breadcrumb">
+		    <li><a href="index.html">首页</a></li>
+            <li><a href="personal_center.html?type=sideBar3">我的订单</a></li>
+            <li class="am-active">订单号<span></span></li>
+		</ol>
+        <div class="log_info">
+            <div class="rec_info_title">
+                <h2>物流信息</h2>
+            </div>
+            <div class="am-divider-dotted"></div>
+            <div class="clearfix log_info_main">
+                <div class="left log_info_main_left">
+                    <div class="log_info_main_left_top am-text-center">
+                        <p id="orderCode"></p>
+                        <h2 id="orderStatusDesc"></h2>
+                        <div>
+                            <!--<button class="am-btn am-radius am-jj-btn">确认收货</button>-->
+                        </div>
+                        <div class="clearfix margin-t12" id="operateType">
+                            <p class="left"><a href="#">延长收货时间</a></p>
+                            <p class="right"><a href="#">申请退款</a></p>
+                        </div>
+                    </div>
+                    <div class="log_info_main_left_bottom">
+                        <div>
+                            <h4>收货人信息</h4>
+                            <p>
+                                <label>收货人：</label>
+                                <span id="realName">石先生</span>
+                            </p>
+                            <p class="clearfix">
+                                <label class="left">收货地址：</label>
+                                <span class="right" id="addrAll">北京市朝阳区建外SOHO6号楼6305</span>
+                            </p>
+                            <p>
+                                <label>手机号码：</label>
+                                <span id="phone">136****2100</span>
+                            </p>
+                        </div>
+                        <div class="margin-t20">
+                            <div class="clearfix">
+                                <h4 class="left">发票信息</h4>
+                                <a class="right" href="#">修改</a>
+                            </div>
+
+                            <p>
+                                <label>发票类型：</label>
+                                <span id="invoiceType">普通发票</span>
+                            </p>
+                            <p>
+                                <label>发票抬头：</label>
+                                <span id="invoiceTitle">个人</span>
+                            </p>
+ <!--                           <p>
+                                <label>发票内容：</label>
+                                <span>商品明细</span>
+                            </p>-->
+                            <p id="invoiceCode" style="display: none">
+                                <label>发票代码：</label>
+                                <span>021001800111</span>
+                            </p>
+                            <p id="invoiceNum" style="display: none">
+                                <label>发票号码：</label>
+                                <span>22690414</span>
+                            </p>
+                            <p style="display: none">
+                                <label>纳税人识别号：</label>
+                                <span id="identificationCode">22690414</span>
+                            </p>
+                            <b id="invoiceDesc">电子发票将在订单完成后1-2天内开具</b>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="right log_info_main_right">
+                    <p class="log_caption" style="display: none;">物流公司：<span>圆通速递</span>运单号：<span>888951790113802710</span></p>
+                    <ul class="clearfix log_info_main_right_ul1 margin-t20">
+                        <li class="log_info_main_right_li1 active">
+                            <p class="caption">提交订单</p>
+                            <strong class="strong1"></strong>
+                            <p class="time">2018-04-02 10:23:32</p>
+                            <i></i>
+                        </li>
+                        <li class="log_info_main_right_li1 active">
+                            <p class="caption">付款成功</p>
+                            <strong class="strong2"></strong>
+                            <p class="time">2018-04-02 10:23:32</p>
+                            <i></i>
+                        </li>
+                        <li class="log_info_main_right_li1 active">
+                            <p class="caption">商品发货</p>
+                            <strong class="strong3"></strong>
+                            <p class="time">2018-04-02 10:23:32</p>
+                            <i></i>
+                        </li>
+                        <li class="log_info_main_right_li1">
+                            <p class="caption">等待收货</p>
+                            <strong class="strong4"></strong>
+                            <i></i>
+                        </li>
+                        <li class="log_info_main_right_li1">
+                            <p class="caption">完成</p>
+                            <strong class="strong5"></strong>
+                        </li>
+                    </ul>
+                    <div class="log_info_main_right_box">
+                        <div class="about4_main">
+                            <div class="line"></div>
+                            <ul>
+ <!--                               <li class="active">
+                                   <span>2018-04-08/周日</span> 23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>
+                                <li>
+                                    23:40:49 【广州市】您的订单在【广州黄浦分拣中心】发货完成，准备送往【北京市】
+                                </li>-->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mainContent_ol_ul_li log_mainContent" style="background: #fff;">
+            <div class="clearfix mainContent_ol_ul_li_header">
+                <p class="left">预约编号：DD20180228001078</p>
+                <p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p>
+            </div>
+            <div class="mainContent_ol_ul_li_content clearfix">
+                <div class="mainContent_ol_ul_li_content_left order">
+                    <div class="clearfix mainContent_ol_ul_li_content_left_div">
+                        <div class="order_img order">
+                            <img class="am-g" src="img/danpin1.png"/>
+                        </div>
+                        <div class="order_caption order margin-t12 am-text-left">
+                            <p>索菲亚经典百叶衣柜定制</p>
+                            <p>尺寸：1500mm*2000mm</p>
+                            <p>颜色：湖蓝色</p>
+                        </div>
+                        <div class="order_num order margin-t30">×2</div>
+                        <div class="order_price order am-text-danger margin-t30">￥799.00</div>
+                    </div>
+                    <div class="clearfix mainContent_ol_ul_li_content_left_div">
+                        <div class="order_img order">
+                            <img class="am-g" src="img/danpin1.png"/>
+                        </div>
+                        <div class="order_caption order margin-t12 am-text-left">
+                            <p>索菲亚经典百叶衣柜定制</p>
+                            <p>尺寸：1500mm*2000mm</p>
+                            <p>颜色：湖蓝色</p>
+                        </div>
+                        <div class="order_num order margin-t30">×2</div>
+                        <div class="order_price order am-text-danger margin-t30">￥799.00</div>
+                    </div>
+                </div>
+                <div class="orderLine"></div>
+                <div class="order_operation order margin-t30 am-text-center">
+                    <h3 class="am-text-danger am-text-lg">￥1598.00</h3>
+                </div>
+                <div class="orderLine"></div>
+                <div class="order_operation order margin-t30 am-text-center">
+                    <p>待确定收货</p>
+                    <h3 id="dayTime"></h3>
+                </div>
+            </div>
+        </div>
+	</div>
+
+
+    <footer class="footer">
+        <ul class="am-container">
+            <li class="am-u-md-2 line">
+                <div class="part-5-title">关于我们</div>
+                <div class="part-5-words2">
+                    <ul class="part-5-words2-ul">
+                        <li class="am-u-md-12"><a href="jinji_plus.html">晋级+</a></li>
+                        <li class="am-u-md-12"><a href="business.html">商务合作</a></li>
+                        <li class="am-u-md-12"><a href="join_us.html">工作机会</a></li>
+                        <li class="am-u-md-12"><a href="experience_city.html">体验城</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </li>
+            <li class="am-u-md-2 line">
+                <div class="part-5-title">关于我服务</div>
+                <div class="part-5-words2">
+                    <ul class="part-5-words2-ul">
+                        <li class="am-u-md-12"><a href="quality_assurance.html">品质保障</a></li>
+                        <li class="am-u-md-12"><a href="financial_service.html">金融服务</a></li>
+                        <li class="am-u-md-12"><a href="javascript:;">售后承诺</a></li>
+                        <li class="am-u-md-12"><a href="see_get.html">所见即所得</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+            </li>
+            <li class="am-u-lg-4 am-u-md-4 line">
+                <div class="part-5-title">联系我们</div>
+                <div class="part-5-words2">
+                    <span>联系地址：沈阳市铁西区云峰北街十三号（铁西百合家乐福三楼--晋级8000平体验馆）</span>
+                    <span><i class="am-icon-phone contactPhone"></i><em>131-0988-6859</em></span>
+                    <span>商务邮箱：jinjizhengzhuang@163.com</span>
+                </div>
+            </li>
+            <li class="am-u-lg-4 am-u-md-4 part-5-li2">
+                <div class="part-5-title" style="margin-bottom: 10px;">关注我们</div>
+                <div class="part-5-words2">
+                    <ul class="part-5-words2-ul clearfix">
+                        <li class="am-u-lg-6 am-u-md-6">
+                            <img src="img/appEWM.png"/>
+                            <p>app下载</p>
+                        </li>
+                        <li class="am-u-lg-6 am-u-md-6">
+                            <img src="img/weixin.png"/>
+                            <p>官方微信</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <div class="copyright">
+            <p><i></i><span>辽公网安备 32015586630077号</span></p>
+            <p>辽ICP备14021018号&nbsp;&nbsp;|&nbsp;&nbsp;增值电信商务经营许可证：辽B2-20060312 </p>
+            <p>北京晋级华夏科技有限公司 &nbsp;&nbsp;版权所有</p>
+        </div>
+    </footer>
+	</body>
+	<script type="text/javascript">
+        $(function(){
+            var h = $(".about4_main ul li:first-child").height()/2;<!--第一个li高度的一半-->
+            var h1 = $(".about4_main ul li:last-child").height()/2;<!--最后一个li高度的一半-->
+            //alert(h+'+'+h1);
+            $(".log_info_main_right_box .line").css("top",h);
+            $(".log_info_main_right_box .line").height($(".about4_main").height()-h1-h);
+
+
+            $('.orderLine').each(function(){
+                var oHeight = $(this).parent().height();
+                $(this).height(oHeight);
+
+
+               countDown(2018,6,1,0,0,0,'#dayTime');
+                var timer = setInterval(function(){
+                    countDown(2018,6,1,0,0,0,'#dayTime');
+                },1000);
+            });
+            initOrderInfo();
+        });
+        //根据订单状态初始化订单信息
+        function initOrderInfo() {
+            var param = GetRequest();
+            var orderId = param["orderId"];
+            console.log(orderId);
+
+            requestPostFront("/personalCenter/queryOrderDetailById",{"orderId":orderId},function (resultData){
+                    if(resultData){
+                        console.log(resultData);
+                        var addr = resultData.addr;
+                        $("#realName").text(addr.realName);
+                        $("#addrAll").text(addr.addrAll);
+                        $("#phone").text(addr.phone);
+                        var invoice = resultData.invoice;
+                        var order = resultData.order;
+                        $(".am-breadcrumb").children().eq(2).after(order.orderCode);
+                        var orderStatus = order.orderStatus;
+                        getInvoiceDesc(invoice,orderStatus);
+                        setLogisticsStep(orderStatus);
+                        $("#orderCode").text("订单号：" + order.orderCode);
+                        orderStatusDesc(orderStatus)
+                        var list = resultData.list;
+                        var orderMaterial = [];
+                        orderMaterial.push('<div class="clearfix mainContent_ol_ul_li_header">');
+                        orderMaterial.push('<p class="left">订单号：'+order.orderCode+'</p>');
+                        orderMaterial.push('<p class="left contact_kefu">联系客服<span class="am-icon-bell am-text-warning"></span></p></div>');
+
+                        orderMaterial.push('<div class="mainContent_ol_ul_li_content clearfix">');
+                        orderMaterial.push('<div class="mainContent_ol_ul_li_content_left order">');
+                        for(var i in list){
+                            orderMaterial.push('<div class="clearfix mainContent_ol_ul_li_content_left_div">');
+                            var url = list[i].url;
+                            var materialName = list[i].materialName;
+                            var num = list[i].num;
+                            var price = list[i].price;
+                            if(url){
+                                //orderMaterial.push('<div class="order_img order"><img class="am-g" src="'+url+'"></div>');
+                                orderMaterial.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                            }else{
+                                orderMaterial.push('<div class="order_img order"><img class="am-g" src="img/danpin1.png"></div>');
+                            }
+
+                            orderMaterial.push('<div class="order_caption order margin-t12 am-text-left">');
+                            orderMaterial.push('<p>'+materialName+'</p>');
+                            var skuValueList = list[i].skuValueList;
+                            for(var j in skuValueList){
+                                orderMaterial.push('<p title="'+skuValueList[j].value+'">'+skuValueList[j].key+'：'+skuValueList[j].value+'</p>');
+                            }
+
+                            orderMaterial.push('</div>');
+                            orderMaterial.push('<div class="order_num order margin-t30">×'+num+'</div>');
+                            orderMaterial.push('<div class="order_price order am-text-danger margin-t30">￥'+price+'</div>');
+
+                            orderMaterial.push('</div>');
+                        }
+                        orderMaterial.push('</div>');
+                        orderMaterial.push('<div class="orderLine"></div>');
+                        orderMaterial.push('<div class="order_operation order margin-t30 am-text-center"><h3 class="am-text-danger am-text-lg">￥'+order.realTransPrice+'</h3></div>');
+                        orderMaterial.push('<div class="orderLine"></div>');
+                        if(orderStatus == 0){
+                            orderMaterial.push('<div class="order_operation order margin-t30 am-text-center"><p>待确定收货</p><h3 id="dayTime">041天08时29分56秒</h3></div>');
+                        }else if(orderStatus == 1){
+                            orderMaterial.push('<div class="order_operation order margin-t30 am-text-center"><p>待确定收货</p><h3 id="dayTime">041天08时29分56秒</h3></div>');
+                        }else if(orderStatus == 3){
+                            orderMaterial.push('<div class="order_operation order margin-t30 am-text-center"><p>交易完成</p></div>');
+                        }
+                        orderMaterial.push('</div>');
+                        $(".log_mainContent").html(orderMaterial.join(''));
+                        $('.orderLine').each(function(){
+                            var oHeight = $(this).parent().height();
+                            $(this).height(oHeight);
+                        });
+                    }
+                }
+            )
+        }
+
+        /**
+         * 订单状态描述方法
+         */
+        function orderStatusDesc(orderStatus) {
+            if(orderStatus == -1){
+                $("#orderStatusDesc").text("交易取消");
+                $("#orderStatusDesc").next().html('');
+                $("#operateType").hide();
+            }else if(orderStatus == 0){
+                $("#orderStatusDesc").text("等待付款");
+                $("#orderStatusDesc").next().html('<button class="am-btn am-radius am-jj-btn">立即付款</button>');
+                $("#operateType").hide();
+            }else if(orderStatus == 1){
+                $("#orderStatusDesc").text("等待收货");
+                $("#orderStatusDesc").next().html('<button class="am-btn am-radius am-jj-btn">确认收货</button>');
+                $("#operateType").show();
+            }else if(orderStatus == 3){
+                $("#orderStatusDesc").text("完成");
+                $("#orderStatusDesc").next().html('<button class="am-btn am-radius am-jj-btn">评价</button>');
+                $("#operateType").show();
+                $("#operateType").children().eq(0).remove();
+            }
+        }
+
+        /**
+         * 设置物流信息描述
+         */
+        function setLogisticsStep(orderStatus) {
+            if(orderStatus == -1){
+                $(".log_info_main_right_li1").removeClass("active");
+            }else if(orderStatus == 0){
+                $(".log_info_main_right_li1").removeClass("active");
+                $(".log_info_main_right_li1").eq(0).addClass("active");
+            }else if(orderStatus == 1){
+                $(".log_info_main_right_li1").removeClass("active");
+                $(".log_info_main_right_li1").eq(0).addClass("active");
+                $(".log_info_main_right_li1").eq(1).addClass("active");
+            }else if(orderStatus == 2){
+                $(".log_info_main_right_li1").addClass("active");
+                $(".log_info_main_right_li1").eq(4).removeClass("active");
+            }else if(orderStatus == 3){
+                $(".log_info_main_right_li1").addClass("active")
+            }
+        }
+        /**
+         * 发票描述
+         */
+        function getInvoiceDesc(invoice,orderStatus) {
+            var invoiceDesc = [];
+            if(invoice){
+                var invoiceMode = invoice.invoiceMode;
+                var invoiceTitle = invoice.invoiceTitle;
+                var invoiceType = invoice.invoiceType;
+                var typeDesc = "";
+                if(invoiceMode == 1){
+                    typeDesc += "电子";
+                }
+                if(invoiceType == 0){
+                    typeDesc += "普通发票";
+                    $("#invoiceType").text(typeDesc);
+                }else{
+                    typeDesc += "增值税专用发票";
+                    $("#invoiceType").text(typeDesc);
+                }
+                if(invoiceTitle == 0){
+                    var name = invoice.name;
+                    if(name){
+                        $("#invoiceTitle").text(name);
+                    }else{
+                        $("#invoiceTitle").text("个人");
+                    }
+                }else{
+                    $("#invoiceTitle").text(name);
+                    var identificationCode = invoice.identificationCode;
+                    if(identificationCode){
+                        $("#identificationCode").parent().show();
+                        $("#identificationCode").text(identificationCode);
+                    }
+                }
+            }else{
+                $("#invoiceType").text("不开发票");
+                $("#invoiceType").parent().prev().children("a").remove();
+                $("#invoiceTitle").parent().remove();
+                $("#invoiceType").parent().parent().children().last().remove();
+            }
+        }
+
+        /**
+         * 获取地址栏参数
+         * @returns {{}}
+         * @constructor
+         */
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = {};
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+	</script>
+</html>

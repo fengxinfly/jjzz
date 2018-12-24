@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html>
+	<head lang="en">
+  <meta charset="UTF-8">
+  <title>晋级整装--提交订单</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  
+  <link rel="alternate icon" type="img/xytxw.ico" href="img/logo.ico">
+  <link rel="stylesheet" href="css/amazeui.css"/>
+  <link rel="stylesheet" href="css/swiper.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/areaData.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/amazeui.min.js"></script>
+  <script src="js/jquery.base64.js"></script>
+  <script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: #f3f3f3;">
+	<div class="fixedSlide">
+  	<ul>
+  		<li class="fixedSlide_1">
+  			<i></i><p>联系客服</p>
+  		</li>
+  		<li class="fixedSlide_2">
+  			<i></i><p>下载APP</p>
+  			<div class="fixedSlide_2_down">
+  				<img src="img/appDownQR.png"/>
+  			</div>
+  		</li>
+  		<li class="fixedSlide_3">
+  			<i></i><p>立即预约</p>
+  		</li>
+  		<li class="fixedSlide_4 toTop" style="display: none;">
+  			<i></i><p>返回顶部</p>
+  		</li>
+  	</ul>
+  </div>
+	<div class="am-topbar header">
+		<div class="am-g tr-login-topbar">
+			<div class="am-container">
+				<div class="am-fr am-text-xs am-margin-right-sm" id="loginPanel">
+					<a class="login" href="sign.html">登录</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a class="register" href="javascript:;">注册</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a  target="_blank" href="shopping_cart.html" class="shoppingCart"><span class="am-icon-shopping-cart"><i></i></span>购物车</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<div class="am-hoverDown">
+						<a class="am-hoverDown-title" href="javascript:;">个人中心 <span class="am-icon-angle-down"></span></a>
+						<ul class="am-hoverDown-caption">
+							<li><a target="_blank" href="personal_center.html?type=sideBar1">个人信息</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar2">我的预约</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar3">我的订单</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar4">我的方案</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar9">地址管理</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar5">我的收藏</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar6">我的红包</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar7">我的消息</a></li>
+							<li><a target="_blank" href="personal_center.html?type=sideBar8">我的社区</a></li>
+						</ul>
+					</div>
+					<div id="appDown">
+						<p>APP下载</p>
+						<div class="appDownQRcode">
+							<img src="img/erweima.png"/>
+							<h4>扫一扫下载APP</h4>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="am-g">
+			<div class="am-container">
+				<div class="left jj-logo">
+					<img class="logo" src="img/logo.png"></img>
+				</div>
+				<div class="right margin-t12">
+					<ul class="jj-menu clearfix">
+						<li class="jj-menu-li"><a class="jj-menu-name" href="index.html">首页</a></li>
+						<li class="jj-dropdown jj-menu-li">
+							<a class="jj-menu-name" href="javascript:;">产品</a>
+							<div class="nav-child">
+								<ul class="clearfix">
+									<li>
+										<a href="product.html">
+											<i class="icon_server_1"></i>
+											<p>整装甄品</p>
+										</a>
+									</li>
+									<li>
+										<a href="full_house.html">
+											<i class="icon_server_3"></i>
+											<p>全屋定制</p>
+										</a>
+									</li>
+									<li>
+										<a href="sigle_product.html">
+											<i class="icon_server_2"></i>
+											<p>精选单品</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="jj-dropdown jj-menu-li">
+							<a class="jj-menu-name" href="javascript:;">体验城</a>
+							<div class="nav-child">
+								<ul class="clearfix">
+									<li>
+										<a href="experience_city.html">
+											<i class="icon_server_12"></i>
+											<p>了解体验城</p>
+										</a>
+									</li>
+									<li>
+										<a href="enter_business.html">
+											<i class="icon_server_13"></i>
+											<p>入驻商家</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="jj-dropdown jj-menu-li">
+							<a class="jj-menu-name" href="case.html">案例</a>
+							<div class="nav-child">
+								<ul class="clearfix">
+									<li>
+										<a href="case.html?type=caseTab1">
+											<i class="icon_server_9"></i>
+											<p>经典案例</p>
+										</a>
+									</li>
+									<li>
+										<a href="case.html?type=caseTab2">
+											<i class="icon_server_10"></i>
+											<p>施工直播</p>
+										</a>
+									</li>
+									<li>
+										<a href="designer.html">
+											<i class="icon_server_11"></i>
+											<p>设计师</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="jj-dropdown jj-menu-li">
+							<a class="jj-menu-name" href="service.html">服务</a>
+							<div class="nav-child">
+								<ul class="clearfix">
+									<li>
+										<a href="quality_assurance.html">
+											<i class="icon_server_6"></i>
+											<p>品质保障</p>
+										</a>
+									</li>
+									<li>
+										<a href="see_get.html">
+											<i class="icon_server_7"></i>
+											<p>所见即所得</p>
+										</a>
+									</li>
+									<li>
+										<a href="financial_service.html">
+											<i class="icon_server_8"></i>
+											<p>金融服务</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+						<li class="jj-menu-li"><a class="jj-menu-name" href="community.html">社区</a></li>
+						<li class="jj-dropdown jj-menu-li">
+							<a class="jj-menu-name" href="javascript:;">关于我们</a>
+							<div class="nav-child">
+								<ul class="clearfix">
+									<li>
+										<a href="jinji_plus.html">
+											<i class="icon_server_1"></i>
+											<p>晋级+</p>
+										</a>
+									</li>
+									<li>
+										<a href="business.html">
+											<i class="icon_server_4"></i>
+											<p>商务合作</p>
+										</a>
+									</li>
+									<li>
+										<a href="join_us.html">
+											<i class="icon_server_5"></i>
+											<p>加入我们</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--购物车-->
+	<div class="am-container margin-t120">
+		<!--面包屑-->
+		<ol class="am-breadcrumb">
+		  <li><a href="#">首页</a></li>
+		  <li class="am-active">购物车</li>
+		</ol>
+		<!--收货信息-->
+		<div class="rec_info">
+			<div class="rec_info_title">
+				<h2>收货信息</h2>
+			</div>
+			<div class="am-divider-dotted"></div>
+			<div class="rec_info_content">
+				<div class="rec_info_content_div1">
+					<span><i></i>默认</span>
+					<a target="_blank" href="personal_center.html?type=sideBar9"><button class="am-btn am-round">地址管理</button></a>
+				</div>
+				<div class="clearfix rec_info_content_div2 margin-t20">
+					<div class="am-u-md-9 rec_info_content_div2_left">
+						<ul></ul>
+					</div>
+					<div class="am-u-md-3 rec_info_content_div2_right">
+						<a href="javascript:;" id="switchBtn">切换地址</a>
+						<button class="am-btn am-round" id="newAddr"><i class="am-icon-plus"></i>新建地址</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cartTable margin-t20" style="padding: 20px;">
+				<table border="0">
+					<thead id="theadList">
+						<tr>
+							<th width="10%">商品信息</th>
+							<th width="40%"></th>
+							<th width="15%">单价</th>
+							<th width="20%">数量</th>
+							<th width="15%">小计</th>
+						</tr>
+					</thead>
+					<tbody id="tbodyList">
+					</tbody>
+				</table>
+			</div>
+		<div class="fapiao">
+			<p class="am-relative">发票信息<i></i></p>
+			<div class="fapiao_caption margin-t12">
+				<span>不开发票</span>
+				<a href="javascript:;" class="am-text-primary modify">修改</a>
+			</div>
+		</div>
+		<div class="placeOrder">
+			<div class="clearfix placeOrder_top">
+				<div class="am-u-md-5 placeOrder_top_right right">
+					<p>给我们留言</p>
+					<input type="text" name="" id="" value="" placeholder="选填：对本次交易的说明" />
+				</div>
+			</div>
+			<div class="placeOrder_bottom clearfix margin-t20">
+				<div class="right am-u-md-3 am-text-right">
+					<p>实付款：<b>￥</b></p>
+					<button class="am-btn am-radius" id="createOrderBtn">提交订单</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="mask"></div>
+	<!--新建地址-->
+	<div class="newAddress">
+		<div class="newAddress_hd clearfix">
+			<h2 class="left">收货信息</h2>
+			<i class="am-icon-remove right"></i>
+		</div>
+		<div class="am-divider-dotted"></div>
+		<div class="newAddress_bd">
+				<ul>
+					<li class="clearfix">
+						<span class="left">
+							<label>收货人：</label>
+							<input type="text"  id="realName"/>
+						</span>
+						<span class="right">
+							<label>联系方式：</label>
+							<input type="text"  id="phone"/>
+						</span>
+					</li>
+					<li>
+						<label>所在区域：</label>
+						<select name="" class="sheng" id="province">
+							<option value="0">--省--</option>
+						</select>
+						<select name="" class="shi" id="city" disabled="true">
+							<option value="0">--市区--</option>
+						</select>
+						<select name="" class="xian" id="district" disabled="true">
+							<option value="0">--县镇--</option>
+						</select>
+					</li>
+					<li>
+						<label>详细地址：</label>
+						<input type="text" id="addr"/>
+					</li>
+					<li>
+						<label class="ui-checkbox" style="margin-left: 80px;"><input type="checkbox" id="isDefault"><span></span></label>
+						<span>设为默认值</span>
+					</li>
+					<li class="am-text-center">
+						<button class="am-btn am-btn-warning am-radius" onclick="saveUserAddr();">确定</button>
+						<button class="am-btn am-radius" id="userAddrCancel">取消</button>
+					</li>
+				</ul>
+		</div>
+	</div>
+	<!--地址切换-->
+	<div class="switchAddress">
+		<div class="switchAddress_hd clearfix">
+			<h2 class="left">选择地址</h2>
+			<i class="am-icon-remove right"></i>
+		</div>
+		<div class="am-divider-dotted"></div>
+		<div class="switchAddress_bd">
+			<ul class="clearfix"></ul>
+			<div class="am-text-center margin-t12">
+				<button class="am-btn am-btn-warning am-radius" id="addrSelection">确定</button>
+				<button class="am-btn am-radius" id="addrCancel">取消</button>
+			</div>
+		</div>
+	</div>
+	<!--发票信息-->
+	<div class="fapiaoPopup">
+		<div class="fapiaoPopup_hd clearfix">
+			<h2 class="left">发票信息</h2>
+			<i class="right am-icon-close"></i>
+		</div>
+		<div class="fapiaoPopup_bd">
+			<p  class="fapiaoPopup_bd_caption">发票须知: 1.依照税局最新开票法规,纸质普通发票和电子普通发票,开具内容均为明细  2.开票金额为用户实际支付的金额（不含礼品卡与不支持该发票类型的商品实付金额）  3.单笔订单只支持开具一种类型的发票4. 电子发票开票成功后,在“订单详情页”或“申请售后-联系客服”下载  5.补开纸质普通发票、增值税专用发票,在提交开票信息后15~30个工作日单独寄送.  如有时间特殊要求建议选择开具电子发票  6.未随箱寄出的纸质发票会在发货后15-30个工作日单独寄出  7.增值税专用发票将会在所有包裹发货后15-30个工作日单独寄出  8.年购订单发票随每期子单寄</p>
+			<div class="fapiaoPopup_bd_main">
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list2">
+					<label class="left">是否开据</label>
+					<div class="left">
+						<span class="WithoutInvoicing active">不开发票</span>
+						<span class="DrawBill">开发票</span>
+					</div>
+				</div>
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list3">
+					<label class="left">发票方式</label>
+					<div class="left">
+						<span class="Paper">纸质</span>
+						<span class="Electronic">电子</span>
+					</div>
+				</div>
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list4">
+					<label class="left">发票类型</label>
+					<div class="left">
+						<span class="plainInvoice">普通发票</span>
+						<span class="VAT_invoice">增值税专用发票</span>
+					</div>
+				</div>
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list1">
+					<label class="left">发票抬头</label>
+					<div class="left">
+						<span class="personal">个人</span>
+						<span class="company">单位</span>
+					</div>
+				</div>
+
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list5" style="display: none;">
+					<label class="left"><i class="am-icon-asterisk am-text-sm am-text-danger"></i>收票人手机</label>
+					<div class="left">
+						<input type="text" id="telphone"/>
+					</div>
+				</div>
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list5" style="display: none;">
+					<label class="left">收票人邮箱</label>
+					<div class="left">
+						<input type="text" id="email"/>
+					</div>
+				</div>
+				<div class="clearfix fapiaoPopup_bd_list fapiaoPopup_bd_list6">
+					<label class="left"></label>
+					<div class="left">
+						<button class="am-btn am-radius" id="invoiceCancel">取消</button>
+						<button class="am-btn am-radius am-btn-warning" id="invoiceDetermine">确定</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<ul class="am-container">
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="jinji_plus.html">晋级+</a></li>
+						<li class="am-u-md-12"><a href="business.html">商务合作</a></li>
+						<li class="am-u-md-12"><a href="join_us.html">工作机会</a></li>
+						<li class="am-u-md-12"><a href="experience_city.html">体验城</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-md-2 line">
+				<div class="part-5-title">关于我服务</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul">
+						<li class="am-u-md-12"><a href="quality_assurance.html">品质保障</a></li>
+						<li class="am-u-md-12"><a href="financial_service.html">金融服务</a></li>
+						<li class="am-u-md-12"><a href="javascript:;">售后承诺</a></li>
+						<li class="am-u-md-12"><a href="see_get.html">所见即所得</a></li>
+						<div class="clear"></div>
+					</ul>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 line">
+				<div class="part-5-title">联系我们</div>
+				<div class="part-5-words2">
+					<span>联系地址：沈阳市铁西区云峰北街十三号（铁西百合家乐福三楼--晋级8000平体验馆）</span>
+					<span><i class="am-icon-phone contactPhone"></i><em>131-0988-6859</em></span>
+					<span>商务邮箱：jinjizhengzhuang@163.com</span>
+				</div>
+			</li>
+			<li class="am-u-lg-4 am-u-md-4 part-5-li2">
+				<div class="part-5-title" style="margin-bottom: 10px;">关注我们</div>
+				<div class="part-5-words2">
+					<ul class="part-5-words2-ul clearfix">
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/appEWM.png"/>
+							<p>app下载</p>
+						</li>
+						<li class="am-u-lg-6 am-u-md-6">
+							<img src="img/weixin.png"/>
+							<p>官方微信</p>
+						</li>
+					</ul>
+				</div>
+			</li>
+			<div class="clear"></div>
+		</ul>
+		<div class="copyright">
+			<p><i></i><span>辽公网安备 32015586630077号</span></p>
+			<p>辽ICP备14021018号&nbsp;&nbsp;|&nbsp;&nbsp;增值电信商务经营许可证：辽B2-20060312 </p>
+			<p>北京晋级华夏科技有限公司 &nbsp;&nbsp;版权所有</p>
+		</div>
+	</footer>
+<input type="hidden" id="userAddrId">
+<input type="hidden" id="skuId">
+<input type="hidden" id="materialId">
+<input type="hidden" id="cartId">
+<input type="hidden" id="orderFrom">
+
+<input type="hidden" id="invoice">
+<input type="hidden" id="invoiceMode">
+<input type="hidden" id="invoiceType">
+<input type="hidden" id="invoiceTitle">
+</body>
+	<script type="text/javascript">
+		$(function(){
+		$(".settlement_div0 :checkbox").click(function(){  
+	        if(this.checked){    
+	            $("#tbodyList :checkbox").prop("checked", true); 
+	            $("#theadList :checkbox").prop("checked", true); 
+	        }else{    
+	            $("#tbodyList :checkbox").prop("checked", false); 
+	            $("#theadList :checkbox").prop("checked", false); 
+	        }   
+	     });
+	     $("#theadList :checkbox").click(function(){  
+	        if(this.checked){    
+	            $("#tbodyList :checkbox").prop("checked", true); 
+	            $(".settlement_div0 :checkbox").prop("checked", true); 
+	        }else{    
+	            $("#tbodyList :checkbox").prop("checked", false); 
+	            $(".settlement_div0 :checkbox").prop("checked", false); 
+	        }   
+	     });  
+	     
+	     $("#tbodyList :checkbox").click(function(){ 
+		        allchk();
+		    }); 
+     
+	     function allchk(){ 
+		    var chknum = $("#tbodyList :checkbox").size();//选项总个数 
+		    var chk = 0; 
+		    $("#tbodyList :checkbox").each(function () {   
+		        if($(this).prop("checked")==true){ 
+		            chk++;
+		        }
+		    }); 
+		    if(chknum==chk){//全选 
+		        $(".settlement_div0 :checkbox").prop("checked",true); 
+		        $("#theadList :checkbox").prop("checked", true); 
+		    }else{//不全选 
+		        $(".settlement_div0 :checkbox").prop("checked",false);
+		        $("#theadList :checkbox").prop("checked", false);
+		    } 
+		} 
+		
+		numOne();
+		//加减数量
+		function numOne(){
+			$('.add').click(function(){
+				var oldValue = parseInt($(this).prev().val());
+				oldValue++;
+				$(this).prev().val(oldValue);
+				$(this).prev().prev().removeAttr('disabled');
+				checkPrice();
+			});
+			$('.minus').click(function(){
+				var oldValue = parseInt($(this).next().val());
+				oldValue--;
+				$(this).next().val(oldValue);
+				if(oldValue<1){
+					$(this).attr('disabled','disabled');
+					alert('购买商品最少为1件');
+					$(this).next().val('1');
+					//return false;
+				}
+				checkPrice();
+			});
+		};
+		
+		
+		$('.td_info_spec').delegate('.td_info_spec_list dl dd ul li','click',function(){
+			$(this).addClass('active').siblings().removeClass('active');
+		});
+		$('.td_info').delegate('.td_info_spec i','click',function(){
+			$(this).next().show();
+		});
+		$('.td_info').delegate('.td_info_spec .td_info_spec_list_btn','click',function(){
+			$(this).parent().hide();
+		});
+		
+		
+		/*省市县*/
+				var sheng = areaData.sheng;
+				var shiIndex = 0;
+				
+				for (var i=0;i<sheng.length;i++) {
+					var $option = $('<option value='+(i+1)+'>'+sheng[i]+'</option>');
+					$('.sheng').append($option);
+				}
+				
+				$('.sheng').change(function(){
+					shiIndex = this.selectedIndex-1;
+					if (shiIndex<0) {
+						
+					} else{
+						var shi = areaData.shi['a_'+shiIndex];
+						$('.shi').html('<option value="0">--市区--</option>');
+						$('.xian').html('<option value="0">--县镇--</option>');
+						for (var i=0;i<shi.length;i++) {
+							var $option = $('<option value='+(i+1)+'>'+shi[i]+'</option>');
+							$('.shi').append($option);
+						}
+					}
+					$('.shi').attr("disabled",false);
+				});
+				$('.shi').change(function(){
+					index = this.selectedIndex-1;
+					if (index<0) {
+						
+					} else{
+						var xian = areaData.xian['a_'+shiIndex+'_'+index];
+						$('.xian').html('<option value="0">--县镇--</option>');
+						for (var i=0;i<xian.length;i++) {
+							var $option = $('<option value='+(i+1)+'>'+xian[i]+'</option>');
+							$('.xian').append($option);
+						}
+					}
+					$('.xian').attr("disabled",false);
+				});
+				
+				
+				/*新建地址*/
+				$('.rec_info_content_div2_right button').click(function(){
+					$('#mask').show();
+					$('.newAddress').show();
+				});
+				$('.newAddress_hd i').click(function(){
+					$('#mask').hide();
+					$('.newAddress').hide();
+				});
+			$('#switchBtn').click(function(){
+				$('#mask').show();
+				$('.switchAddress').show();
+				showAllAddr();
+			});
+			$('.switchAddress_hd i').click(function(){
+				$('#mask').hide();
+				$('.switchAddress').hide();
+			});
+
+            $('#addrCancel').click(function(){
+                $('#mask').hide();
+                $('.switchAddress').hide();
+            });
+
+            $('#userAddrCancel').click(function(){
+                $('#mask').hide();
+                $('.newAddress').hide();
+            });
+
+            $('#addrSelection').click(function(){
+				$(".switchAddress_bd ol").each(function (index) {
+                    var clazz = $(this).parent().attr("class");
+                    if(clazz.indexOf("active") > -1){
+                        $("#userAddrId").val($(this).parent().attr("item"));
+                        $(".rec_info_content_div2_left ul li").eq(0).children("span").text($(this).children().eq(0).children("span").text());
+                        $(".rec_info_content_div2_left ul li").eq(1).children("span").text($(this).children().eq(1).children("span").text());
+                        $(".rec_info_content_div2_left ul li").eq(2).children("span").text($(this).children().eq(2).children("span").text());
+                        $('#mask').hide();
+                        $('.switchAddress').hide();
+                        return false;
+                    }
+                });
+
+            });
+
+
+            $('#createOrderBtn').click(function(){
+                createOrder();
+            });
+
+
+//			$('.switchAddress_bd').delegate('.switchAddress_bd_li','click',function(){
+//				$(this).addClass('active').siblings().removeClass('active');
+//			});
+
+
+            $('#newAddr').click(function(){
+                $("#realName").val("");
+                $("#phone").val("");
+                $("#addr").val("");
+                $("#province").val("0");
+                $("#city").val("0");
+                $("#district").val("0");
+                $("#isDefault").prop('checked',true);
+                $('#mask').show();
+                $('.newAddress').show();
+            });
+
+            initProvince();
+			userOrderDetail();
+			/**
+			 *  ****************发票开始**********************
+			 */
+			$("#invoice").val("0");
+            $('.fapiaoPopup_hd i').click(function(){
+                $(this).parent().parent().hide();
+                $('#mask').hide();
+            });
+            $('#invoiceCancel').click(function(){
+                $(".fapiaoPopup").hide();
+                $('#mask').hide();
+            });
+
+            $('.fapiao .modify').click(function(){
+                var invoiceTitle = $("#invoiceTitle").val();
+                $('#mask').show();
+                $('.fapiaoPopup').show();
+                if(invoiceTitle == ""){
+                    $(".WithoutInvoicing").click();
+                    $(".fapiaoPopup_bd_list5").hide();
+				}else{
+
+				}
+
+            });
+
+			$(".WithoutInvoicing").click(function(){//不开发票点击
+                $("#invoice").val("0");
+                $(this).addClass('active').siblings().removeClass('active');
+				$(this).parent().parent().siblings().find("span").unbind("click");
+                $(this).parent().parent().siblings().find("span").removeClass('active');
+                $(this).parent().parent().siblings().find('span').css({'color':'#ccc','cursor':'not-allowed'});
+                $(".fapiaoPopup_bd_list5").hide();
+                $('.personalFillName').remove();
+                $('.companyInput').remove();
+                $('.companyAdd').remove();
+                $('.companyBox').remove();
+            });
+            $(".DrawBill").click(function(){//开发票
+                $(this).addClass('active').siblings().removeClass('active');
+                $(this).parent().parent().siblings().find('span').css({'color':'#666','cursor':'pointer'});
+
+                $(this).parent().parent().siblings().find("span").unbind("click").bind("click",function () {
+
+                    var oHTML = '';
+                    $(this).addClass('active').siblings().removeClass('active');
+                    if($(this).hasClass("Paper")){
+                        $(".fapiaoPopup_bd_list5").hide();
+                        $("#invoiceMode").val("0");
+                        $("#telphone").val('');
+                        $("#email").val('');
+					}else if($(this).hasClass("Electronic")){
+                        $(".fapiaoPopup_bd_list5").show();
+                        $("#invoiceMode").val("1");
+					}else if($(this).hasClass("plainInvoice")){
+                        $("#invoiceType").val("0");
+                        $(".personal").css({'color':'#666','cursor':'pointer'});
+                        $(".personal").unbind("click").bind("click",function () {
+                            $("#invoiceTitle").val("0");
+                            $(this).addClass('active').siblings().removeClass('active');
+                            $('.personalFillName').remove();
+                            $('.companyInput').remove();
+                            $('.companyAdd').remove();
+                            $('.companyBox').remove();
+                            var oHTML = '<div class="fapiaoPopup_bd_list personalFillName"><span onclick="oInput(this)">请填写姓名</span><b>非必填</b></div>';
+                            $('.fapiaoPopup_bd_list1').after(oHTML);
+                        });
+					}else if($(this).hasClass("VAT_invoice")){
+                        $("#invoiceType").val("1");
+                        $(".personal").unbind("click");
+                        $(".personal").removeClass('active');
+                        $(".personal").css({'color':'#ccc','cursor':'not-allowed'});
+                        $('.personalFillName').remove();
+                    }else if($(this).hasClass("company")){
+                        $("#invoiceTitle").val("1");
+                        $('.personalFillName').remove();
+                        $('.companyInput').remove();
+                        $('.companyAdd').remove();
+                        oHTML += '<div class="companyBox"></div><div class="fapiaoPopup_bd_list companyAdd"><span onclick="oInput1(this)">新增单位发票</span></div>';
+                        oHTML += '<div class="fapiaoPopup_bd_list companyInput"><label>纳税人识别号</label><input type="text" id="identificationCode"></div>';
+                        $('.fapiaoPopup_bd_list1').after(oHTML);
+                        queryCompanyByUser();
+					}else if($(this).hasClass("personal")){
+                        $("#invoiceTitle").val("0");
+                        $('.personalFillName').remove();
+                        $('.companyInput').remove();
+                        $('.companyAdd').remove();
+                        $('.companyBox').remove();
+                        $(this).addClass('active').siblings().removeClass('active');
+                        oHTML += '<div class="fapiaoPopup_bd_list personalFillName"><span onclick="oInput(this)">请填写姓名</span><b>非必填</b></div>';
+                        $('.fapiaoPopup_bd_list1').after(oHTML);
+					}
+                })
+            });
+
+            //发票确定按钮点击方法
+            $("#invoiceDetermine").click(function () {
+                generateInvoice();
+            });
+	});
+
+		//生成发票方案
+		var invoiceParam = {};
+		function generateInvoice() {
+			if($(".WithoutInvoicing").hasClass("active")){
+                $(".fapiaoPopup").hide();
+                $('#mask').hide();
+                $(".fapiao_caption").children("span").text('不开发票');
+                $('#invoiceMode').val('');
+                $('#invoiceType').val('');
+                $('#invoiceTitle').val('');
+                invoiceParam = {};
+                return;
+			}
+            if($(".DrawBill").hasClass("active")){
+			    var invoiceMode = $("#invoiceMode").val();
+				if(invoiceMode == ""){
+					alert("请选择发票方式");
+					return;
+				}
+                invoiceParam["invoiceMode"] = invoiceMode;
+                if($("#invoiceType").val() == ""){
+                    alert("请选择发票类型");
+                    return;
+                }
+                invoiceParam["invoiceType"] = $("#invoiceType").val();
+                var invoiceTitle = $("#invoiceTitle").val();
+                if( invoiceTitle == ""){
+                    alert("请选择发票抬头");
+                    return;
+                }else{
+					if(invoiceTitle == "1"){
+					    var flag = false;
+					    $(".companyBox").children().each(function () {
+								if($(this).hasClass("active")){
+									var name = $(this).children("input").val();
+									if(name != ""){
+                                        flag = true;
+                                        invoiceParam["name"] = name;
+                                        return false;
+									}
+								}
+                        });
+					    if(!flag){
+							alert("请选择单位或填写单位");
+							return;
+						}
+
+						var identificationCode = $("#identificationCode").val();
+						if(identificationCode == ""){
+                            alert("请填写纳税人识别号");
+                            return;
+						}
+                        invoiceParam["identificationCode"] = identificationCode;
+					}else{
+						var name = $(".personalFillName").children("input").val();
+					    if(name && name != ""){
+                            invoiceParam["name"] = name;
+						}
+					}
+				}
+                invoiceParam["invoiceTitle"] = invoiceTitle;
+				if(invoiceMode == "1"){
+					var telphone = $("#telphone").val();
+					if(telphone == ""){
+					    alert("请填写收票人手机");
+					    return;
+					}
+                    var email = $("#email").val();
+                    if(email == ""){
+                        alert("请填写收票人邮箱");
+                        return;
+                    }
+                    invoiceParam["telphone"] = telphone;
+                    invoiceParam["email"] = email;
+				}
+            }
+            getInvoiceDesc();
+            $("#invoice").val("1");
+            $(".fapiaoPopup").hide();
+            $('#mask').hide();
+        }
+
+        //获取发票最终描述
+        function getInvoiceDesc() {
+		    var desc = [];
+		    var invoiceMode = $("#invoiceType").val();
+		    if(invoiceMode == "1"){
+                desc.push('电子');
+			}
+			var invoiceType = $("#invoiceType").val();
+			if(invoiceType == "0"){
+                desc.push('普通发票');
+			}else{
+                desc.push('增值税专用发票');
+			}
+            desc.push(' ');
+            var invoiceTitle = $("#invoiceTitle").val();
+            if(invoiceTitle == "0"){
+                var name = $(".personalFillName").children("input").val();
+                if(name && name != ""){
+                    desc.push(name);
+				}else{
+                    desc.push('个人');
+				}
+            }else{
+                $(".companyBox").children().each(function () {
+                    if($(this).hasClass("active")){
+                        var name = $(this).children("input").val();
+                        if(name != ""){
+                            desc.push(name);
+                            return false;
+                        }
+                    }
+                });
+            }
+
+            $(".fapiao_caption").children("span").text(desc.join(''));
+        }
+
+        function oInput(obj){
+            $(obj).parent().html('<input type="text" placeholder="请填写姓名" /><i onclick="delNameInput(this);">删除</i>');
+        }
+        function oInput1(obj){
+            var oInput = '';
+            oInput += '<div class="companyBox_list"><input type="text" placeholder="新增单位发票抬头" /><i onclick="baocun(this)">保存</i></div>';
+            $('.companyBox').append(oInput);
+        }
+        function delNameInput(obj) {
+            $(obj).parent().remove();
+            var oHTML = '<div class="fapiaoPopup_bd_list personalFillName"><span onclick="oInput(this)">请填写姓名</span><b>非必填</b></div>';
+            $('.fapiaoPopup_bd_list1').after(oHTML);
+        }
+
+        function baocun(obj){
+            var oVal = $(obj).parent().find('input').val();
+            if( oVal == "" ){
+                alert('新增发票抬头不能为空');
+            }else{
+                var id  = $(obj).parent().attr("item");
+                if(id){
+                    requestPostFront("/invoice/updateInvoiceCompanyById",{"name":oVal,"id":id},function (resultData){
+                            console.log(resultData);
+                            if(resultData){
+                                var code = resultData.code;
+                                //var id = resultData.data.id;
+                                if(code == "200"){
+                                    //$(obj).parent().attr("item",id);
+                                    $(obj).parent().find('input').prop('readonly','readonly');
+                                    $(obj).parent().find('input').after('<b onclick="oEdit(this)">编辑</b><strong onclick="oDelete(this)">删除</strong>');
+                                    $(obj).remove();
+                                }
+                            }
+                        }
+                    )
+				}else{
+                    requestPostFront("/invoice/createInvoiceCompany",{"name":oVal},function (resultData){
+                            console.log(resultData);
+                            if(resultData){
+                                var code = resultData.code;
+                                var id = resultData.data.id;
+                                if(code == "200"){
+                                    $(obj).parent().attr("item",id);
+                                    $(obj).parent().find('input').prop('readonly','readonly');
+                                    $(obj).parent().find('input').after('<b onclick="oEdit(this)">编辑</b><strong onclick="oDelete(this)">删除</strong>');
+                                    $(obj).remove();
+                                }
+                            }
+                        }
+                    )
+				}
+            }
+        }
+        function oDelete(obj){
+            var id = $(obj).parent().attr("item");
+            popup('确定要删除吗？',true,function(){
+                requestPostFront("/invoice/deleteInvoiceCompanyById",{"id":id},function (resultData){
+                        console.log(resultData);
+                        if(resultData){
+                            var code = resultData.code;
+                            if(code == "200"){
+                                $(obj).parent().remove();
+                            }
+                        }
+                    }
+                )
+            });
+        }
+        function oEdit(obj){
+            $(obj).parent().find('strong').remove();
+            $(obj).parent().find('input').prop('readonly',false);
+            $(obj).parent().find('input').after('<i onclick="baocun(this)">保存</i><strong onclick="oDelete(this)">删除</strong>');
+            $(obj).remove();
+        }
+
+        /**
+		 * 根据用户查询单位名称
+		 */
+        function queryCompanyByUser() {
+            requestPostFront("/invoice/queryCompanyByUser",{},function (resultData){
+   					console.log(resultData);
+   					var company = [];
+   					for(var i in resultData){
+   					    var name = resultData[i].name;
+                        var id = resultData[i].id;
+                        company.push('<div class="companyBox_list" item="'+id+'"><input type="text" placeholder="新增单位发票抬头" readonly value="'+name+'"><b onclick="oEdit(this)">编辑</b><strong onclick="oDelete(this)">删除</strong></div>')
+					}
+				$('.companyBox').html(company.join(''));
+                }
+            )
+        }
+
+		/*
+		 * 初始化省直辖市
+		 */
+        function  initProvince() {
+            requestPostFront("/personalCenter/queryProvince",{},function (resultData){
+                    if(resultData){
+                        var province = [];
+                        province.push('<option value="0">--省--</option>');
+                        for(var i=0;i<resultData.length;i++){
+                            var id  = resultData[i].id;
+                            var name  = resultData[i].name;
+                            province.push('<option value="'+id+'">'+name+'</option>');
+                        }
+                        $("#province").html(province.join(''));
+                        $("#province").change(function(){
+                            queryCity(this);
+                        });
+                    }
+                }
+            )
+        }
+
+		/*
+		 * 地市查询
+		 */
+        function queryCity(obj) {
+            var pid = $(obj).val();
+            if(pid == ""){
+                return;
+            }
+            requestPostFront("/personalCenter/queryCity",{"pid":pid},function (resultData){
+                    if(resultData){
+                        var city = [];
+                        city.push('<option value="0">--市区--</option>');
+                        for(var i in resultData){
+                            var id  = resultData[i].id;
+                            var name  = resultData[i].name;
+                            city.push('<option value="'+id+'">'+name+'</option>');
+                        }
+                        $("#city").html(city.join(''));
+                        $('#city').attr("disabled",false);
+                        $("#city").change(function(){
+                            queryDistrict(this);
+                        });
+                    }
+                }
+            )
+        }
+
+		/*
+		 * 区县查询
+		 */
+        function queryDistrict(obj) {
+            var pid = $(obj).val();
+            if(pid == ""){
+                return;
+            }
+            requestPostFront("/personalCenter/queryDistrict",{"pid":pid},function (resultData){
+                    if(resultData){
+                        var district = [];
+                        district.push('<option value="0">--县镇--</option>');
+                        for(var i in resultData){
+                            var id  = resultData[i].id;
+                            var name  = resultData[i].name;
+                            district.push('<option value="'+id+'">'+name+'</option>');
+                        }
+                        $('#district').attr("disabled",false);
+                        $("#district").html(district.join(''));
+                    }
+                }
+            )
+        }
+
+
+		/**
+		 * 购物车清单
+		 */
+        function shoppingCartList(param) {
+            requestPostFront("/shoppingCart/userShoppingCart",{"param":param},function (resultData){
+                	var cart = [];
+                    if(resultData){
+                        var totalPrice = resultData.totalPrice;
+                        var addr = resultData.addr;
+                        for(var i in resultData.list){
+                            var url = resultData.list[i].url;
+                            var skuValueList = resultData.list[i].skuValueList;
+                            var materialName =  resultData.list[i].materialName;
+                            var price = resultData.list[i].price;
+                            var quantity = resultData.list[i].quantity;
+                            var total = resultData.list[i].total;
+                            cart.push('<tr>');
+                            if(url){
+                                //cart.push('<td><img src="'+url+'"></td>');
+                                cart.push('<td><img src="img/danpin1.png"></td>');
+                            }else{
+                                cart.push('<td><img src="img/danpin1.png"></td>');
+                            }
+                            //<td class="td_info"><h4>索菲亚经典百叶衣柜定制</h4><div class="td_info_spec"><label>花色：</label>白橡木</div><div class="td_info_spec"><label>规格：</label>投影面积算价：元/㎡（4色可选，连门带框安装）</div></td>
+                            var sku = [];
+                            for(j in skuValueList){
+                                sku.push('<div class="td_info_spec"><label>'+skuValueList[j].key+'：</label>'+skuValueList[j].value+'</div>')
+                            }
+                            cart.push('<td class="td_info"><h4>'+materialName+'</h4>'+sku.join('')+'</td>');
+                            cart.push('<td>￥'+price+'</td>');
+                            cart.push('<td class="shopNumber">'+quantity+'</td>');
+                            cart.push('<td class="td_total">￥'+total+'</td>');
+                            cart.push('</tr>');
+                        }
+                        var addrAll = "";
+                        var realName = "";
+                        var phone = "";
+                        if(addr){
+                            addrAll = addr.addrAll;
+                            phone = addr.phone;
+                            realName = addr.realName;
+                            $("#userAddrId").val(addr.id);
+                        }
+                        var userAddrInfo = [];
+                        userAddrInfo.push('<li><label>收货人：</label><span>'+realName+'</span></li>');
+                        userAddrInfo.push('<li><label>联系方式：</label><span>'+phone+'</span></li>');
+                        userAddrInfo.push('<li><label>收货地址：</label><span>'+addrAll+'</span></li>');
+                        $("#tbodyList").html(cart.join(''));
+                        $(".placeOrder_bottom").find("b").append(totalPrice);
+                        $(".rec_info_content_div2_left ul").html(userAddrInfo.join(''));
+                        $("#cartId").val(param);
+                        $("#orderFrom").val(GetRequest()["t"]);
+                    }
+                }
+            )
+        }
+
+        /**
+		 * 用户订单选配详情
+         */
+		function userOrderDetail() {
+            var param = GetRequest();
+            if(param["t"]){
+                var param = $.base64.atob(param["i"], true);
+                shoppingCartList(param);
+                return;
+			}
+            requestPostFront("/singleProduct/userOrderDetail",param,function (resultData){
+                    if(resultData){
+                        var materialList = [];
+                        var sku = [];
+                        for(var i in resultData.materialSkuAttrValue){
+                            sku.push('<div class="td_info_spec"><label>'+resultData.materialSkuAttrValue[i].key+'：</label>'+resultData.materialSkuAttrValue[i].value+'</div>')
+                        }
+                        var material = resultData.material;
+                        var url = material.url;
+                        var materialName = material.materialName;
+                        materialList.push('<tr>');
+                        if(url){
+                            //materialList.push('<td><img src="'+url+'"></td>');
+                            materialList.push('<td><img src="img/danpin1.png"></td>');
+                        }else{
+                            materialList.push('<td><img src="img/danpin1.png"></td>');
+                        }
+                        materialList.push('<td class="td_info"><h4>'+materialName+'</h4>'+sku.join('')+'</td>');
+                        materialList.push('<td>￥'+material.nowPrice+'</td>');
+                        materialList.push('<td class="shopNumber">'+resultData.count+'</td>');
+                        materialList.push('<td class="td_total">￥'+resultData.totalPrice+'</td>');
+                        materialList.push('</tr>');
+                        var userAddrInfo = [];
+                        var addr = resultData.addr;
+                        var addrAll = "";
+                        var realName = "";
+                        var phone = "";
+                        if(addr){
+                            addrAll = addr.addrAll;
+                            phone = addr.phone;
+                            realName = addr.realName;
+                            $("#userAddrId").val(addr.id);
+                        }
+                        userAddrInfo.push('<li><label>收货人：</label><span>'+realName+'</span></li>');
+                        userAddrInfo.push('<li><label>联系方式：</label><span>'+phone+'</span></li>');
+                        userAddrInfo.push('<li><label>收货地址：</label><span>'+addrAll+'</span></li>');
+
+                        $(".rec_info_content_div2_left ul").html(userAddrInfo.join(''));
+                        $("#tbodyList").html(materialList.join(''));
+                        $(".placeOrder_bottom").find("b").append(resultData.totalPrice);
+                        $("#skuId").val(resultData.skuId);
+                        $("#materialId").val(material.materialId);
+                    }
+                }
+            )
+        }
+
+        /**
+		 * js 解析地址栏获取参数
+         * @returns {{}}
+         * @constructor
+         */
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = {};
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    var index = strs[i].indexOf("=");
+                    theRequest[strs[i].split("=")[0]]=unescape(strs[i].substr(index + 1));
+                }
+            }
+            return theRequest;
+        }
+
+        /**
+		 * 查询用户可切换地址列表
+		 */
+        function showAllAddr() {
+            requestPostFront("/personalCenter/queryUserAddr",{},function (resultData){
+                    if(resultData){
+                        var addrList = [];
+                        var defaultAddr = [];
+                        for(var i in resultData){
+                            var isDefault = resultData[i].isDefault;
+                            var realName = resultData[i].realName;
+                            var phone = resultData[i].phone;
+                            var addrAll = resultData[i].addrAll;
+                            var id = resultData[i].id;
+                            var userAddrId = $("#userAddrId").val();
+                            //debugger;
+                            if(isDefault == 1){
+                                if(id == parseInt(userAddrId)){
+                                    defaultAddr.push('<li class="switchAddress_bd_li active" item="'+id+'">');
+                                }else{
+                                    defaultAddr.push('<li class="switchAddress_bd_li" item="'+id+'">');
+                                }
+                                defaultAddr.push('<ol><li><span>'+realName+'</span></li><li><span>'+phone+'</span></li><li><span class="address">'+addrAll+'</span></li></ol>');
+                                defaultAddr.push('<div class="defaultChk"><label class="ui-checkbox" style="margin-left: 80px;"><input type="checkbox" checked="checked" id="'+id+'"><span></span></label><span>设为默认值</span></div>');
+                                defaultAddr.push('</li>');
+                            }else{
+                                if(id == parseInt(userAddrId)){
+                                    addrList.push('<li class="switchAddress_bd_li active" item="'+id+'">');
+                                }else{
+                                    addrList.push('<li class="switchAddress_bd_li" item="'+id+'">');
+                                }
+                                //addrList.push('<li class="switchAddress_bd_li" item="'+id+'">');
+                                addrList.push('<ol><li><span>'+realName+'</span></li><li><span>'+phone+'</span></li><li><span class="address">'+addrAll+'</span></li></ol>');
+                                addrList.push('<div class="defaultChk"><label class="ui-checkbox" style="margin-left: 80px;"><input type="checkbox" id="'+id+'"><span></span></label><span>设为默认值</span></div>');
+                                addrList.push('</li>');
+                            }
+                        }
+                        defaultAddr.push(addrList.join(''));
+                        $(".switchAddress_bd ul").html(defaultAddr.join(''));
+                        $(".switchAddress_bd li").click(function () {
+                            $(this).addClass('active').siblings().removeClass('active');
+                        });
+                        var postData = {};
+                        $(".switchAddress_bd ul").find("input").bind("click",function () {
+                            var isChecked = $(this).is(":checked");
+                            if(isChecked){
+                                //$(this).parent().parent().parent().siblings().find("input").prop('checked',false);//checkbox选中互斥
+                                $(".switchAddress_bd ul").find("input").prop('checked',false);
+                                $(this).prop('checked',true);
+                                postData["url"] = "/personalCenter/updateAddrDefaultSelected";
+
+                                $(".rec_info_content_div2_left ul li").eq(0).children("span").text($(this).parent().parent().prev().children().eq(0).children().text());
+                                $(".rec_info_content_div2_left ul li").eq(1).children("span").text($(this).parent().parent().prev().children().eq(1).children().text());
+                                $(".rec_info_content_div2_left ul li").eq(2).children("span").text($(this).parent().parent().prev().children().eq(2).children().text());
+                                $("#userAddrId").val($(this).attr("id"));
+                                $('#mask').hide();
+                                $('.switchAddress').hide();
+                            }else{
+                                postData["url"] = "/personalCenter/updateAddrDefaultCancel";
+                                $(".rec_info_content_div2_left ul li").eq(0).children("span").text("");
+                                $(".rec_info_content_div2_left ul li").eq(1).children("span").text("");
+                                $(".rec_info_content_div2_left ul li").eq(2).children("span").text("");
+                                $("#userAddrId").val("");
+                                $(this).parent().parent().parent().attr("class","switchAddress_bd_li");
+                                console.log($(this).parent().parent().parent());
+                            }
+                            postData["id"] = $(this).attr("id");
+                            updateUserAddrDefault(postData);
+                        })
+                    }
+                }
+            )
+        }
+
+        /**
+         * 更新用户默认地址
+         * @param param
+         */
+        function updateUserAddrDefault(param){
+            requestPostFront(param["url"],param,function (resultData){
+                    if(resultData){
+                        var code = resultData.code;
+                        if(code == "200"){
+                            console.log(data);
+                        }
+                    }
+                }
+            )
+        }
+
+        /**
+		 * 保存收货地址
+         */
+        function saveUserAddr() {
+            var realName = $("#realName").val();
+            var phone = $("#phone").val();
+            var addr = $("#addr").val();
+            var cityId = $("#district").val();
+            var isDefault ;
+            if($("#isDefault").is(":checked")){
+                isDefault = 1;
+            }else{
+                isDefault = 0;
+            }
+            var param = {};
+            param["realName"] = realName;
+            param["phone"] = phone;
+            param["addr"] = addr;
+            param["cityId"] = cityId;
+            param["isDefault"] = isDefault;
+            requestPostFront("/personalCenter/saveUserAddr",param,function (resultData){
+                    if(resultData){
+                        var code = resultData.code;
+                        if(code == "200"){
+                            $('#mask').hide();
+                            $('.newAddress').hide();
+                            window.location.reload();
+                        }
+                    }
+                }
+            )
+        }
+
+        /**
+		 * 创建订单
+         */
+        function createOrder() {
+            var userAddrId = $("#userAddrId").val();
+            if(userAddrId == ""){
+                alert("请选择收货地址");
+                return ;
+			}
+			var type = $("#orderFrom").val();
+			if(type && type == "s"){//购物车创建订单
+                createCartOrder();
+			}else{//精选单品创建订单
+                createSingleOrder()
+			}
+        }
+
+        /**
+		 * 精选单品订单
+		 */
+        function createSingleOrder() {
+            var materialId = $("#materialId").val();
+            var skuId = $("#skuId").val();
+            var count = $(".shopNumber").eq(0).text();
+            var param = {};
+            param["userAddrId"] = $("#userAddrId").val();
+            param["materialId"] = materialId;
+            param["skuId"] = skuId;
+            param["count"] = count;
+            var invoice = $("#invoice").val();
+            param["invoice"] = invoice;
+			if(invoice != "0"){
+                param["telphone"] = invoiceParam["telphone"];
+                param["email"] = invoiceParam["email"];
+                param["identificationCode"] = invoiceParam["identificationCode"];
+                param["name"] = invoiceParam["name"];
+                param["invoiceType"] = invoiceParam["invoiceType"];
+                param["invoiceMode"] = invoiceParam["invoiceMode"];
+                param["invoiceTitle"] = invoiceParam["invoiceTitle"];
+			}
+            requestPostFront("/singleProduct/createOrder",param,function (resultData){
+                    console.log(resultData);
+                    if(resultData){
+                        var code = resultData.code;
+                        if(code == "200"){
+                            var orderInfo = resultData.data.orderInfo;
+                            var orderId = orderInfo.orderId;
+                            window.location.href = "shopping_cart_payment.html?o=" + orderId;
+                        }
+                    }
+                }
+            )
+        }
+
+        /**
+		 * 购物车订单
+         */
+        function createCartOrder(){
+            var param = {};
+			var cartId = $("#cartId").val();
+            param["cartId"] = cartId;
+            param["userAddrId"] = $("#userAddrId").val();
+            var invoice = $("#invoice").val();
+            param["invoice"] = invoice;
+            if(invoice != "0"){
+                param["invoice"] = $("#invoice").val();
+                if(invoiceParam["telphone"]){
+                    param["telphone"] = invoiceParam["telphone"];
+				}
+                if(invoiceParam["email"]){
+                    param["email"] = invoiceParam["email"];
+                }
+                if(invoiceParam["identificationCode"]){
+                    param["identificationCode"] = invoiceParam["identificationCode"];
+                }
+                if(invoiceParam["name"]){
+                    param["name"] = invoiceParam["name"];
+                }
+                param["invoiceType"] = invoiceParam["invoiceType"];
+                param["invoiceMode"] = invoiceParam["invoiceMode"];
+                param["invoiceTitle"] = invoiceParam["invoiceTitle"];
+            }
+            requestPostFront("/shoppingCart/createCartOrder",param,function (resultData){
+                    console.log(resultData);
+					if(resultData){
+						var code = resultData.code;
+						if(code == "200"){
+							var orderInfo = resultData.data.result;
+							var orderId = orderInfo.orderId;
+							window.location.href = "shopping_cart_payment.html?o=" + orderId;
+						}
+					}
+                }
+            )
+		}
+	</script>
+</html>

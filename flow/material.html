@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>套餐材料</title>
+    <script src="/js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/common/http_request.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body onload="loadData()">
+<form id="">
+     <input type="text" id="product_id" name="product_id" value=""/>
+     <input type="text" id="case_id" name="case_id" value=""/>
+     <input type="text" id="house_user_id" name="house_user_id" value=""/>
+     <input type="text" id="house_dictionary_id" name="house_dictionary_id" value=""/>
+     <input type="text" id="parent_id" name="parent_id" value=""/>
+     <input type="text" id="material_tree_id" name="material_tree_id" value=""/>
+     <input type="text" id="order_id" name="order_id" value=""/>
+
+
+
+     <p>------------------------------------户型结构-------------</p>
+     <div id="houseUserDiv"></div>
+
+     <p>------------------------------------材料分类-------------</p>
+     <div id="materialTreeDiv"></div>
+
+    <p>-------------------------------------材料信息------------</p>
+    <div id="materialUserDiv"></div>
+
+    <p>-------------------------------------材料替换-------------<input type="button" value="保存" onclick="updateSubstitution()">-----------------</p>
+    <div id="replaceDiv"></div>
+
+    <p>-------------------------------------提交订单-----------------</p>
+    <div id="">支付金额：300.00元<input type="button" value="提交订单" onclick="submitOrder()"/></div>
+</form>
+</body>
+<script type="text/javascript">
+    <!--加载上边户型+左侧材料分类-->
+    function  loadData() {
+        $("#case_id").val(getRequestParam("case_id"));
+        var postData = {};
+        postData["case_id"]= $("#case_id").val();
+        requestPostFront("/flowController/queryHouseAndMaterialTreeAttr",postData,
+                function (resultData){
+                    var houseUsers = resultData.data.houseUsers;
+                    if(houseUsers.length > 0){
+                        $("#order_id").val(houseUsers[0].order_id);
+                        $("#product_id").val(houseUsers[0].product_id);
+                        $("#house_user_id").val(houseUsers[0].id);
+                        $("#house_dictionary_id").val(houseUsers[0].house_dictionary_id);
+                        $("#houseUserDiv").empty();
+                        for(var i=0;i<houseUsers.length;i++){
+                            var houseUser = houseUsers[i];
+                            var trStr ='';
+                            trStr += '<a href="#" onclick="loadHouseUsers('+houseUser.id+','+houseUser.house_dictionary_id+')">'+houseUser.name+'--</a>';
+                            $("#houseUserDiv").append(trStr);
+                        }
+                        $("#houseUserDiv").append('<br/><br/>');
+                    }
+
+                    var materialTrees = resultData.data.materialTrees;
+                    if(materialTrees.length > 0){
+                        $("#materialTreeDiv").empty();
+                        $("#parent_id").val(materialTrees[0].id);
+                        for(var i=0;i<materialTrees.length;i++){
+                            var materialTree = materialTrees[i];
+                            var trStr ='';
+                            trStr += '<a href="#" onclick="loadMaterialTrees('+materialTree.id+')">'+materialTree.name+'</a><br/><br/>';
+                            $("#materialTreeDiv").append(trStr);
+                        }
+                        $("#materialTreeDiv").append('<br/><br/>');
+                    }
+
+                    var materialUserList = resultData.data.materialUserList;
+                    if(materialUserList.length>0){
+                        showMaterials(materialUserList);
+                    }
+                }
+        )
+    }
+
+    function loadMaterialTrees(parent_id) {
+        $("#replaceDiv").empty();
+        $("#parent_id").val(parent_id);
+        var house_user_id=  $("#house_user_id").val();
+        var house_dictionary_id = $("#house_dictionary_id").val();
+        loadMaterialData(house_user_id,house_dictionary_id,parent_id);
+    }
+
+    function loadHouseUsers(house_user_id,house_dictionary_id) {
+        $("#replaceDiv").empty();
+        var parent_id = $("#parent_id").val();
+        $("#house_user_id").val(house_user_id);
+        $("#house_dictionary_id").val(house_dictionary_id);
+        loadMaterialData(house_user_id,house_dictionary_id,parent_id);
+    }
+
+    <!--加载材料-->
+    function loadMaterialData(house_user_id,house_dictionary_id,parent_id) {
+        $("#case_id").val(getRequestParam("case_id"));
+        var postData = {};
+        postData["case_id"]= $("#case_id").val();
+        postData["house_user_id"]= house_user_id;
+        postData["house_dictionary_id"]= house_dictionary_id;
+        postData["parent_id"]= parent_id;
+        requestPostFront("/flowController/queryMaterialByParms",postData,
+                function (resultData){
+                    var materialUserList = resultData.data;
+                    $("#materialUserDiv").empty();
+                    if(materialUserList.length > 0){
+                        showMaterials(materialUserList);
+                    }
+                }
+        )
+    }
+
+    function showMaterials(materialUserList) {
+        for(var i=0;i<materialUserList.length;i++){
+            var materialUser = materialUserList[i];
+            var trStr ='';
+            trStr += '<img src="'+materialUser.url+'" style="width:50px; height:50px;"/>';
+            trStr += '<a href="#">'+materialUser.material_name+'</a>';
+            if(materialUser.counts>1){
+                trStr += '<input type="button" value="替换" onclick="substitutionData('+materialUser.material_tree_id+')"/>';
+            }
+            trStr +='<br/><br/>';
+            $("#materialUserDiv").append(trStr);
+        }
+    }
+
+    <!--加载替换材料-->
+    function substitutionData(material_tree_id) {
+        $("#material_tree_id").val(material_tree_id)
+        var house_user_id=  $("#house_user_id").val();
+        var postData = {};
+        postData["house_user_id"]= house_user_id;
+        postData["material_tree_id"]= material_tree_id;
+        requestPostFront("/flowController/querySubstitutionData",postData,
+                function (resultData){
+                    var replaceMaterials = resultData.data;
+                    $("#replaceDiv").empty();
+                    if(replaceMaterials.length > 0){
+                        for(var i=0;i<replaceMaterials.length;i++){
+                            var replaceMaterial = replaceMaterials[i];
+                            var trStr ='';
+                            trStr += '<img src="replaceMaterial.url" style="width: 50px;height: 50px;"/>';
+                            trStr += '<a href="#">'+replaceMaterial.material_name+'</a>';
+                            if(replaceMaterial.type==1){
+                                trStr += '<input type="radio" name="id" value="'+replaceMaterial.id+'" checked="checked"/>'
+                            }else{
+                                trStr += '<input type="radio" name="id" value="'+replaceMaterial.id+'"/>'
+                            }
+
+                            if (replaceMaterial.state==1){
+                                trStr += '标配';
+                            }else{
+                                trStr += '非标配';
+                            }
+
+
+                            trStr +='<br/><br/>';
+                            $("#replaceDiv").append(trStr);
+                        }
+                    }
+                }
+        )
+    }
+
+
+    <!--更新替换替换材料-->
+    function updateSubstitution() {
+        var postData = {};
+        postData["id"]= $("input[name='id']:checked").val();
+        postData["house_user_id"]= $("#house_user_id").val();
+        postData["material_tree_id"]= $("#material_tree_id").val();
+        requestPostFront("/flowController/updateSubstitutionData",postData,
+                function (resultData){
+                     var result = resultData.data;
+                     if(result>0){
+                         var house_user_id = $("#house_user_id").val();
+                         var house_dictionary_id = $("#house_dictionary_id").val();
+                         var parent_id = $("#parent_id").val();
+                         loadMaterialData(house_user_id,house_dictionary_id,parent_id)
+                     }else{
+                         alert("保存失败");
+                     }
+                }
+        )
+    }
+
+    function submitOrder() {
+       var order_id =  $("#order_id").val();
+        if(order_id>0){
+            alert("提交失败：订单已存在！");
+            return false;
+        }
+        var postData = {};
+        postData["product_id"]= $("#product_id").val();
+        postData["case_id"]= $("#case_id").val();
+        requestPostFront("/flowController/submitOrder",postData,
+                function (resultData){
+                    var result = resultData.data;
+                    if(result>0){
+                        alert("生成订单成功！");
+                        window.location.reload();
+                    }else{
+                        alert("生成订单失败！");
+                    }
+                }
+        )
+    }
+</script>
+
+
+
+
+
+
+
+</html>
